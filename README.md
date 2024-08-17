@@ -1,6 +1,6 @@
-# Deepin Image Viewer
+# GXDE Image Viewer
 
-Image viewer for Deepin Desktop Environment.
+Image viewer for GXDE Desktop Environment.
 
 ## Dependencies
 
@@ -29,7 +29,7 @@ Image viewer for Deepin Desktop Environment.
 
 2. Build:
 ```
-$ cd deepin-viewer
+$ cd gxde-image-viewer
 $ mkdir Build
 $ cd Build
 $ qmake ..
@@ -41,7 +41,7 @@ $ make
 $ sudo make install
 ```
 
-When install complete, the executable binary file is placed into `/usr/bin/deepin-viewer`.
+When install complete, the executable binary file is placed into `/usr/bin/gxde-image-viewer`.
 
 ## Getting help
 
@@ -60,4 +60,4 @@ We encourage you to report issues and contribute changes
 
 ## License
 
-Deepin Image Viewer is licensed under [GPLv3](LICENSE).
+GXDE Image Viewer is licensed under [GPLv3](LICENSE).

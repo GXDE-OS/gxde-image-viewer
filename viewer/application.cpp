@@ -33,9 +33,9 @@ Application::Application(int& argc, char** argv)
     : DApplication(argc, argv)
 {
     initI18n();
-    setOrganizationName("deepin");
-    setApplicationName("deepin-image-viewer");
-    setApplicationDisplayName(tr("Deepin Image Viewer"));
+    setOrganizationName("GXDE");
+    setApplicationName("gxde-image-viewer");
+    setApplicationDisplayName(tr("GXDE Image Viewer"));
 
     setApplicationVersion(DApplication::buildVersion("1.3"));
 

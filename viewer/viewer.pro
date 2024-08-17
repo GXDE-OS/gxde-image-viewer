@@ -14,7 +14,7 @@ PKGCONFIG += x11 xext libexif dtkwidget gio-unix-2.0
 LIBS += -lfreeimage
 
 #gtk+-2.0
-TARGET = deepin-image-viewer
+TARGET = gxde-image-viewer
 TEMPLATE = app
 INCLUDEPATH += utils
 
@@ -51,12 +51,12 @@ RESOURCES += \
 !system($$PWD/generate_translations.sh): error("Failed to generate translation")
 
 TRANSLATIONS += \
-    translations/deepin-image-viewer.ts\
-    translations/deepin-image-viewer_zh_CN.ts
+    translations/gxde-image-viewer.ts\
+    translations/gxde-image-viewer_zh_CN.ts
 
 BINDIR = $$PREFIX/bin
-APPSHAREDIR = $$PREFIX/share/deepin-image-viewer
-MANDIR = $$PREFIX/share/dman/deepin-image-viewer
+APPSHAREDIR = $$PREFIX/share/gxde-image-viewer
+MANDIR = $$PREFIX/share/dman/gxde-image-viewer
 MANICONDIR = $$PREFIX/share/icons/hicolor/scalable/apps
 APPICONDIR = $$PREFIX/share/icons/deepin/apps/scalable
 
@@ -65,7 +65,7 @@ DEFINES += APPSHAREDIR=\\\"$$APPSHAREDIR\\\"
 target.path = $$BINDIR
 
 desktop.path = $$PREFIX/share/applications/
-desktop.files = $$PWD/deepin-image-viewer.desktop
+desktop.files = $$PWD/gxde-image-viewer.desktop
 
 icons.path = $$APPSHAREDIR/icons
 icons.files = $$PWD/resources/images/*
@@ -74,13 +74,13 @@ manual.path = $$MANDIR
 manual.files = $$PWD/doc/*
 
 manual_icon.path = $$MANICONDIR
-manual_icon.files = $$PWD/doc/common/deepin-image-viewer.svg
+manual_icon.files = $$PWD/doc/common/gxde-image-viewer.svg
 
 app_icon.path = $$APPICONDIR
-app_icon.files = $$PWD/resources/images/logo/deepin-image-viewer.svg
+app_icon.files = $$PWD/resources/images/logo/gxde-image-viewer.svg
 
 dbus_service.path =  $$PREFIX/share/dbus-1/services
-dbus_service.files += $$PWD/com.deepin.ImageViewer.service
+dbus_service.files += $$PWD/com.gxde.ImageViewer.service
 
 translations.path = $$APPSHAREDIR/translations
 translations.files = $$PWD/translations/*.qm
@@ -88,7 +88,7 @@ translations.files = $$PWD/translations/*.qm
 INSTALLS = target desktop dbus_service icons manual manual_icon app_icon translations
 
 DISTFILES += \
-    com.deepin.ImageViewer.service
+    com.gxde.ImageViewer.service
 
 load(dtk_qmake)
 host_sw_64: {

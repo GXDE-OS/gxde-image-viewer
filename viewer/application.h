@@ -18,6 +18,7 @@
 #define APPLICATION_H_
 
 #include <DApplication>
+#include <QPainterPath>
 
 class Application;
 class ConfigSetter;

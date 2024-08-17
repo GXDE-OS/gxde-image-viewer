@@ -34,6 +34,7 @@
 #include <QScrollBar>
 #include <QStandardItemModel>
 #include <QtMath>
+#include <QPainterPath>
 
 #include "denhancedwidget.h"
 

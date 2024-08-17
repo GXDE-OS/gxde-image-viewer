@@ -187,7 +187,7 @@ void TopToolbar::initLeftContent()
     m_lLayout->setSpacing(0);
 #ifdef LITE_DIV
     QLabel *logo = new QLabel(this);
-    QImageReader ir(":/images/logo/resources/images/logo/deepin-image-viewer.svg");
+    QImageReader ir(":/images/logo/resources/images/logo/gxde-image-viewer.svg");
 
     ir.setScaledSize(QSize(22, 22) * devicePixelRatioF());
 
@@ -272,16 +272,15 @@ void TopToolbar::initMenu()
 #endif
 
     m_menu->addSeparator();
-    qApp->setProductIcon(QIcon(":/images/logo/resources/images/logo/deepin-image-viewer.svg"));
+    qApp->setProductIcon(QIcon(":/images/logo/resources/images/logo/gxde-image-viewer.svg"));
 #ifdef LITE_DIV
-    qApp->setApplicationDescription(tr("Deepin Image Viewer is an image viewing tool with fashion interface and smooth performance."));
+    qApp->setApplicationDescription(tr("GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance."));
 #else
-    qApp->setApplicationDescription(QString("%1\n%2\n").arg(tr("Deepin Image Viewer is a fashion "
+    qApp->setApplicationDescription(QString("%1\n%2\n").arg(tr("GXDE Image Viewer is a fashion "
               "& smooth image manager.")).arg(tr("It is featured with image management, image viewing "
               "and basic image editing.")));
 #endif
-    qApp->setApplicationAcknowledgementPage("https://www.deepin.org/"
-                                            "acknowledgments/deepin-image-viewer/");
+    qApp->setApplicationAcknowledgementPage("https://gxde.gfdgdxi.top/");
 
 //    if (utils::base::isCommandExist("dman")) {
 //        QAction *acH = m_menu->addAction(tr("Help"));

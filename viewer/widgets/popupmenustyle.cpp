@@ -21,6 +21,7 @@
 #include <QPainter>
 #include <QStyleOption>
 #include <QStyleOptionMenuItem>
+#include <QPainterPath>
 
 namespace {
 

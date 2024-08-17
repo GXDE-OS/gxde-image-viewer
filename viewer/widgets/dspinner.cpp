@@ -3,6 +3,7 @@
 #include <QtMath>
 #include <QPainter>
 #include <QTimer>
+#include <QPainterPath>
 
 #include <DObjectPrivate>
 

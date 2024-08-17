@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/common/deepin_logo.png</file>
-        <file>resources/common/deepin-image-viewer.svg</file>
+        <file>resources/common/gxde_logo.png</file>
+        <file>resources/common/gxde-image-viewer.svg</file>
         <file>resources/common/synimages.png</file>
         <file>resources/dark/images/del_multi_img.png</file>
         <file>resources/dark/images/del_single_img.png</file>

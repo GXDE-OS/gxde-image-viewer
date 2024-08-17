@@ -27,6 +27,7 @@
 #include <QStandardItemModel>
 #include <QThread>
 #include <QTimer>
+#include <QPainterPath>
 
 class TDThumbnailThread : public QThread {
     Q_OBJECT
