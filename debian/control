@@ -14,7 +14,6 @@ Homepage: http://www.deepin.org
 Package: gxde-image-viewer
 Architecture: any
 Replaces: deepin-image-viewer
-Provides: deepin-image-viewer
 Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5sql5-sqlite, qt5-image-formats-plugins
 Recommends: libqt5libqgtk2, kimageformat-plugins
 Description: Image Viewer for GXDE Desktop Environment
