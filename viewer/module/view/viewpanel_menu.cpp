@@ -31,6 +31,8 @@
 #include <QJsonDocument>
 #include <QShortcut>
 #include <QStyleFactory>
+#include <QDBusMessage>
+#include <QDBusConnection>
 
 namespace {
 
@@ -64,6 +66,7 @@ enum MenuItemId {
     IdSetAsWallpaper,
     IdDisplayInFileManager,
     IdImageInfo,
+    IdImageOCR,
     IdSubMenu,
 };
 
@@ -148,6 +151,16 @@ QMenu *ViewPanel::createAlbumMenu()
 }
 #endif
 
+void ViewPanel::imageOcr(QString path)
+{
+    QDBusMessage dbus = QDBusMessage::createMethodCall("com.gxde.Ocr",
+                                                       "/com/gxde/Ocr",
+                                                       "com.deepin.Ocr",
+                                                       "openFile");
+    dbus << path;
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
+}
+
 void ViewPanel::onMenuItemClicked(QAction *action)
 {
     using namespace utils::base;
@@ -220,6 +233,9 @@ void ViewPanel::onMenuItemClicked(QAction *action)
         break;
     case IdRotateCounterclockwise:
         rotateImage(false);
+        break;
+    case IdImageOCR:
+        imageOcr(path);
         break;
     case IdSetAsWallpaper:
         dApp->wpSetter->setWallpaper(path);
@@ -316,6 +332,10 @@ void ViewPanel::updateMenuContent()
     if (utils::image::imageSupportSave(m_current->filePath))  {
         appendAction(IdSetAsWallpaper,
                      tr("Set as wallpaper"), ss("Set as wallpaper", "Ctrl+F8"));
+    }
+    if (!window()->isFullScreen()) {
+        appendAction(IdImageOCR,
+                     tr("Image OCR"), ss("Image OCR", "Ctrl+F9"));
     }
 #ifndef LITE_DIV
     if (m_vinfo.inDatabase)

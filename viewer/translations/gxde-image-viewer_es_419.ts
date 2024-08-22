@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es_419" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="es_419">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -136,7 +138,11 @@
     <name>Application</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation>Deepin Image Viewer</translation>
+        <translation type="vanished">Deepin Image Viewer</translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -174,6 +180,33 @@
     </message>
 </context>
 <context>
+    <name>EditPanel</name>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Atrás</translation>
+    </message>
+    <message>
+        <source>Revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate counterclockwise</source>
+        <translation type="unfinished">Gire hacia la izquierda</translation>
+    </message>
+    <message>
+        <source>Rotate clockwise</source>
+        <translation type="unfinished">Gire hacia la derecha</translation>
+    </message>
+</context>
+<context>
     <name>Exporter</name>
     <message>
         <source>JPEG(*.bmp *.gif *.jpg; *.jpeg; *.png *.pbm;*.pgm *.ppm *.xbm *.xpm *.svg *.dds *.icns*.jp2 *.mng *.tga *.tiff *.wbmp *.webp;)</source>
@@ -208,6 +241,21 @@
     </message>
 </context>
 <context>
+    <name>FilterSetup</name>
+    <message>
+        <source>Simple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Guardar</translation>
+    </message>
+</context>
+<context>
     <name>ImageInfoWidget</name>
     <message>
         <source>Image info</source>
@@ -218,7 +266,7 @@
     <name>ImageView</name>
     <message>
         <source>This file contains multiple pages, please use Evince to view all pages.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -326,7 +374,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File size</source>
@@ -397,50 +445,50 @@
     <name>PrintOptionsPage</name>
     <message>
         <source>No scaling</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Fit page to image</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Fit image to page</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Scale to:</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Image Position</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Scaling</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -797,7 +845,7 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -952,7 +1000,7 @@
     </message>
     <message>
         <source>Deepin Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation>El visor de imágenes deepin es un gestor de imágenes rápido y moderno.</translation>
+        <translation type="vanished">El visor de imágenes deepin es un gestor de imágenes rápido y moderno.</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
@@ -964,7 +1012,15 @@
     </message>
     <message>
         <source>Deepin Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation>El visor de imágenes deepin es un gestor de imágenes rápido y moderno.</translation>
+        <translation type="vanished">El visor de imágenes deepin es un gestor de imágenes rápido y moderno.</translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1047,11 +1103,15 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image OCR</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -72,6 +72,8 @@ protected:
     void wheelEvent(QWheelEvent *e) override;
 
 private:
+    void imageOcr(QString path);
+
     void initConnect();
     void initFileSystemWatcher();
     void initPopupMenu();

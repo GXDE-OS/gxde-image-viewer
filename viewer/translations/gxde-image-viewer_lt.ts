@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="lt" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="lt">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -136,7 +138,11 @@
     <name>Application</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation>Deepin paveikslų žiūryklė</translation>
+        <translation type="vanished">Deepin paveikslų žiūryklė</translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -174,6 +180,33 @@
     </message>
 </context>
 <context>
+    <name>EditPanel</name>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Atsisakyti</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Atgal</translation>
+    </message>
+    <message>
+        <source>Revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate counterclockwise</source>
+        <translation type="unfinished">Pasukti prieš laikrodžio rodyklę</translation>
+    </message>
+    <message>
+        <source>Rotate clockwise</source>
+        <translation type="unfinished">Pasukti pagal laikrodžio rodyklę</translation>
+    </message>
+</context>
+<context>
     <name>Exporter</name>
     <message>
         <source>JPEG(*.bmp *.gif *.jpg; *.jpeg; *.png *.pbm;*.pgm *.ppm *.xbm *.xpm *.svg *.dds *.icns*.jp2 *.mng *.tga *.tiff *.wbmp *.webp;)</source>
@@ -205,6 +238,21 @@
     <message>
         <source>Delete</source>
         <translation>Ištrinti</translation>
+    </message>
+</context>
+<context>
+    <name>FilterSetup</name>
+    <message>
+        <source>Simple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Atsisakyti</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Įrašyti</translation>
     </message>
 </context>
 <context>
@@ -952,7 +1000,7 @@
     </message>
     <message>
         <source>Deepin Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation>Deepin paveikslų žiūryklė yra šiuolaikinė ir glotni paveikslų tvarkytuvė.</translation>
+        <translation type="vanished">Deepin paveikslų žiūryklė yra šiuolaikinė ir glotni paveikslų tvarkytuvė.</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
@@ -964,7 +1012,15 @@
     </message>
     <message>
         <source>Deepin Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation>Deepin paveikslų žiūryklė yra paveikslų peržiūros įrankis su šiuolaikine sąsaja ir glotniu našumu.</translation>
+        <translation type="vanished">Deepin paveikslų žiūryklė yra paveikslų peržiūros įrankis su šiuolaikine sąsaja ir glotniu našumu.</translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1052,6 +1108,10 @@
     <message>
         <source>All images</source>
         <translation>Visi paveikslai</translation>
+    </message>
+    <message>
+        <source>Image OCR</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="gl_ES" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="gl_ES">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -136,7 +138,11 @@
     <name>Application</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation>Visualizador de imaxes</translation>
+        <translation type="vanished">Visualizador de imaxes</translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -174,6 +180,33 @@
     </message>
 </context>
 <context>
+    <name>EditPanel</name>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back</source>
+        <translation type="unfinished">Atrás</translation>
+    </message>
+    <message>
+        <source>Revert</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotate counterclockwise</source>
+        <translation type="unfinished">Rotar á esquerda</translation>
+    </message>
+    <message>
+        <source>Rotate clockwise</source>
+        <translation type="unfinished">Rotar á dereita</translation>
+    </message>
+</context>
+<context>
     <name>Exporter</name>
     <message>
         <source>JPEG(*.bmp *.gif *.jpg; *.jpeg; *.png *.pbm;*.pgm *.ppm *.xbm *.xpm *.svg *.dds *.icns*.jp2 *.mng *.tga *.tiff *.wbmp *.webp;)</source>
@@ -205,6 +238,21 @@
     <message>
         <source>Delete</source>
         <translation>Eliminar</translation>
+    </message>
+</context>
+<context>
+    <name>FilterSetup</name>
+    <message>
+        <source>Simple</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Gardar</translation>
     </message>
 </context>
 <context>
@@ -293,7 +341,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Eliminar</translation>
     </message>
 </context>
 <context>
@@ -326,7 +374,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>File size</source>
@@ -390,7 +438,7 @@
     </message>
     <message>
         <source>Date captured</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -440,7 +488,7 @@
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Axustes da imaxe</translation>
     </message>
 </context>
 <context>
@@ -612,7 +660,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Eliminar</translation>
     </message>
 </context>
 <context>
@@ -786,7 +834,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Eliminar</translation>
     </message>
 </context>
 <context>
@@ -797,7 +845,7 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -895,7 +943,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Eliminar</translation>
     </message>
 </context>
 <context>
@@ -952,7 +1000,7 @@
     </message>
     <message>
         <source>Deepin Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation>O visualizador de imaxes é un xestor de imaxes moderno e fluído.</translation>
+        <translation type="vanished">O visualizador de imaxes é un xestor de imaxes moderno e fluído.</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
@@ -963,8 +1011,12 @@
         <translation>Tema escuro</translation>
     </message>
     <message>
-        <source>Deepin Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"/>
+        <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1043,15 +1095,19 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished">Eliminar</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Image OCR</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
