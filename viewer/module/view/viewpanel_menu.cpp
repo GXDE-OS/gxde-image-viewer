@@ -333,7 +333,7 @@ void ViewPanel::updateMenuContent()
         appendAction(IdSetAsWallpaper,
                      tr("Set as wallpaper"), ss("Set as wallpaper", "Ctrl+F8"));
     }
-    if (!window()->isFullScreen()) {
+    if (!window()->isFullScreen() && QFile::exists("/usr/bin/gxde-ocr")) {
         appendAction(IdImageOCR,
                      tr("Image OCR"), ss("Image OCR", "Ctrl+F9"));
     }

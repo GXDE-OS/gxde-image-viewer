@@ -15,6 +15,6 @@ Package: gxde-image-viewer
 Architecture: any
 Replaces: deepin-image-viewer
 Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5sql5-sqlite, qt5-image-formats-plugins
-Recommends: libqt5libqgtk2, kimageformat-plugins
+Recommends: libqt5libqgtk2, kimageformat-plugins, gxde-ocr
 Description: Image Viewer for GXDE Desktop Environment
  GXDE Image Viewer is GXDE Desktop Environment Image Viewer.
