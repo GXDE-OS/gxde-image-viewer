@@ -20,7 +20,7 @@ namespace {
 
 const QString WINDOW_ICON = "";
 const QString PRODUCT_ICON = ":/dialogs/images/resources/images/deepin-image-viewer.png";
-const QString VERSION = "1.2";
+const QString VERSION_VIEWER = "1.2";
 
 }  // namespace
 
@@ -30,10 +30,10 @@ AboutDialog::AboutDialog()
     setWindowFlags(this->windowFlags() | Qt::WindowStaysOnTopHint);
     setModal(true);
     setProductIcon(QIcon(PRODUCT_ICON));
-    setProductName(tr("Deepin Image Viewer"));
-    setVersion(tr("Version:") + VERSION);
+    setProductName(tr("GXDE Image Viewer"));
+    setVersion(tr("Version:") + VERSION_VIEWER);
     //FIXME: acknowledgementLink is empty!
-    setAcknowledgementLink("https://www.deepin.org/acknowledgments/deepin-image-viewer/");
+    setAcknowledgementLink("https://gitee.com/GXDE-OS/gxde-image-viewer/");
 
     connect(this, SIGNAL(closed()), this, SLOT(deleteLater()));
 }
