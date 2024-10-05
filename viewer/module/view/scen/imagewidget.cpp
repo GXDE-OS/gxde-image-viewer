@@ -1,6 +1,6 @@
 #include "imagewidget.h"
 #include "application.h"
-#include "controller/databasemanager.h"
+//#include "controller/databasemanager.h"
 #include "utils/imageutils.h"
 #include <QDebug>
 #include <QDesktopWidget>

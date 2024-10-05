@@ -19,7 +19,7 @@
 #include "controller/importer.h"
 #include "controller/configsetter.h"
 #include "module/album/albumpanel.h"
-//#include "module/edit/EditPanel.h"
+#include "module/edit/EditPanel.h"
 #include "module/timeline/timelinepanel.h"
 #include "module/slideshow/slideshowpanel.h"
 #include "module/view/viewpanel.h"
@@ -171,19 +171,19 @@ void MainWidget::initPanelStack(bool manager)
     mainLayout->addWidget(m_panelStack);
 
     // Init panel
-#ifndef LITE_DIV
+//#ifndef LITE_DIV
         if (m_manager) {
             TimelinePanel *m_timelinePanel = new TimelinePanel;
             m_panelStack->addWidget(m_timelinePanel);
             AlbumPanel *m_albumPanel = new AlbumPanel;
             m_panelStack->addWidget(m_albumPanel);
-    //        EditPanel *m_editPanel = new EditPanel();
-    //        m_panelStack->addWidget(m_editPanel);
+            EditPanel *m_editPanel = new EditPanel();
+            m_panelStack->addWidget(m_editPanel);
         }
 
         SlideShowPanel *m_slideShowPanel = new SlideShowPanel();
         m_panelStack->addWidget(m_slideShowPanel);
-#endif
+//#endif
         ViewPanel *m_viewPanel = new ViewPanel();
         m_panelStack->addWidget(m_viewPanel);
 }

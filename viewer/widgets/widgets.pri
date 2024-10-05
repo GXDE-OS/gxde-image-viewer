@@ -1,6 +1,6 @@
-!isEmpty(FULL_FUNCTIONALITY) {
+#!isEmpty(FULL_FUNCTIONALITY) {
     include (dialogs/dialogs.pri)
-}
+#}
 
 HEADERS += \
     $$PWD/importframe.h \

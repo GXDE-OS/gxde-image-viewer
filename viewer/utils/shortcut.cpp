@@ -24,7 +24,7 @@ namespace {
 const QString VIEW_GROUP = "SHORTCUTVIEW";
 const QString ALBUM_GROUP = "SHORTCUTALBUM";
 
-QString ss(const QString &group, const QString &text, const QString &defaultValue)
+QString ss(const QString &group, const QString &text, const QString &defaultValue = "")
 {
     return dApp->setter->value(group, text, defaultValue).toString();
 }

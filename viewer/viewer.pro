@@ -18,9 +18,9 @@ TARGET = gxde-image-viewer
 TEMPLATE = app
 INCLUDEPATH += utils
 
-isEmpty(FULL_FUNCTIONALITY) {
-    DEFINES += LITE_DIV
-}
+#isEmpty(FULL_FUNCTIONALITY) {
+#    DEFINES += LITE_DIV
+#}
 
 isEmpty(PREFIX){
     PREFIX = /usr
@@ -32,11 +32,11 @@ include (widgets/widgets.pri)
 include (utils/utils.pri)
 include (controller/controller.pri)
 
-!isEmpty(FULL_FUNCTIONALITY) {
+#!isEmpty(FULL_FUNCTIONALITY) {
     include (service/service.pri)
     include (settings/settings.pri)
     include (dirwatcher/dirwatcher.pri)
-}
+#}
 
 HEADERS += \
     application.h
@@ -90,7 +90,7 @@ INSTALLS = target desktop dbus_service icons manual manual_icon app_icon transla
 DISTFILES += \
     com.gxde.ImageViewer.service
 
-load(dtk_qmake)
+#load(dtk_qmake)
 host_sw_64: {
 # 在 sw_64 平台上添加此参数，否则会在旋转图片时崩溃
     QMAKE_CFLAGS += -mieee

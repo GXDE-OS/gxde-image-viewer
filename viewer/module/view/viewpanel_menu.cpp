@@ -274,7 +274,7 @@ void ViewPanel::updateMenuContent()
         appendAction(IdFullScreen, tr("Fullscreen"), ss("Fullscreen", "F11"));
     }
 #ifndef LITE_DIV
-    appendAction(IdStartSlideShow, tr("Slide show"), ss("Slide show"));
+    appendAction(IdStartSlideShow, tr("Slide show"), ss("Slide show", ""));
 #endif
     appendAction(IdPrint, tr("Print"), ss("Print", "Ctrl+P"));
 #ifndef LITE_DIV
@@ -293,7 +293,7 @@ void ViewPanel::updateMenuContent()
 #ifndef LITE_DIV
     if (! m_vinfo.album.isEmpty()) {
         appendAction(IdRemoveFromAlbum,
-                     tr("Remove from album"), ss("Remove from album"));
+                     tr("Remove from album"), ss("Remove from album", ""));
     }
     m_menu->addSeparator();
     /**************************************************************************/
@@ -302,11 +302,11 @@ void ViewPanel::updateMenuContent()
                 ! DBManager::instance()->isImgExistInAlbum(FAVORITES_ALBUM_NAME,
                                                m_current->filePath)) {
             appendAction(IdAddToFavorites,
-                         tr("Favorite"), ss("Favorite"));
+                         tr("Favorite"), ss("Favorite", ""));
         } else {
             appendAction(IdRemoveFromFavorites,
                          tr("Unfavorite"),
-                         ss("Unfavorite"));
+                         ss("Unfavorite", ""));
         }
     }
 #endif

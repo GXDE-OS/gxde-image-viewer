@@ -5,6 +5,7 @@
 #include "filters/FilterObj.h"
 #include "FilterSetup.h"
 #include "Cut.h"
+#include "imagewidget.h"
 #include <dtextbutton.h>
 #include <QBoxLayout>
 #include <QButtonGroup>

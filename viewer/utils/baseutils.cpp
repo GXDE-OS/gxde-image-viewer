@@ -151,6 +151,11 @@ void showInFileManager(const QString &path)
 //    }
 }
 
+void copyOneImageToClipboard(const QString& path)
+{
+    copyImageToClipboard(QStringList() << path);
+}
+
 void copyImageToClipboard(const QStringList &paths)
 {
     //  Get clipboard

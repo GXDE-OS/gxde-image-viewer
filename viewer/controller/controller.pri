@@ -14,7 +14,7 @@ SOURCES += \
     $$PWD/globaleventfilter.cpp \
     $$PWD/viewerthememanager.cpp
 
-!isEmpty(FULL_FUNCTIONALITY) {
+#!isEmpty(FULL_FUNCTIONALITY) {
     HEADERS += $$PWD/importer.h \
                $$PWD/divdbuscontroller.h \
                $$PWD/dbmanager.h \
@@ -24,4 +24,4 @@ SOURCES += \
                $$PWD/divdbuscontroller.cpp \
                $$PWD/dbmanager.cpp \
                $$PWD/exporter.cpp
-}
+#}
