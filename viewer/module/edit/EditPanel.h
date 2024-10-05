@@ -1,6 +1,6 @@
 #pragma once
 
-#include "imagewidget.h"
+#include "module/view/scen/imagewidget.h"
 #include "module/modulepanel.h"
 #include <QStackedWidget>
 

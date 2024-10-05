@@ -177,8 +177,8 @@ void MainWidget::initPanelStack(bool manager)
             m_panelStack->addWidget(m_timelinePanel);
             AlbumPanel *m_albumPanel = new AlbumPanel;
             m_panelStack->addWidget(m_albumPanel);
-            EditPanel *m_editPanel = new EditPanel();
-            m_panelStack->addWidget(m_editPanel);
+            //EditPanel *m_editPanel = new EditPanel();
+            //m_panelStack->addWidget(m_editPanel);
         }
 
         SlideShowPanel *m_slideShowPanel = new SlideShowPanel();
