@@ -705,7 +705,7 @@ void ViewPanel::removeCurrentImage()
 
 void ViewPanel::viewOnNewProcess(const QStringList &paths)
 {
-    const QString pro = "deepin-image-viewer";
+    const QString pro = "gxde-image-viewer";
     QProcess *p = new QProcess;
     connect(p, SIGNAL(finished(int)), p, SLOT(deleteLater()));
 
@@ -833,8 +833,8 @@ void ViewPanel::openImage(const QString &path, bool inDB)
 
         // open success.
         DRecentData data;
-        data.appName = "Deepin Image Viewer";
-        data.appExec = "deepin-image-viewer";
+        data.appName = "GXDE Image Viewer";
+        data.appExec = "gxde-image-viewer";
         DRecentManager::addItem(path, data);
     }
     if (inDB) {

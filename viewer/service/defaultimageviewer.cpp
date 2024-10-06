@@ -29,7 +29,7 @@ namespace service {
     //Section names in mimeapps.list
     const char defaultApplicationsSection[] = "Default Applications";
     const char addedAssociationsSection[] = "Added Associations";
-    const QString appDesktopFile = "deepin-image-viewer.desktop";
+    const QString appDesktopFile = "gxde-image-viewer.desktop";
     const QStringList supportImageFormat = {
         "image/jpeg",
     };

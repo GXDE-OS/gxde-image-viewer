@@ -353,8 +353,8 @@ void TopToolbar::onViewShortcut() {
 void TopToolbar::onHelp()
 {
     if (m_manualPro.isNull()) {
-        const QString pro = "dman";
-        const QStringList args("deepin-image-viewer");
+        const QString pro = "gman";
+        const QStringList args("gxde-image-viewer");
         m_manualPro = new QProcess(this);
         connect(m_manualPro.data(), SIGNAL(finished(int)),
                 m_manualPro.data(), SLOT(deleteLater()));
