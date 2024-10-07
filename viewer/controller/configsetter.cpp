@@ -22,15 +22,15 @@
 #include <QProcess>
 
 const QString CONFIG_PATH =   QDir::homePath() +
-        "/.config/deepin/deepin-image-viewer/config.conf";
+        "/.config/GXDE/gxde-image-viewer/config.conf";
 const QString DB_PATH = QDir::homePath() +
-        "/.local/share/deepin/deepin-image-viewer/deepinimageviewer.db";
+        "/.local/share/GXDE/gxde-image-viewer/gxdeimageviewer.db";
 
 ConfigSetter::ConfigSetter(QObject *parent) : QObject(parent)
 {
     if (!QFileInfo(CONFIG_PATH).exists())
         QProcess::startDetached(QString("rm %1").arg(DB_PATH));
-
+f
     m_settings = new QSettings(CONFIG_PATH, QSettings::IniFormat, this);
     qDebug() << "Setting file:" << m_settings->fileName();
 }
