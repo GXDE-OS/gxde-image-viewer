@@ -1,8 +1,9 @@
-gxde-image-viewer (1.4.0-1) UNRELEASED; urgency=medium
+gxde-image-viewer (1.4.1) UNRELEASED; urgency=medium
 
   * Remove Album function
+  * 修复 loongarch 价格的编译问题
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 22 Aug 2024 08:15:49 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 16 Nov 2024 22:56:50 +0800
 
 gxde-image-viewer (1.0.0-1) unstable; urgency=medium
 
