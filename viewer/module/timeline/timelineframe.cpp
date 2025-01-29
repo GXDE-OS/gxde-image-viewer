@@ -83,6 +83,13 @@ TimelineFrame::TimelineFrame(QWidget *parent)
     initTopTip();
     initItems();
     initConnection();
+
+    QTimer *timer = new QTimer();
+    timer->setInterval(3 * 1000);
+    connect(timer, &QTimer::timeout, this, [this](){
+        this->update();
+    });
+    timer->start();
 }
 
 void TimelineFrame::clearSelection()

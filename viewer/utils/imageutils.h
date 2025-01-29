@@ -28,7 +28,7 @@ namespace image {
 
 const int THUMBNAIL_MAX_SIZE = 291 * 2;
 //const int THUMBNAIL_NORMAL_SIZE = 128;// * 2;
-const int THUMBNAIL_NORMAL_SIZE = 100;
+const int THUMBNAIL_NORMAL_SIZE = 128 * 2;
 
 enum ThumbnailType {
     ThumbNormal,
