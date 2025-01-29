@@ -408,7 +408,7 @@ const QPixmap getThumbnail(const QString &path, bool cacheOnly)
     const QString cacheP = thumbnailCachePath();
     const QUrl url = QUrl::fromLocalFile(path);
     const QString md5s = toMd5(url.toString(QUrl::FullyEncoded).toLocal8Bit());
-    const QString encodePath = cacheP + "/large/" + md5s + ".png";
+    const QString encodePath = cacheP + "/normal/" + md5s + ".png";
     const QString failEncodePath = cacheP + "/fail/" + md5s + ".png";
     if (QFileInfo(encodePath).exists()) {
         return QPixmap(encodePath);
@@ -441,17 +441,19 @@ bool generateThumbnail(const QString &path)
     const QString cacheP = thumbnailCachePath();
 
     // Large thumbnail
-    QImage lImg = scaleImage(path,
-                             QSize(THUMBNAIL_MAX_SIZE, THUMBNAIL_MAX_SIZE));
+    /*QImage lImg = scaleImage(path,
+                             QSize(THUMBNAIL_MAX_SIZE, THUMBNAIL_MAX_SIZE));*/
 
     // Normal thumbnail
-    QImage nImg = lImg.scaled(
+    QImage nImg = scaleImage(path,
+                             QSize(THUMBNAIL_NORMAL_SIZE, THUMBNAIL_NORMAL_SIZE));
+            /*lImg.scaled(
                 QSize(THUMBNAIL_NORMAL_SIZE, THUMBNAIL_NORMAL_SIZE)
                 , Qt::KeepAspectRatio
-                , Qt::SmoothTransformation);
+                , Qt::SmoothTransformation);*/
 
     // Create filed thumbnail
-    if(lImg.isNull() || nImg.isNull()) {
+    if(nImg.isNull()) {
         const QString failedP = cacheP + "/fail/" + md5 + ".png";
         QImage img(1,1,QImage::Format_ARGB32_Premultiplied);
         const auto keys = attributes.keys();
@@ -465,12 +467,12 @@ bool generateThumbnail(const QString &path)
     }
     else {
         for (QString key : attributes.keys()) {
-            lImg.setText(key, attributes[key]);
+            //lImg.setText(key, attributes[key]);
             nImg.setText(key, attributes[key]);
         }
-        const QString largeP = cacheP + "/large/" + md5 + ".png";
+        //const QString largeP = cacheP + "/large/" + md5 + ".png";
         const QString normalP = cacheP + "/normal/" + md5 + ".png";
-        if (lImg.save(largeP, "png", 50) && nImg.save(normalP, "png", 50)) {
+        if (nImg.save(normalP, "png", 50)) {
             return true;
         }
         else {

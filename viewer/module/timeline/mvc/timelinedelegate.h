@@ -21,12 +21,15 @@
 #include <QMap>
 #include <QObject>
 #include <QStyledItemDelegate>
+#include <QQueue>
 
 #include "timelineitem.h"
 #include "controller/viewerthememanager.h"
 
 class QMutex;
 class TLThumbnailThread;
+class RemoveCacheThread;
+class LoadImageThread;
 class TimelineDelegate : public QStyledItemDelegate {
     Q_OBJECT
 
@@ -38,6 +41,8 @@ public:
                const QModelIndex& index) const Q_DECL_OVERRIDE;
     QSize sizeHint(const QStyleOptionViewItem& option,
                    const QModelIndex& index) const Q_DECL_OVERRIDE;
+    QPixmap getThumbnailWithCache(const QString path, const QSize &size);
+    void removeLock(QString path);
 
 signals:
     void thumbnailGenerated(const QString &path);
@@ -53,6 +58,9 @@ private:
     QColor m_dateColor;
     QColor m_seperatorColor;
     QString m_defaultThumbnail;
+    QQueue<QString> m_addQueue;
+    mutable QMap<QString, QPixmap> m_timelineImageCache;
+    mutable QMap<QString, LoadImageThread *> m_loadImagethreads;
     mutable QMap<QString, TLThumbnailThread *> m_threads;
 };
 

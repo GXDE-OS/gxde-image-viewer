@@ -46,16 +46,52 @@ private:
     TimelineItem::ItemData m_data;
 };
 
+class RemoveCacheThread : public QThread {
+    Q_OBJECT
+public:
+    explicit RemoveCacheThread(QMap<QString, QPixmap>* map,
+                               QQueue<QString> *queue,
+                               bool isHead);
+
+
+protected:
+    void run() Q_DECL_OVERRIDE;
+
+private:
+    bool m_isHead;
+    QQueue<QString> *m_queue;
+    QMap<QString, QPixmap>* m_map;
+};
+
+class LoadImageThread : public QThread {
+    Q_OBJECT
+public:
+    explicit LoadImageThread(QMap<QString, QPixmap>* map,
+                             QQueue<QString> *queue,
+                             QString path,
+                             const QSize &size);
+    const QString path() const;
+
+protected:
+    void run() Q_DECL_OVERRIDE;
+
+private:
+    QString m_path;
+    QSize m_size;
+    QQueue<QString> *m_queue;
+    QMap<QString, QPixmap>* m_map;
+};
+
 
 TimelineDelegate::TimelineDelegate(QObject *parent)
     : QStyledItemDelegate(parent)
 {
     // Avoid thumbnail-thread being called too ofen
-    QTimer *t = new QTimer(this);
+    /*QTimer *t = new QTimer(this);
     connect(t, &QTimer::timeout, this, [=] {
         m_threads.clear();
     });
-    t->start(1000);
+    t->start(1000);*/
 
     onThemeChanged(dApp->viewerTheme->getCurrentTheme());
     connect(dApp->viewerTheme, &ViewerThemeManager::viewerThemeChanged, this,
@@ -75,6 +111,59 @@ void TimelineDelegate::onThemeChanged(ViewerThemeManager::AppTheme theme) {
         m_defaultThumbnail = utils::common::LIGHT_DEFAULT_THUMBNAIL;
     }
 }
+
+void TimelineDelegate::removeLock(QString path)
+{
+    //LoadImageThread *thread = NULL;
+    if (m_loadImagethreads.contains(path)) {
+        //thread = m_loadImagethreads[path];
+        m_loadImagethreads.remove(path);
+    }
+    auto list = m_loadImagethreads.keys();
+    for (int i = 0; i <= (list.count() > 4 ? 4 : list.count() - 1); ++i) {
+        if (m_loadImagethreads.contains(list[i])) {
+            auto thread = m_loadImagethreads[list[i]];
+            /*if (thread) {
+                thread->start();
+            }*/
+            if (thread && !thread->isRunning()) {
+                thread->start();
+            }
+        }
+    }
+
+}
+
+QPixmap TimelineDelegate::getThumbnailWithCache(const QString path, const QSize &size)
+{
+    // 如果已缓存
+    if (m_timelineImageCache.contains(path)) {
+        return m_timelineImageCache[path];
+    }
+    if (m_loadImagethreads.keys().contains(path)) {
+        return QPixmap();
+    }
+    // 如果超出缓存数量，则移除最早加入的
+    /*if (m_timelineImageCache.count() >= 1000) {
+        RemoveCacheThread *remove = new RemoveCacheThread(&m_timelineImageCache,
+                                                          &m_addQueue,
+                                                          1);
+        remove->start();
+    }*/
+    LoadImageThread *load = new LoadImageThread(&m_timelineImageCache,
+                                                &m_addQueue,
+                                                path,
+                                                size);
+    m_loadImagethreads.insert(path, load);
+    m_timelineImageCache.insert(path, QPixmap());
+    connect(load, &LoadImageThread::finished, this, [=] {
+        load->deleteLater();
+    });
+    load->start();
+    return QPixmap();
+}
+
+
 
 void TimelineDelegate::paint(QPainter *painter,
                           const QStyleOptionViewItem &option,
@@ -131,7 +220,8 @@ void TimelineDelegate::paint(QPainter *painter,
         using namespace utils::image;
 
         const auto ratio = qApp->devicePixelRatio();
-        QPixmap pix = cutSquareImage(getThumbnail(data.path), rect.size() * ratio);
+        QPixmap pix = const_cast<TimelineDelegate*>(this)->getThumbnailWithCache(data.path,
+                                            rect.size() * ratio);// = cutSquareImage(getThumbnail(data.path), rect.size() * ratio);
         pix.setDevicePixelRatio(ratio);
         painter->drawPixmap(rect, pix);
 
@@ -200,6 +290,7 @@ void TimelineDelegate::startThumbnailThread(const TimelineItem::ItemData &data) 
     TLThumbnailThread *t = new TLThumbnailThread(data);
     connect(t, &TLThumbnailThread::finished, this, [=] {
         t->deleteLater();
+        m_threads.remove(t->path());
     });
     connect(t, &TLThumbnailThread::reGenerated,
             this, &TimelineDelegate::thumbnailGenerated);
@@ -208,6 +299,60 @@ void TimelineDelegate::startThumbnailThread(const TimelineItem::ItemData &data) 
 }
 
 #include "timelinedelegate.moc"
+LoadImageThread::LoadImageThread(QMap<QString, QPixmap>* map,
+                                 QQueue<QString> *queue,
+                                 QString path,
+                                 const QSize &size)
+{
+    m_map = map;
+    m_path = path;
+    m_queue = queue;
+    m_size = size;
+}
+
+void LoadImageThread::run()
+{
+    if (m_map->contains(m_path)) {
+        if (!m_map->value(m_path).isNull()) {
+            return;
+        }
+    }
+    /*if (m_map->count() >= 300) {
+        auto index = m_map->keys().indexOf(m_path);
+        auto all = m_map->count();
+        m_map->insert(m_map->keys().at(all - index - 1), QPixmap());
+    }*/
+    using namespace utils::image;
+    m_map->insert(m_path, cutSquareImage(getThumbnail(m_path), m_size));
+    m_queue->append(m_path);
+}
+
+const QString LoadImageThread::path() const
+{
+    return m_path;
+}
+
+
+RemoveCacheThread::RemoveCacheThread(QMap<QString, QPixmap>* map,
+                                     QQueue<QString> *queue,
+                                     bool isHead)
+{
+    m_map = map;
+    m_isHead = isHead;
+    m_queue = queue;
+}
+
+void RemoveCacheThread::run()
+{
+    if (m_isHead) {
+        m_map->remove(m_queue->head());
+        m_queue->removeFirst();
+        return;
+    }
+    m_map->remove(m_queue->last());
+    m_queue->removeLast();
+}
+
 TLThumbnailThread::TLThumbnailThread(const TimelineItem::ItemData &data)
     : QThread()
     , m_data(data)
