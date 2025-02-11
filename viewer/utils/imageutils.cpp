@@ -38,13 +38,50 @@ namespace utils {
 
 namespace image {
 
+const QImage decryptRpgmvpToQImage(const QString &filePath) {
+    // PNG文件头
+    const QByteArray pngHeader = QByteArray::fromHex("89504E470D0A1A0A0000000D49484452");
+
+    // 打开文件并读取数据
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        return QImage(); // 打开文件失败
+    }
+
+    QByteArray data = file.readAll();
+    file.close();
+
+    // 跳过前32字节
+    if (data.size() <= 32) {
+        return QImage(); // 文件数据不足
+    }
+    QByteArray imageData = data.mid(32);
+
+    // 拼接PNG文件头和图像数据
+    QByteArray pngData = pngHeader + imageData;
+
+    // 加载为QImage
+    QImage image;
+    if (!image.loadFromData(pngData, "PNG")) {
+        return QImage(); // 加载失败
+    }
+
+    return image;
+}
+
 const QImage scaleImage(const QString &path, const QSize &size)
 {
     QImageReader reader(path);
     reader.setAutoTransform(true);
+    bool isRpgmpv = 0;
+    QImage rpgImg;
     if (! reader.canRead()) {
-        qDebug() << "Can't read image: " << path;
-        return QImage();
+        rpgImg = decryptRpgmvpToQImage(path);
+        if (rpgImg.isNull()) {
+            qDebug() << "Can't read image: " << path;
+            return QImage();
+        }
+        isRpgmpv = 1;
     }
 
     QSize tSize = reader.size();
@@ -58,6 +95,9 @@ const QImage scaleImage(const QString &path, const QSize &size)
     tSize.scale(size, Qt::KeepAspectRatio);
     reader.setScaledSize(tSize);
     QImage tImg = reader.read();
+    if (isRpgmpv) {
+        tImg = rpgImg;
+    }
     // Some format does not support scaling
     if (tImg.width() > size.width() || tImg.height() > size.height()) {
         if (tImg.isNull()) {
@@ -127,7 +167,7 @@ bool imageSupportRead(const QString &path)
     if (freeimage::isSupportsReading(path))
         return true;
     else {
-        return (suffix == "svg");
+        return (suffix == "svg" || suffix == "rpgmvp");
     }
 }
 
@@ -321,6 +361,9 @@ const QImage getRotatedImage(const QString &path)
     if (reader.canRead()) {
         tImg = reader.read();
     }
+    else {
+        tImg = decryptRpgmvpToQImage(path);
+    }
     return tImg;
 }
 
@@ -367,6 +410,11 @@ QMap<QString,QString> thumbnailAttribute(const QUrl&  url)
         if(reader.canRead()){
             set.insert("Thumb::Image::Width", QString::number(reader.size().width()));
             set.insert("Thumb::Image::Height", QString::number(reader.size().height()));
+        }
+        else {
+            QImage img = decryptRpgmvpToQImage(path);
+            set.insert("Thumb::Image::Width", QString::number(img.width()));
+            set.insert("Thumb::Image::Height", QString::number(img.height()));
         }
         return set;
     }

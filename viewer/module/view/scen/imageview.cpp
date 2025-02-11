@@ -69,6 +69,10 @@ QVariantList cachePixmap(const QString &path)
         if (reader.canRead()) {
             tImg = reader.read();
         }
+        else {
+            // 尝试以 rpgmvp 格式方式读取
+            tImg = utils::image::decryptRpgmvpToQImage(path);
+        }
     } else {
         QImageReader readerF(path, format.toLatin1());
         readerF.setAutoTransform(true);
@@ -294,7 +298,7 @@ const QImage ImageView::image()
         imagePainter.end();
         return image;
     } else {
-        return QImage();
+        return utils::image::decryptRpgmvpToQImage(m_path);  // 尝试以 rpgmvp 格式方式读取
     }
 }
 
