@@ -30,6 +30,37 @@ namespace image {
 
 namespace freeimage {
 
+const QImage decryptRpgmvpToQImage(const QString &filePath) {
+    // PNG???
+    const QByteArray pngHeader = QByteArray::fromHex("89504E470D0A1A0A0000000D49484452");
+
+    // ?????????
+    QFile file(filePath);
+    if (!file.open(QIODevice::ReadOnly)) {
+        return QImage(); // ??????
+    }
+
+    QByteArray data = file.readAll();
+    file.close();
+
+    // ???32??
+    if (data.size() <= 32) {
+        return QImage(); // ??????
+    }
+    QByteArray imageData = data.mid(32);
+
+    // ??PNG????????
+    QByteArray pngData = pngHeader + imageData;
+
+    // ???QImage
+    QImage image;
+    if (!image.loadFromData(pngData, "PNG")) {
+        return QImage(); // ????
+    }
+
+    return image;
+}
+
 FREE_IMAGE_FORMAT fFormat(const QString &path)
 {
     const QByteArray ba = path.toUtf8();
@@ -47,6 +78,9 @@ const QString getFileFormat(const QString &path)
 {
     const FREE_IMAGE_FORMAT fif = fFormat(path);
     if (fif == FIF_UNKNOWN) {
+        if (!decryptRpgmvpToQImage(path).isNull()) {
+            return QString("RPGMPV");
+        }
         return QString("UNKNOW");
     }
     else {
@@ -170,6 +204,11 @@ QMap<QString, QString> getAllMetaData(const QString &path)
     w = w > 0 ? w : FreeImage_GetWidth(dib);
     int h = reader.size().height();
     h = h > 0 ? h : FreeImage_GetHeight(dib);
+    if (w + h == 0) {
+        auto img = decryptRpgmvpToQImage(path);
+        w = img.width();
+        h = img.height();
+    }
     admMap.insert("Dimension", QString::number(w) + "x" + QString::number(h));
     admMap.insert("FileName", info.fileName());
     admMap.insert("FileFormat", getFileFormat(path));

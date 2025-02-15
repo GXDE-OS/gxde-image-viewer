@@ -51,6 +51,7 @@ bool                                imageSupportWrite(const QString &path);
 bool                                rotate(const QString &path, int degree);
 const QImage                        scaleImage(const QString &path,
                                                const QSize &size = QSize(384, 383));
+const QImage                        decryptRpgmvpToQImage(const QString &filePath);
 
 bool                                generateThumbnail(const QString &path);
 const QPixmap                       getThumbnail(const QString &path,
