@@ -121,6 +121,12 @@ void ViewPanel::initConnect()
         emit dApp->signalM->updateTopToolbarMiddleContent(toolbarTopMiddleContent());
 
         onViewImage(vinfo);
+
+#ifdef LITE_DIV
+        // 因为没有启用相册，所以不进行后面的判断
+        return;
+#endif
+
         if (NULL == vinfo.lastPanel) {
             return;
         } else if (vinfo.lastPanel->moduleName() == "AlbumPanel" ||

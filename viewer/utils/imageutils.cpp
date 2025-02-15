@@ -558,7 +558,7 @@ static QStringList fromByteArrayList(const QByteArrayList &list)
 QStringList supportedImageFormats()
 {
     static QStringList list = fromByteArrayList(QImageReader::supportedImageFormats());
-
+    list << "*.rpgmvp";
     return list;
 }
 

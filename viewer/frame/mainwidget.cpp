@@ -181,9 +181,11 @@ void MainWidget::initPanelStack(bool manager)
     //        m_panelStack->addWidget(m_editPanel);
         }
 
+#endif
+        // 开启幻灯片播放
         SlideShowPanel *m_slideShowPanel = new SlideShowPanel();
         m_panelStack->addWidget(m_slideShowPanel);
-#endif
+
         ViewPanel *m_viewPanel = new ViewPanel();
         m_panelStack->addWidget(m_viewPanel);
 }
