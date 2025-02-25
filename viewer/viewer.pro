@@ -58,7 +58,7 @@ BINDIR = $$PREFIX/bin
 APPSHAREDIR = $$PREFIX/share/gxde-image-viewer
 MANDIR = $$PREFIX/share/dman/gxde-image-viewer
 MANICONDIR = $$PREFIX/share/icons/hicolor/scalable/apps
-APPICONDIR = $$PREFIX/share/icons/deepin/apps/scalable
+APPICONDIR = $$PREFIX/share/icons/hicolor/apps/scalable/apps
 
 DEFINES += APPSHAREDIR=\\\"$$APPSHAREDIR\\\"
 
