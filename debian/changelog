@@ -1,7 +1,8 @@
-gxde-image-viewer (1.5.0) UNRELEASED; urgency=medium
+gxde-image-viewer (1.5.0-1) UNRELEASED; urgency=medium
 
   * 新增幻灯片功能
   * 支持读取 rpgmpv 文件
+  * fix: 图标无法被正确读取
 
  -- gfdgd_xi <3025613752@qq.com>  Sat, 15 Feb 2025 17:14:50 +0800
 
