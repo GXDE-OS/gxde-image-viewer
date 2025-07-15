@@ -511,6 +511,25 @@
     </message>
 </context>
 <context>
+    <name>QRCodeResultShower</name>
+    <message>
+        <source>Decode result</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Result:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ScanPathsDialog</name>
     <message>
         <source>Select Directory</source>
@@ -1107,6 +1126,10 @@
     </message>
     <message>
         <source>Image OCR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decode QRCode</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

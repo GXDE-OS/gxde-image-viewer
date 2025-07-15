@@ -183,7 +183,7 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -191,7 +191,7 @@
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">返回</translation>
+        <translation>返回</translation>
     </message>
     <message>
         <source>Revert</source>
@@ -199,11 +199,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">逆时针旋转</translation>
+        <translation>逆时针旋转</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">顺时针旋转</translation>
+        <translation>顺时针旋转</translation>
     </message>
 </context>
 <context>
@@ -248,11 +248,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">保存</translation>
+        <translation>保存</translation>
     </message>
 </context>
 <context>
@@ -508,6 +508,25 @@
     <message>
         <source>Ring</source>
         <translation>圆环</translation>
+    </message>
+</context>
+<context>
+    <name>QRCodeResultShower</name>
+    <message>
+        <source>Decode result</source>
+        <translation>识别结果</translation>
+    </message>
+    <message>
+        <source>Result:</source>
+        <translation>结果：</translation>
+    </message>
+    <message>
+        <source>Copy text</source>
+        <translation>复制到剪切板</translation>
+    </message>
+    <message>
+        <source>Open Browser</source>
+        <translation>在浏览器打开</translation>
     </message>
 </context>
 <context>
@@ -1016,11 +1035,11 @@
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE 看图是一款外观时尚，性能流畅的图片查看工具。</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE 看图是一款外观时尚，性能流畅的图片管理工具。</translation>
     </message>
 </context>
 <context>
@@ -1112,6 +1131,10 @@
     <message>
         <source>Image OCR</source>
         <translation>文字识别</translation>
+    </message>
+    <message>
+        <source>Decode QRCode</source>
+        <translation>二维码识别</translation>
     </message>
 </context>
 </TS>

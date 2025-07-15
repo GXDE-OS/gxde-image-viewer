@@ -142,7 +142,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE 看圖</translation>
     </message>
 </context>
 <context>
@@ -183,7 +183,7 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -191,7 +191,7 @@
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">返回</translation>
+        <translation>返回</translation>
     </message>
     <message>
         <source>Revert</source>
@@ -199,11 +199,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">逆時針旋轉</translation>
+        <translation>逆時針旋轉</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">順時針旋轉</translation>
+        <translation>順時針旋轉</translation>
     </message>
 </context>
 <context>
@@ -248,11 +248,11 @@
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">儲存</translation>
+        <translation>儲存</translation>
     </message>
 </context>
 <context>
@@ -508,6 +508,25 @@
     <message>
         <source>Ring</source>
         <translation>圓環</translation>
+    </message>
+</context>
+<context>
+    <name>QRCodeResultShower</name>
+    <message>
+        <source>Decode result</source>
+        <translation>識別結果</translation>
+    </message>
+    <message>
+        <source>Result:</source>
+        <translation>結果：</translation>
+    </message>
+    <message>
+        <source>Copy text</source>
+        <translation>拷貝至剪切板</translation>
+    </message>
+    <message>
+        <source>Open Browser</source>
+        <translation>在瀏覽器打開</translation>
     </message>
 </context>
 <context>
@@ -1016,11 +1035,11 @@
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE 看圖是款有著流行介面和順滑效能的圖片檢視工具。</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deepin 看圖是一款時尚且流暢的圖片管理器。</translation>
     </message>
 </context>
 <context>
@@ -1111,7 +1130,11 @@
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>文本識別</translation>
+    </message>
+    <message>
+        <source>Decode QRCode</source>
+        <translation>二維碼識別</translation>
     </message>
 </context>
 </TS>
