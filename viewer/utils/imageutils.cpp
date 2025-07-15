@@ -143,7 +143,7 @@ bool imageSupportRead(const QString &path)
     if (freeimage::isSupportsReading(path))
         return true;
     else {
-        return (suffix == "svg" || suffix == "rpgmvp");
+        return (suffix == "svg" || suffix == "rpgmvp" || suffix == "heic");
     }
 }
 
