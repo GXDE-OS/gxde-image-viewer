@@ -376,11 +376,12 @@ QMap<QString,QString> thumbnailAttribute(const QUrl&  url)
     if(url.isLocalFile()) {
         const QString path = url.path();
         QFileInfo info(path);
+        qDebug() << QMimeDatabase().mimeTypeForFile(path).name();
         set.insert("Thumb::Mimetype", QMimeDatabase().mimeTypeForFile(path).name());
         set.insert("Thumb::Size", QString::number(info.size()));
         set.insert("Thumb::URI", url.toString());
         set.insert("Thumb::MTime", QString::number(info.lastModified().toTime_t()));
-        set.insert("Software", "Deepin Image Viewer");
+        set.insert("Software", "GXDE Image Viewer");
 
         QImageReader reader(path);
         if(reader.canRead()){

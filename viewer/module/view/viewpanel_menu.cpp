@@ -25,6 +25,7 @@
 #include "utils/imageutils.h"
 #include "widgets/dialogs/filedeletedialog.h"
 #include "widgets/printhelper.h"
+#include "qrcoderesultshower.h"
 #include <QMenu>
 #include <QKeySequence>
 #include <QJsonArray>
@@ -68,6 +69,7 @@ enum MenuItemId {
     IdImageInfo,
     IdImageOCR,
     IdSubMenu,
+    IdImageQRCode,
 };
 
 }  // namespace
@@ -237,6 +239,9 @@ void ViewPanel::onMenuItemClicked(QAction *action)
     case IdImageOCR:
         imageOcr(path);
         break;
+    case IdImageQRCode:
+        QRCodeResultShower::Show(this, path);
+        break;
     case IdSetAsWallpaper:
         dApp->wpSetter->setWallpaper(path);
         break;
@@ -337,6 +342,10 @@ void ViewPanel::updateMenuContent()
     if (!window()->isFullScreen() && QFile::exists("/usr/bin/gxde-ocr")) {
         appendAction(IdImageOCR,
                      tr("Image OCR"), ss("Image OCR", "Ctrl+F9"));
+    }
+    if (!window()->isFullScreen()) {
+        appendAction(IdImageQRCode,
+                     tr("Decode QRCode"), ss("Decode QRCode", "Ctrl+F10"));
     }
 #ifndef LITE_DIV
     if (m_vinfo.inDatabase)
