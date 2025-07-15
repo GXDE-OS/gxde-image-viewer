@@ -222,6 +222,7 @@ void ImageInfoWidget::updateBaseInfo(const QMap<QString, QString> &infos)
 
         field->setAlignment(Qt::AlignLeft | Qt::AlignTop);
         field->setText(wrapStr(value, field->font(), m_maxFieldWidth));
+        field->setTextInteractionFlags(Qt::TextSelectableByKeyboard | Qt::TextSelectableByMouse);
 
         SimpleFormLabel *title = new SimpleFormLabel(trLabel(i->name) + ":");
         title->setMinimumHeight(field->minimumHeight());
