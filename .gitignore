@@ -13,7 +13,7 @@
 *.a
 
 build*/
-include*/
+#include*/
 
 *.pro.user*
 *.DS_Store
