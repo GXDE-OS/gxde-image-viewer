@@ -6,6 +6,8 @@ gxde-image-viewer (1.6.0) UNRELEASED; urgency=medium
   * 补充 rpgmpv 格式的 Mimetype
   * 新增 heic 文件支持
   * 支持解析二维码
+  * 图片信息支持复制
+  * 优化文件类型读取机制
 
  -- gfdgd_xi <3025613752@qq.com>  Wed, 16 Jul 2025 07:32:23 +0800
 

@@ -23,6 +23,7 @@
 #include <QMap>
 #include <QString>
 #include <QDebug>
+#include <QMimeDatabase>
 
 namespace utils {
 
@@ -31,31 +32,31 @@ namespace image {
 namespace freeimage {
 
 const QImage decryptRpgmvpToQImage(const QString &filePath) {
-    // PNG???
+    // PNG文件头
     const QByteArray pngHeader = QByteArray::fromHex("89504E470D0A1A0A0000000D49484452");
 
-    // ?????????
+    // 打开文件并读取内容
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
-        return QImage(); // ??????
+        return QImage(); // 打开失败返回空
     }
 
     QByteArray data = file.readAll();
     file.close();
 
-    // ???32??
+    // 检查文件大于 32
     if (data.size() <= 32) {
-        return QImage(); // ??????
+        return QImage(); // 文件太短返回空图像
     }
     QByteArray imageData = data.mid(32);
 
-    // ??PNG????????
+    // 拼接PNG头和数据重建图像
     QByteArray pngData = pngHeader + imageData;
 
-    // ???QImage
+    // 尝试加载为QImage对象
     QImage image;
     if (!image.loadFromData(pngData, "PNG")) {
-        return QImage(); // ????
+        return QImage(); // 加载失败返回空
     }
 
     return image;
@@ -81,7 +82,10 @@ const QString getFileFormat(const QString &path)
         if (!decryptRpgmvpToQImage(path).isNull()) {
             return QString("RPGMPV");
         }
-        return QString("UNKNOW");
+        // 若无法从 FreeImage 读取到相关 MimeType 信息，则直接读取文件的 Mimetype 信息
+        QMimeDatabase db;
+        QMimeType type = db.mimeTypeForFile(path);
+        return type.name();
     }
     else {
         return QString(FreeImage_GetFIFMimeType(fif));
@@ -249,8 +253,8 @@ FIBITMAP * makeThumbnail(const QString &path, int size) {
             if(!dib) return NULL;
         }
         else {
-            // 某些损坏的图片� �式会识别错误，freeimage在load的时候会崩溃，暂时没法解决
-            // 除了上面� 种可能� 速缩略图读取的方式，都返回空
+            // 某些损坏的图片� �式会识别错误，freeimage在load的时候会崩溃，暂时没法解决
+            // 除了上面� 种可能� 速缩略图读取的方式，都返回空
             return NULL;
         }
     }
