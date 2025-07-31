@@ -1,4 +1,4 @@
-gxde-image-viewer (1.6.0) UNRELEASED; urgency=medium
+gxde-image-viewer (1.6.1) UNRELEASED; urgency=medium
 
   * 新增幻灯片功能
   * 支持读取 rpgmpv 文件
@@ -8,8 +8,9 @@ gxde-image-viewer (1.6.0) UNRELEASED; urgency=medium
   * 支持解析二维码
   * 图片信息支持复制
   * 优化文件类型读取机制
+  * 新增 avif 格式支持
 
- -- gfdgd_xi <3025613752@qq.com>  Wed, 16 Jul 2025 07:32:23 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Thu, 31 Jul 2025 13:45:53 +0800
 
 gxde-image-viewer (1.0.0-1) unstable; urgency=medium
 
