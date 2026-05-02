@@ -315,8 +315,9 @@ void TimelineView::setSelection(const QRect &rect, QItemSelectionModel::Selectio
 
     if (! vr.isEmpty()) {
         QItemSelection selection;
-        for (auto index : m_paintingIndexs) {
-            if (! visualRect(index).intersected(vr).isEmpty()) {
+        const QRect normalizedRect = vr.normalized();
+        for (auto index : visualIndexs()) {
+            if (! visualRect(index).intersected(normalizedRect).isEmpty()) {
                 QItemSelection s;
                 s.select(index, index);
                 selection.merge(s, flags);
@@ -621,9 +622,15 @@ void TimelineView::updateVisualRects()
     emit paintingIndexsChanged();
 }
 
+void TimelineView::updatePaintingIndexs()
+{
+    m_paintingIndexs = visualIndexs();
+    emit paintingIndexsChanged();
+}
+
 void TimelineView::onScrolled()
 {
-    updateVisualRects();
+    updatePaintingIndexs();
 }
 
 void TimelineView::mouseReleaseEvent(QMouseEvent *e)

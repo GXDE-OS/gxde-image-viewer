@@ -194,6 +194,7 @@ void TimelineFrame::initConnection()
         connect(t, &LoadThread::finished, this, [=] {
             t->deleteLater();
             m_infos << infos;
+            updateScrollRange();
         }, Qt::DirectConnection);
         t->start();
     });
@@ -280,7 +281,6 @@ void TimelineFrame::insertItems(const TimelineItem::ItemData &data)
         return;
     }
     m_model.appendData(data);
-    m_view->updateScrollbarRange();
 }
 
 void TimelineFrame::removeItem(const DBImgInfo &info)

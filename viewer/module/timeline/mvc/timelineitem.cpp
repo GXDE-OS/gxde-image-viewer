@@ -41,8 +41,11 @@ void TimelineItem::appendData(const ItemData &data)
 {
     QMutexLocker locker(m_mutex);
 
+    const bool exists = m_datas.contains(data.path);
     m_datas.insert(data.path, data);
-    m_paths = m_datas.keys();
+    if (!exists) {
+        m_paths.append(data.path);
+    }
 }
 
 void TimelineItem::updateData(const TimelineItem::ItemData &data)
@@ -54,7 +57,7 @@ void TimelineItem::updateData(const TimelineItem::ItemData &data)
 void TimelineItem::removeData(const QString &path)
 {
     m_datas.remove(path);
-    m_paths = m_datas.keys();
+    m_paths.removeAll(path);
 }
 
 void TimelineItem::insertChild(int index, TimelineItem *child)
