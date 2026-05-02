@@ -66,7 +66,7 @@ class LoadThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit LoadThread(const QString &album);
+    explicit LoadThread(const DBImgInfoList &infos);
 
     void setDone(bool done);
 
@@ -78,7 +78,7 @@ signals:
 
 private:
     bool m_done;
-    QString m_album;
+    DBImgInfoList m_infos;
 };
 
 #include "imagesview.moc"
@@ -438,10 +438,11 @@ void ImagesView::resizeEvent(QResizeEvent *e)
 
 void ImagesView::initItems()
 {
-    LoadThread *t = new LoadThread(m_album);
+    auto infos = DBManager::instance()->getInfosByAlbum(m_album);
+    LoadThread *t = new LoadThread(infos);
     qRegisterMetaType<QVector<int>>("QVector<int>");
     connect(t, &LoadThread::ready, m_view, &ThumbnailListView::insertItem,
-            Qt::DirectConnection);
+            Qt::QueuedConnection);
     connect(t, &LoadThread::finished, this, [=] {
         disconnect(t, &LoadThread::ready, m_view, &ThumbnailListView::insertItem);
         m_loadingThreads.removeAll(t);
@@ -593,20 +594,18 @@ void  ImagesView::showPrintDialog(const QStringList &paths)
     qDebug() << "print failed!";
 }
 
-LoadThread::LoadThread(const QString &album)
+LoadThread::LoadThread(const DBImgInfoList &infos)
     :QThread(nullptr)
     , m_done(false)
-    , m_album(album)
+    , m_infos(infos)
 {
 
 }
 
 void LoadThread::run()
 {
-    auto infos = DBManager::instance()->getInfosByAlbum(m_album);
-
     using namespace utils::image;
-    for (auto info : infos) {
+    for (auto info : m_infos) {
         if (m_done)
             return;
         ThumbnailListView::ItemInfo vi;

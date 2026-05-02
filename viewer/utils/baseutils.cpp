@@ -189,6 +189,11 @@ void copyImageToClipboard(const QStringList &paths)
     cb->setMimeData(newMimeData);
 }
 
+void copyOneImageToClipboard(const QString &path)
+{
+    copyImageToClipboard(QStringList(path));
+}
+
 QString getFileContent(const QString &file) {
     QFile f(file);
     QString fileContent = "";

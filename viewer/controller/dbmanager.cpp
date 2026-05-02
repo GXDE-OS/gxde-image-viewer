@@ -20,6 +20,7 @@
 #include "utils/baseutils.h"
 #include <QDebug>
 #include <QDir>
+#include <QFileInfo>
 #include <QMutex>
 #include <QSqlDatabase>
 #include <QSqlError>
@@ -261,19 +262,17 @@ const QStringList DBManager::getPathsByDir(const QString &dir) const
 bool DBManager::isImgExist(const QString &path) const
 {
     const QSqlDatabase db = getDatabase();
-    if (db.isValid()) {
+    if (!db.isValid()) {
         return false;
     }
     QMutexLocker mutex(&m_mutex);
     QSqlQuery query( db );
     query.setForwardOnly(true);
-    query.exec("BEGIN IMMEDIATE TRANSACTION");
     query.prepare( "SELECT COUNT(*) FROM ImageTable3 WHERE FilePath = :path" );
     query.bindValue( ":path", path );
     if (query.exec()) {
         query.first();
         if (query.value(0).toInt() > 0) {
-            query.exec("COMMIT");
             mutex.unlock();
             return true;
         }
@@ -340,38 +339,43 @@ void DBManager::removeImgInfos(const QStringList &paths)
         infos << getInfoByPath(path);
     }
 
-    QMutexLocker mutex(&m_mutex);
-    QSqlQuery query(db);
-    // Remove from albums table
-    query.setForwardOnly(true);
-    query.exec("BEGIN IMMEDIATE TRANSACTION");
-    QString qs = "DELETE FROM AlbumTable3 WHERE PathHash=?";
-    query.prepare(qs);
-    query.addBindValue(pathHashs);
-    if (! query.execBatch()) {
-        qWarning() << "Remove data from AlbumTable3 failed: "
-                   << query.lastError();
-        query.exec("COMMIT");
-    }
-    else {
-        query.exec("COMMIT");
-    }
+    bool success = false;
+    {
+        QMutexLocker mutex(&m_mutex);
+        QSqlQuery query(db);
+        // Remove from albums table
+        query.setForwardOnly(true);
+        query.exec("BEGIN IMMEDIATE TRANSACTION");
+        QString qs = "DELETE FROM AlbumTable3 WHERE PathHash=?";
+        query.prepare(qs);
+        query.addBindValue(pathHashs);
+        if (! query.execBatch()) {
+            qWarning() << "Remove data from AlbumTable3 failed: "
+                       << query.lastError();
+            query.exec("COMMIT");
+        }
+        else {
+            query.exec("COMMIT");
+        }
 
-    // Remove from image table
-    query.exec("BEGIN IMMEDIATE TRANSACTION");
-    qs = "DELETE FROM ImageTable3 WHERE PathHash=?";
-    query.prepare(qs);
-    query.addBindValue(pathHashs);
-    if (! query.execBatch()) {
-        qWarning() << "Remove data from ImageTable3 failed: "
-                   << query.lastError();
-        query.exec("COMMIT");
+        // Remove from image table
+        query.exec("BEGIN IMMEDIATE TRANSACTION");
+        qs = "DELETE FROM ImageTable3 WHERE PathHash=?";
+        query.prepare(qs);
+        query.addBindValue(pathHashs);
+        if (! query.execBatch()) {
+            qWarning() << "Remove data from ImageTable3 failed: "
+                       << query.lastError();
+            query.exec("COMMIT");
+        }
+        else {
+            success = true;
+            query.exec("COMMIT");
+        }
     }
-    else {
+    if (success) {
         emit dApp->signalM->imagesRemoved(infos);
-        query.exec("COMMIT");
     }
-    mutex.unlock();
 }
 
 void DBManager::removeDir(const QString &dir)
@@ -389,35 +393,40 @@ void DBManager::removeDir(const QString &dir)
         pathHashs << utils::base::hash(info.filePath);
     }
 
-    QMutexLocker mutex(&m_mutex);
-    QSqlQuery query(db);
-    // Remove from albums table
-    query.setForwardOnly(true);
-    query.exec("BEGIN IMMEDIATE TRANSACTION");
-    QString qs = "DELETE FROM AlbumTable3 WHERE PathHash=?";
-    query.prepare(qs);
-    query.addBindValue(pathHashs);
-    if (! query.execBatch()) {
-        qWarning() << "Remove data from AlbumTable3 failed: "
-                   << query.lastError();
-    }
-    query.exec("COMMIT");
+    bool success = false;
+    {
+        QMutexLocker mutex(&m_mutex);
+        QSqlQuery query(db);
+        // Remove from albums table
+        query.setForwardOnly(true);
+        query.exec("BEGIN IMMEDIATE TRANSACTION");
+        QString qs = "DELETE FROM AlbumTable3 WHERE PathHash=?";
+        query.prepare(qs);
+        query.addBindValue(pathHashs);
+        if (! query.execBatch()) {
+            qWarning() << "Remove data from AlbumTable3 failed: "
+                       << query.lastError();
+        }
+        query.exec("COMMIT");
 
-    // Remove from image table
-    query.exec("BEGIN IMMEDIATE TRANSACTION");
-    qs = "DELETE FROM ImageTable3 WHERE Dir=:Dir";
-    query.prepare(qs);
-    query.bindValue(":Dir", dirHash);
-    if (! query.exec()) {
-        qWarning() << "Remove dir's images from ImageTable3 failed: "
-                   << query.lastError();
-        query.exec("COMMIT");
+        // Remove from image table
+        query.exec("BEGIN IMMEDIATE TRANSACTION");
+        qs = "DELETE FROM ImageTable3 WHERE Dir=:Dir";
+        query.prepare(qs);
+        query.bindValue(":Dir", dirHash);
+        if (! query.exec()) {
+            qWarning() << "Remove dir's images from ImageTable3 failed: "
+                       << query.lastError();
+            query.exec("COMMIT");
+        }
+        else {
+            query.exec("COMMIT");
+            success = true;
+        }
     }
-    else {
-        query.exec("COMMIT");
+    if (success) {
         emit dApp->signalM->imagesRemoved(infos);
     }
-    mutex.unlock();
 }
 
 const DBAlbumInfo DBManager::getAlbumInfo(const QString &album) const
@@ -502,24 +511,32 @@ const QStringList DBManager::getPathsByAlbum(const QString &album) const
     if (! db.isValid()) {
         return list;
     }
+
+    QStringList pathHashs;
     QMutexLocker mutex(&m_mutex);
     QSqlQuery query( db );
     query.setForwardOnly(true);
-    query.prepare("SELECT DISTINCT i.FilePath "
-                  "FROM ImageTable3 AS i, AlbumTable3 AS a "
-                  "WHERE i.PathHash=a.PathHash "
-                  "AND a.AlbumName=:album "
-                  "AND FilePath != \" \" ");
-    query.bindValue(":album", album);
-    if (! query.exec() ) {
-        qWarning() << "Get Paths from AlbumTable3 failed: " << query.lastError();
+    QString ps = "SELECT DISTINCT PathHash FROM AlbumTable3 "
+                 "WHERE AlbumName =:name AND PathHash != \"%1\" ";
+    query.prepare( ps.arg(EMPTY_HASH_STR) );
+    query.bindValue(":name", album);
+    if ( ! query.exec() ) {
+        qWarning() << "Get PathHash from AlbumTable3 failed: "
+                   << query.lastError();
     }
     else {
         while (query.next()) {
-            list << query.value(0).toString();
+            pathHashs << query.value(0).toString();
         }
     }
     mutex.unlock();
+
+    for (const QString &pathHash : pathHashs) {
+        DBImgInfo info = getInfoByPathHash(pathHash);
+        if (! info.filePath.isEmpty()) {
+            list << info.filePath;
+        }
+    }
 
     return list;
 }
@@ -531,30 +548,33 @@ const DBImgInfoList DBManager::getInfosByAlbum(const QString &album) const
     if (! db.isValid()) {
         return infos;
     }
+
+    QStringList pathHashs;
     QMutexLocker mutex(&m_mutex);
     QSqlQuery query( db );
     query.setForwardOnly(true);
-    query.prepare("SELECT DISTINCT i.FilePath, i.FileName, i.Dir, i.Time "
-                  "FROM ImageTable3 AS i, AlbumTable3 AS a "
-                  "WHERE i.PathHash=a.PathHash AND a.AlbumName=:album");
-    query.bindValue(":album", album);
-    if (! query.exec()) {
-        qWarning() << "Get ImgInfo by album failed: " << query.lastError();
-        mutex.unlock();
+    QString ps = "SELECT DISTINCT PathHash FROM AlbumTable3 "
+                 "WHERE AlbumName =:name AND PathHash != \"%1\" ";
+    query.prepare( ps.arg(EMPTY_HASH_STR) );
+    query.bindValue(":name", album);
+    if ( ! query.exec() ) {
+        qWarning() << "Get PathHash from AlbumTable3 failed: "
+                   << query.lastError();
     }
     else {
-        using namespace utils::base;
         while (query.next()) {
-            DBImgInfo info;
-            info.filePath = query.value(0).toString();
-            info.fileName = query.value(1).toString();
-            info.dirHash = query.value(2).toString();
-            info.time = stringToDateTime(query.value(3).toString());
-
-            infos << info;
+            pathHashs << query.value(0).toString();
         }
     }
     mutex.unlock();
+
+    for (const QString &pathHash : pathHashs) {
+        DBImgInfo info = getInfoByPathHash(pathHash);
+        if (! info.filePath.isEmpty()) {
+            infos << info;
+        }
+    }
+
     return infos;
 }
 
@@ -656,6 +676,25 @@ void DBManager::insertIntoAlbum(const QString &album, const QStringList &paths)
     if (! db.isValid() || album.isEmpty()) {
         return;
     }
+
+    DBImgInfoList infosToInsert;
+    for (QString path : paths) {
+        if (!isImgExist(path)) {
+            QFileInfo fi(path);
+            if (fi.exists()) {
+                DBImgInfo dbi;
+                dbi.fileName = fi.fileName();
+                dbi.filePath = path;
+                dbi.dirHash = utils::base::hash(QString());
+                dbi.time = fi.lastModified();
+                infosToInsert << dbi;
+            }
+        }
+    }
+    if (!infosToInsert.isEmpty()) {
+        insertImgInfos(infosToInsert);
+    }
+
     QStringList nameRows, pathHashRows;
     for (QString path : paths) {
         nameRows << album;
@@ -676,8 +715,6 @@ void DBManager::insertIntoAlbum(const QString &album, const QStringList &paths)
     }
     query.exec("COMMIT");
 
-    //FIXME: Don't insert the repeated filepath into the same album
-    //Delete the same data
     QString ps = "DELETE FROM AlbumTable3 where AlbumId NOT IN"
                  "(SELECT min(AlbumId) FROM AlbumTable3 GROUP BY"
                  " AlbumName, PathHash) AND PathHash != \"%1\" ";
@@ -719,22 +756,26 @@ void DBManager::removeFromAlbum(const QString &album, const QStringList &paths)
     for (QString path : paths) {
         pathHashs << utils::base::hash(path);
     }
-    QMutexLocker mutex(&m_mutex);
-    QSqlQuery query(db);
-    query.setForwardOnly(true);
-    query.exec("BEGIN IMMEDIATE TRANSACTION");
-    // Remove from albums table
-    QString qs("DELETE FROM AlbumTable3 WHERE AlbumName=\"%1\" AND PathHash=?");
-    query.prepare(qs.arg(album));
-    query.addBindValue(pathHashs);
-    if (! query.execBatch()) {
-        qWarning() << "Remove images from DB failed: " << query.lastError();
+    bool success = false;
+    {
+        QMutexLocker mutex(&m_mutex);
+        QSqlQuery query(db);
+        query.setForwardOnly(true);
+        query.exec("BEGIN IMMEDIATE TRANSACTION");
+        QString qs("DELETE FROM AlbumTable3 WHERE AlbumName=\"%1\" AND PathHash=?");
+        query.prepare(qs.arg(album));
+        query.addBindValue(pathHashs);
+        if (! query.execBatch()) {
+            qWarning() << "Remove images from DB failed: " << query.lastError();
+        }
+        else {
+            success = true;
+        }
+        query.exec("COMMIT");
     }
-    else {
+    if (success) {
         emit dApp->signalM->removedFromAlbum(album, paths);
     }
-    query.exec("COMMIT");
-    mutex.unlock();
 }
 
 void DBManager::renameAlbum(const QString &oldAlbum, const QString &newAlbum)

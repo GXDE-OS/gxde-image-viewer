@@ -50,15 +50,15 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
 #endif
     ShortcutItem(tr("Fullscreen"), ss(VIEW_GROUP, "Fullscreen", "F11"))<<
 #ifndef LITE_DIV
-    ShortcutItem(tr("Slide show"), ss(VIEW_GROUP, "Slide show"))<<
-    ShortcutItem(tr("End show"),  ss(VIEW_GROUP, "End show"))<<
+    ShortcutItem(tr("Slide show"), ss(VIEW_GROUP, "Slide show", ""))<<
+    ShortcutItem(tr("End show"),  ss(VIEW_GROUP, "End show", ""))<<
 #endif
     ShortcutItem(tr("Copy"), ss(VIEW_GROUP, "Copy", "Ctrl + C"))<<
     ShortcutItem(tr("Delete"),  "Delete")<<
 #ifndef LITE_DIV
-    ShortcutItem(tr("Remove from album"), ss(VIEW_GROUP, "Remove from album"))<<
-    ShortcutItem(tr("Favorite"), ss(VIEW_GROUP, "Favorite"))<<
-    ShortcutItem(tr("Unfavorite"), ss(VIEW_GROUP, "Unfavorite"))<<
+    ShortcutItem(tr("Remove from album"), ss(VIEW_GROUP, "Remove from album", ""))<<
+    ShortcutItem(tr("Favorite"), ss(VIEW_GROUP, "Favorite", ""))<<
+    ShortcutItem(tr("Unfavorite"), ss(VIEW_GROUP, "Unfavorite", ""))<<
 #endif
     ShortcutItem(tr("Rotate clockwise"), ss(VIEW_GROUP, "Rotate clockwise", "Ctrl + R"))<<
     ShortcutItem(tr("Rotate counterclockwise"), ss(VIEW_GROUP, "Rotate counterclockwise", "Ctrl + Shift + R"))<<
@@ -71,8 +71,8 @@ Shortcut::Shortcut(QObject *parent) : QObject(parent)
                      <<
     ShortcutItem(tr("Previous screen"), "PageUp")<<
     ShortcutItem(tr("Next screen"), "PageDown");
-    group2.groupItems<<ShortcutItem(tr("New album"), ss(ALBUM_GROUP, "New album"))<<
-                       ShortcutItem(tr("Rename"), ss(ALBUM_GROUP, "Rename"));
+    group2.groupItems<<ShortcutItem(tr("New album"), ss(ALBUM_GROUP, "New album", ""))<<
+                       ShortcutItem(tr("Rename"), ss(ALBUM_GROUP, "Rename", ""));
 #else
                         ;
 #endif

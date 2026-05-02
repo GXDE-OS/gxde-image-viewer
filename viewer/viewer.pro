@@ -18,9 +18,7 @@ TARGET = gxde-image-viewer
 TEMPLATE = app
 INCLUDEPATH += utils
 
-isEmpty(FULL_FUNCTIONALITY) {
-    DEFINES += LITE_DIV
-}
+FULL_FUNCTIONALITY = 1
 
 isEmpty(PREFIX){
     PREFIX = /usr

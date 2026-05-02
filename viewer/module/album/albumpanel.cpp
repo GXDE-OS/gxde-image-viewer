@@ -465,9 +465,9 @@ void AlbumPanel::onInsertIntoAlbum(const DBImgInfo info)
 void AlbumPanel::onOpenAlbum(const QString &album)
 {
     m_currentAlbum = album;
-    m_imagesView->setAlbum(album);
 
     m_stackWidget->setCurrentWidget(m_imagesView);
+    m_imagesView->setAlbum(album);
     if (! m_mContent.isNull()) {
         m_mContent->setAlbum(album);
         m_mContent->setInAlbumView(false);
