@@ -1,4 +1,8 @@
 
+QLabel#TopleftLogo {
+    border-image: url(:/resources/light/images/deepin_image_viewer_24.svg);
+}
+
 ReturnButton#ReturnBtn {
     qproperty-normalPic: url(:/resources/light/images/return_normal.svg);
     qproperty-hoverPic: url(:/resources/light/images/return_hover.svg);

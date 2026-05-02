@@ -79,6 +79,12 @@ TTLContent::TTLContent(bool inDB,
     connect(m_returnBtn, &ReturnButton::returnBtnWidthChanged, this, [=]{
         updateFilenameLayout();
     });
+#else
+    QLabel *logo = new QLabel;
+    logo->setObjectName("TopleftLogo");
+    logo->setFixedSize(LOGO_SIZE);
+    hb->addWidget(logo);
+    hb->addSpacing(20);
 #endif
     // Adapt buttons////////////////////////////////////////////////////////////
     m_adaptImageBtn = new PushButton();
