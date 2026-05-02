@@ -40,6 +40,7 @@ public:
     void setIconSize(int size);
     void updateThumbnail(const QString &path);
     void updateScrollRange();
+    void enqueueItems(const TimelineItemDataList &datas);
 
     bool isEmpty() const;
     const QString currentMonth() const;
@@ -59,7 +60,6 @@ private:
     void initView();
     void initTopTip();
     void initItems();
-    void enqueueItems(const TimelineItemDataList &datas);
     void processPendingItems();
     void insertItem(const TimelineItem::ItemData &data);
     void updateVisibleThumbnails();

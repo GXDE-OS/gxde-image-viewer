@@ -43,22 +43,21 @@ const QString SCANPATHS_KEY = "SCANPATHSKEY";
 
 class LoadThread : public QThread
 {
-    Q_OBJECT
 public:
-    explicit LoadThread(const DBImgInfoList &infos, int thumbnailSize);
+    explicit LoadThread(const DBImgInfoList &infos, int thumbnailSize,
+                        TimelineFrame *receiver);
 
 protected:
     void run() Q_DECL_OVERRIDE;
 
-signals:
-    void ready(TimelineItemDataList datas);
-
 private:
     const QStringList scanpathsHash();
+    void enqueueBatch(const TimelineItemDataList &batch);
 
 private:
     DBImgInfoList m_infos;
     int m_thumbnailSize;
+    TimelineFrame *m_receiver;
 };
 
 }   // namespace
@@ -205,9 +204,7 @@ void TimelineFrame::initConnection()
     });
     connect(dApp->signalM, &SignalManager::imagesInserted,
             this, [=] (const DBImgInfoList infos){
-        LoadThread *t = new LoadThread(infos, m_thumbnailSize);
-        connect(t, &LoadThread::ready,
-                this, &TimelineFrame::enqueueItems, Qt::QueuedConnection);
+        LoadThread *t = new LoadThread(infos, m_thumbnailSize, this);
         connect(t, &LoadThread::finished, this, [=] {
             t->deleteLater();
             m_infos << infos;
@@ -286,9 +283,7 @@ void TimelineFrame::initItems()
 {
     auto infos = DBManager::instance()->getAllInfos();
 
-    LoadThread *t = new LoadThread(infos, m_thumbnailSize);
-    connect(t, &LoadThread::ready,
-            this, &TimelineFrame::enqueueItems, Qt::QueuedConnection);
+    LoadThread *t = new LoadThread(infos, m_thumbnailSize, this);
     connect(t, &LoadThread::finished, this, [=] {
         t->deleteLater();
         m_infos << infos;
@@ -393,13 +388,27 @@ void TimelineFrame::removeItems(const DBImgInfoList &infos)
     m_view->updateView();
 }
 
-#include "timelineframe.moc"
-LoadThread::LoadThread(const DBImgInfoList &infos, int thumbnailSize)
+LoadThread::LoadThread(const DBImgInfoList &infos, int thumbnailSize,
+                       TimelineFrame *receiver)
     : QThread(nullptr)
     , m_infos(infos)
     , m_thumbnailSize(thumbnailSize)
+    , m_receiver(receiver)
 {
 
+}
+
+void LoadThread::enqueueBatch(const TimelineItemDataList &batch)
+{
+    if (!m_receiver || batch.isEmpty()) {
+        return;
+    }
+
+    TimelineFrame *receiver = m_receiver;
+    const TimelineItemDataList batchCopy = batch;
+    QTimer::singleShot(0, receiver, [receiver, batchCopy] {
+        receiver->enqueueItems(batchCopy);
+    });
 }
 
 void LoadThread::run()
@@ -434,14 +443,12 @@ void LoadThread::run()
 
         batch << data;
         if (batch.count() >= INSERT_BATCH_SIZE) {
-            emit ready(batch);
+            enqueueBatch(batch);
             batch.clear();
         }
     }
 
-    if (!batch.isEmpty()) {
-        emit ready(batch);
-    }
+    enqueueBatch(batch);
 }
 
 const QStringList LoadThread::scanpathsHash()
