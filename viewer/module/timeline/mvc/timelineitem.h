@@ -60,5 +60,6 @@ private:
 };
 
 Q_DECLARE_METATYPE(TimelineItem::ItemData)
+Q_DECLARE_METATYPE(QList<TimelineItem::ItemData>)
 
 #endif // TIMELINEITEM_H

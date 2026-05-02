@@ -160,6 +160,20 @@ void ThumbnailListView::removeItems(const QStringList &paths)
     }
 }
 
+void ThumbnailListView::updateVisibleThumbnails()
+{
+    const QRect viewportRect = viewport()->rect();
+    for (int i = 0; i < m_model->rowCount(); ++i) {
+        const QModelIndex idx = m_model->index(i, 0);
+        if (visualRect(idx).intersects(viewportRect)) {
+            const QVariantList datas = m_model->data(idx, Qt::DisplayRole).toList();
+            if (datas.length() >= 2) {
+                updateThumbnail(datas[1].toString());
+            }
+        }
+    }
+}
+
 bool ThumbnailListView::contain(const QModelIndex &index) const
 {
     return index.model() == m_model;

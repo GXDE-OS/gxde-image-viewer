@@ -23,6 +23,8 @@
 #include <QFrame>
 #include <QSet>
 
+class QTimer;
+
 DWIDGET_USE_NAMESPACE
 
 class TimelineView;
@@ -57,7 +59,10 @@ private:
     void initView();
     void initTopTip();
     void initItems();
-    void insertItems(const TimelineItem::ItemData &data);
+    void enqueueItems(const QList<TimelineItem::ItemData> &datas);
+    void processPendingItems();
+    void insertItem(const TimelineItem::ItemData &data);
+    void updateVisibleThumbnails();
     void removeItem(const DBImgInfo &info);
     void removeItems(const DBImgInfoList &infos);
 
@@ -70,6 +75,9 @@ private:
     int                     m_thumbnailSize;
     QStringList             m_loadedPaths;
     QSet<QString>           m_loadedPathSet;
+    QList<TimelineItem::ItemData> m_pendingItems;
+    QTimer                  *m_insertTimer;
+    bool                    m_pendingScrollRangeUpdate;
 };
 
 #endif // TIMELINEFRAME_H

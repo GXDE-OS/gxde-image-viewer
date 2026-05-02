@@ -430,6 +430,7 @@ void ImagesView::setIconSize(const QSize &iconSize)
 {
     m_thumbnailSize = qMax(MIN_MODEL_THUMBNAIL_SIZE, iconSize.width());
     m_view->setIconSize(iconSize);
+    m_view->updateVisibleThumbnails();
     updateTopTipsRect();
 }
 

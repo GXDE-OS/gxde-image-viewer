@@ -143,8 +143,8 @@ QPixmap ThumbnailDelegate::thumbnail(const ThumbnailDelegate::ItemData &data) co
             thumb = utils::image::cutSquareImage(QPixmap(m_defaultThumbnail), ms);
             QPixmapCache::insert("NO_IMAGE_TMP_KEY", thumb);
         }
+        startThumbnailThread(data);
     }
-    startThumbnailThread(data);
 
     return thumb;
 }

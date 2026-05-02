@@ -43,6 +43,7 @@ public:
     void insertItem(const ItemInfo &info);
     void updateItem(const ItemInfo &info);
     void removeItems(const QStringList &paths);
+    void updateVisibleThumbnails();
     bool contain(const QModelIndex &index) const;
     int indexOf(const QString &path);
     int count() const;

@@ -29,6 +29,7 @@
 #include <QLabel>
 #include <QMutex>
 #include <QScrollBar>
+#include <QTimer>
 #include <QtConcurrent>
 
 namespace {
@@ -36,6 +37,7 @@ namespace {
 const int TOP_TOOLBAR_HEIGHT = 39;
 const int BOTTOM_TOOLBAR_HEIGHT = 22;
 const int MIN_MODEL_THUMBNAIL_SIZE = 128;
+const int INSERT_BATCH_SIZE = 32;
 const QString SCANPATHS_GROUP = "SCANPATHSGROUP";
 const QString SCANPATHS_KEY = "SCANPATHSKEY";
 
@@ -49,7 +51,7 @@ protected:
     void run() Q_DECL_OVERRIDE;
 
 signals:
-    void ready(TimelineItem::ItemData data);
+    void ready(QList<TimelineItem::ItemData> datas);
 
 private:
     const QStringList scanpathsHash();
@@ -76,8 +78,15 @@ public:
 TimelineFrame::TimelineFrame(QWidget *parent)
     : QFrame(parent)
     , m_thumbnailSize(MIN_MODEL_THUMBNAIL_SIZE)
+    , m_insertTimer(new QTimer(this))
+    , m_pendingScrollRangeUpdate(false)
 {
     qRegisterMetaType<TimelineItem::ItemData>("TimelineItem::ItemData");
+    qRegisterMetaType<QList<TimelineItem::ItemData> >("QList<TimelineItem::ItemData>");
+
+    m_insertTimer->setInterval(16);
+    connect(m_insertTimer, &QTimer::timeout,
+            this, &TimelineFrame::processPendingItems);
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -104,6 +113,7 @@ void TimelineFrame::setIconSize(int size)
 {
     m_thumbnailSize = qMax(MIN_MODEL_THUMBNAIL_SIZE, size);
     m_view->setItemSize(size);
+    updateVisibleThumbnails();
 }
 
 void TimelineFrame::updateThumbnail(const QString &path)
@@ -197,11 +207,15 @@ void TimelineFrame::initConnection()
             this, [=] (const DBImgInfoList infos){
         LoadThread *t = new LoadThread(infos, m_thumbnailSize);
         connect(t, &LoadThread::ready,
-                this, &TimelineFrame::insertItems, Qt::QueuedConnection);
+                this, &TimelineFrame::enqueueItems, Qt::QueuedConnection);
         connect(t, &LoadThread::finished, this, [=] {
             t->deleteLater();
             m_infos << infos;
-            updateScrollRange();
+            m_pendingScrollRangeUpdate = true;
+            if (m_pendingItems.isEmpty()) {
+                updateScrollRange();
+                m_pendingScrollRangeUpdate = false;
+            }
         });
         t->start();
     });
@@ -274,16 +288,45 @@ void TimelineFrame::initItems()
 
     LoadThread *t = new LoadThread(infos, m_thumbnailSize);
     connect(t, &LoadThread::ready,
-            this, &TimelineFrame::insertItems, Qt::QueuedConnection);
+            this, &TimelineFrame::enqueueItems, Qt::QueuedConnection);
     connect(t, &LoadThread::finished, this, [=] {
         t->deleteLater();
         m_infos << infos;
-        updateScrollRange();
+        m_pendingScrollRangeUpdate = true;
+        if (m_pendingItems.isEmpty()) {
+            updateScrollRange();
+            m_pendingScrollRangeUpdate = false;
+        }
     });
     t->start();
 }
 
-void TimelineFrame::insertItems(const TimelineItem::ItemData &data)
+void TimelineFrame::enqueueItems(const QList<TimelineItem::ItemData> &datas)
+{
+    m_pendingItems << datas;
+    if (!m_insertTimer->isActive()) {
+        m_insertTimer->start();
+    }
+}
+
+void TimelineFrame::processPendingItems()
+{
+    int count = 0;
+    while (!m_pendingItems.isEmpty() && count < INSERT_BATCH_SIZE) {
+        insertItem(m_pendingItems.takeFirst());
+        ++count;
+    }
+
+    if (m_pendingItems.isEmpty()) {
+        m_insertTimer->stop();
+        if (m_pendingScrollRangeUpdate) {
+            updateScrollRange();
+            m_pendingScrollRangeUpdate = false;
+        }
+    }
+}
+
+void TimelineFrame::insertItem(const TimelineItem::ItemData &data)
 {
     // Do not update model if user is scroll and importing, the missing datas
     // will be insert again after import thread finished by call initItems
@@ -294,6 +337,16 @@ void TimelineFrame::insertItems(const TimelineItem::ItemData &data)
     if (!m_loadedPathSet.contains(data.path)) {
         m_loadedPathSet.insert(data.path);
         m_loadedPaths << data.path;
+    }
+}
+
+void TimelineFrame::updateVisibleThumbnails()
+{
+    for (const QModelIndex &index : m_view->paintingIndexs()) {
+        QVariantList datas = index.model()->data(index, Qt::DisplayRole).toList();
+        if (datas.count() == 4 && !datas[0].toBool()) {
+            updateThumbnail(datas[1].toString());
+        }
     }
 }
 
@@ -355,6 +408,7 @@ void LoadThread::run()
     using namespace utils::image;
 
     const QStringList hashs = scanpathsHash();
+    QList<TimelineItem::ItemData> batch;
     for (auto info : m_infos) {
         // Do not check the thumbnail for unplug devices' image
         if (onMountDevice(info.filePath) && ! mountDeviceExist(info.filePath)) {
@@ -378,7 +432,15 @@ void LoadThread::run()
         }
         data.timeline = timeToString(info.time, true);
 
-        emit ready(data);
+        batch << data;
+        if (batch.count() >= INSERT_BATCH_SIZE) {
+            emit ready(batch);
+            batch.clear();
+        }
+    }
+
+    if (!batch.isEmpty()) {
+        emit ready(batch);
     }
 }
 
