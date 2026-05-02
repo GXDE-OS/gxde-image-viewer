@@ -59,4 +59,6 @@ private:
     TimelineItem *m_parentItem;
 };
 
+Q_DECLARE_METATYPE(TimelineItem::ItemData)
+
 #endif // TIMELINEITEM_H

@@ -107,7 +107,9 @@ void ThumbnailListView::updateThumbnail(const QString &path)
     ItemInfo info;
     info.name = QFileInfo(path).fileName();
     info.path = path;
-    info.thumb = utils::image::getThumbnail(path, true);
+    const int size = qMax(THUMBNAIL_MIN_SIZE, iconSize().width());
+    info.thumb = utils::image::cutSquareImage(utils::image::getThumbnail(path, true),
+                                              QSize(size, size));
     updateItem(info);
     this->update();
 }

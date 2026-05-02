@@ -120,6 +120,7 @@ private:
     QMenu *m_menu;
     ImportFrame *m_importFrame;
     QList<LoadThread *> m_loadingThreads;
+    int m_thumbnailSize;
 };
 
 #endif // IMAGESVIEW_H

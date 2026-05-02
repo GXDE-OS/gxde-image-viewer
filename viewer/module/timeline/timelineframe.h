@@ -21,6 +21,7 @@
 #include "mvc/timelinemodel.h"
 #include "danchors.h"
 #include <QFrame>
+#include <QSet>
 
 DWIDGET_USE_NAMESPACE
 
@@ -66,6 +67,9 @@ private:
     QMutex                  m_mutex;
     TimelineModel           m_model;
     TimelineView            *m_view;
+    int                     m_thumbnailSize;
+    QStringList             m_loadedPaths;
+    QSet<QString>           m_loadedPathSet;
 };
 
 #endif // TIMELINEFRAME_H

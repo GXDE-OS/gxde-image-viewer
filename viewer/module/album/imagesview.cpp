@@ -52,7 +52,7 @@ const int TOP_TOOLBAR_HEIGHT = 39;
 const QString FAVORITES_ALBUM_NAME = "My favorite";
 const QString RECENT_IMPORTED_ALBUM = "Recent imported";
 const QString SHORTCUTVIEW_GROUP = "SHORTCUTVIEW";
-const int MODEL_THUMBNAIL_SIZE = 128;
+const int MIN_MODEL_THUMBNAIL_SIZE = 128;
 
 QString ss(const QString &text)
 {
@@ -67,7 +67,7 @@ class LoadThread : public QThread
 {
     Q_OBJECT
 public:
-    explicit LoadThread(const DBImgInfoList &infos);
+    explicit LoadThread(const DBImgInfoList &infos, int thumbnailSize);
 
     void setDone(bool done);
 
@@ -80,12 +80,14 @@ signals:
 private:
     bool m_done;
     DBImgInfoList m_infos;
+    int m_thumbnailSize;
 };
 
 #include "imagesview.moc"
 
 ImagesView::ImagesView(QWidget *parent)
     : QStackedWidget(parent)
+    , m_thumbnailSize(MIN_MODEL_THUMBNAIL_SIZE)
 {
     qRegisterMetaType<ThumbnailListView::ItemInfo>("ThumbnailListView::ItemInfo");
 
@@ -205,7 +207,7 @@ void ImagesView::insertItem(const DBImgInfo &info, bool update)
     vi.name = info.fileName;
     vi.path = info.filePath;
     vi.thumb = cutSquareImage(getThumbnail(vi.path, true),
-                              QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE));
+                              QSize(m_thumbnailSize, m_thumbnailSize));
 
     m_view->insertItem(vi);
     // Update tip's info
@@ -225,7 +227,7 @@ void ImagesView::insertItems(const DBImgInfoList &infos)
         vi.name = info.fileName;
         vi.path = info.filePath;
         vi.thumb = cutSquareImage(getThumbnail(vi.path, true),
-                                  QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE));
+                                  QSize(m_thumbnailSize, m_thumbnailSize));
 
         m_view->insertItem(vi);
     }
@@ -426,6 +428,7 @@ QSize ImagesView::iconSize() const
 
 void ImagesView::setIconSize(const QSize &iconSize)
 {
+    m_thumbnailSize = qMax(MIN_MODEL_THUMBNAIL_SIZE, iconSize.width());
     m_view->setIconSize(iconSize);
     updateTopTipsRect();
 }
@@ -444,7 +447,7 @@ void ImagesView::resizeEvent(QResizeEvent *e)
 void ImagesView::initItems()
 {
     auto infos = DBManager::instance()->getInfosByAlbum(m_album);
-    LoadThread *t = new LoadThread(infos);
+    LoadThread *t = new LoadThread(infos, m_thumbnailSize);
     connect(t, &LoadThread::ready, m_view, &ThumbnailListView::insertItem,
             Qt::QueuedConnection);
     connect(t, &LoadThread::finished, this, [=] {
@@ -599,10 +602,11 @@ void  ImagesView::showPrintDialog(const QStringList &paths)
     qDebug() << "print failed!";
 }
 
-LoadThread::LoadThread(const DBImgInfoList &infos)
+LoadThread::LoadThread(const DBImgInfoList &infos, int thumbnailSize)
     :QThread(nullptr)
     , m_done(false)
     , m_infos(infos)
+    , m_thumbnailSize(thumbnailSize)
 {
 
 }
@@ -617,7 +621,7 @@ void LoadThread::run()
         vi.name = info.fileName;
         vi.path = info.filePath;
         vi.thumb = cutSquareImage(getThumbnail(vi.path, true),
-                                  QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE));
+                                  QSize(m_thumbnailSize, m_thumbnailSize));
         emit ready(vi);
     }
 }
