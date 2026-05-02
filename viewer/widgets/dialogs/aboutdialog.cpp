@@ -31,7 +31,11 @@ AboutDialog::AboutDialog()
     setModal(true);
     setProductIcon(QIcon(PRODUCT_ICON));
     setProductName(tr("Deepin Image Viewer"));
-    setVersion(tr("Version:") + VERSION);
+#define _STRINGIFY(x) #x
+#define STRINGIFY(x) _STRINGIFY(x)
+    setVersion(tr("Version:") + STRINGIFY(VERSION));
+#undef STRINGIFY
+#undef _STRINGIFY
     //FIXME: acknowledgementLink is empty!
     setAcknowledgementLink("https://www.deepin.org/acknowledgments/deepin-image-viewer/");
 
