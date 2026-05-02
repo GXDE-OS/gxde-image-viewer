@@ -54,7 +54,6 @@ protected:
 
 private:
 #ifndef LITE_DIV
-    PushButton *m_folderBtn;
     ReturnButton *m_returnBtn;
 #endif
     bool m_inDB;

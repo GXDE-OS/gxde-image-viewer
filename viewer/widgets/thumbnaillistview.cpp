@@ -107,7 +107,7 @@ void ThumbnailListView::updateThumbnail(const QString &path)
     ItemInfo info;
     info.name = QFileInfo(path).fileName();
     info.path = path;
-    const int size = qMax(THUMBNAIL_MIN_SIZE, iconSize().width());
+    const int size = qMax(THUMBNAIL_MIN_SIZE * 2, iconSize().width() * 2);
     info.thumb = utils::image::cutSquareImage(utils::image::getThumbnail(path, true),
                                               QSize(size, size));
     updateItem(info);
@@ -415,7 +415,7 @@ const QVariantList ThumbnailListView::getVariantList(const ItemInfo &info)
     QByteArray inByteArray;
     QBuffer inBuffer( &inByteArray );
     inBuffer.open( QIODevice::WriteOnly );
-    if ( !info.thumb.save( &inBuffer, "JPG", 75 )) { // write inPixmap into inByteArray
+    if ( !info.thumb.save( &inBuffer, "JPG", 90 )) { // write inPixmap into inByteArray
 //        qDebug() << "Write pixmap to buffer error!" << info.name;
     }
     datas.append(QVariant(inByteArray));

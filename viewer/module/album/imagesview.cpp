@@ -52,7 +52,8 @@ const int TOP_TOOLBAR_HEIGHT = 39;
 const QString FAVORITES_ALBUM_NAME = "My favorite";
 const QString RECENT_IMPORTED_ALBUM = "Recent imported";
 const QString SHORTCUTVIEW_GROUP = "SHORTCUTVIEW";
-const int MIN_MODEL_THUMBNAIL_SIZE = 128;
+const int MIN_MODEL_THUMBNAIL_SIZE = 192;
+const int MODEL_THUMBNAIL_SCALE = 2;
 
 QString ss(const QString &text)
 {
@@ -428,7 +429,8 @@ QSize ImagesView::iconSize() const
 
 void ImagesView::setIconSize(const QSize &iconSize)
 {
-    m_thumbnailSize = qMax(MIN_MODEL_THUMBNAIL_SIZE, iconSize.width());
+    m_thumbnailSize = qMax(MIN_MODEL_THUMBNAIL_SIZE,
+                           iconSize.width() * MODEL_THUMBNAIL_SCALE);
     m_view->setIconSize(iconSize);
     m_view->updateVisibleThumbnails();
     updateTopTipsRect();

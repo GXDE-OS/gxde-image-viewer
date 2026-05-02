@@ -36,7 +36,8 @@ namespace {
 
 const int TOP_TOOLBAR_HEIGHT = 39;
 const int BOTTOM_TOOLBAR_HEIGHT = 22;
-const int MIN_MODEL_THUMBNAIL_SIZE = 128;
+const int MIN_MODEL_THUMBNAIL_SIZE = 192;
+const int MODEL_THUMBNAIL_SCALE = 2;
 const int INSERT_BATCH_SIZE = 32;
 const QString SCANPATHS_GROUP = "SCANPATHSGROUP";
 const QString SCANPATHS_KEY = "SCANPATHSKEY";
@@ -110,7 +111,8 @@ void TimelineFrame::selectAll()
 
 void TimelineFrame::setIconSize(int size)
 {
-    m_thumbnailSize = qMax(MIN_MODEL_THUMBNAIL_SIZE, size);
+    m_thumbnailSize = qMax(MIN_MODEL_THUMBNAIL_SIZE,
+                           size * MODEL_THUMBNAIL_SCALE);
     m_view->setItemSize(size);
     updateVisibleThumbnails();
 }
@@ -128,7 +130,7 @@ void TimelineFrame::updateThumbnail(const QString &path)
     inBuffer.open( QIODevice::WriteOnly );
     // write inPixmap into inByteArray
     cutSquareImage(getThumbnail(data.path, true),
-                   QSize(m_thumbnailSize, m_thumbnailSize)).save(&inBuffer, "JPG", 75);
+                   QSize(m_thumbnailSize, m_thumbnailSize)).save(&inBuffer, "JPG", 90);
     data.timeline = timeToString(info.time, true);
 
     m_model.updateData(data);
@@ -436,7 +438,7 @@ void LoadThread::run()
         inBuffer.open( QIODevice::WriteOnly );
         // write inPixmap into inByteArray
         if ( ! cutSquareImage(getThumbnail(data.path, true),
-                              QSize(m_thumbnailSize, m_thumbnailSize)).save(&inBuffer, "JPG", 75 )) {
+                              QSize(m_thumbnailSize, m_thumbnailSize)).save(&inBuffer, "JPG", 90 )) {
 //             errorPaths << info.filePath;
         }
         data.timeline = timeToString(info.time, true);

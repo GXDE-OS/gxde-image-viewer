@@ -40,6 +40,7 @@ const int RETURN_BTN_MAX = 200;
 const int FILENAME_MAX_LENGTH = 600;
 const int RIGHT_TITLEBAR_WIDTH = 100;
 const int LEFT_SPACE = 20;
+const QSize LOGO_SIZE = QSize(24, 24);
 }  // namespace
 
 TTLContent::TTLContent(bool inDB,
@@ -62,21 +63,17 @@ TTLContent::TTLContent(bool inDB,
     m_returnBtn->setObjectName("ReturnBtn");
     m_returnBtn->setToolTip(tr("Back"));
 
-    m_folderBtn = new PushButton();
-    m_folderBtn->setFixedSize(QSize(24, 24));
-    m_folderBtn->setObjectName("FolderBtn");
-    m_folderBtn->setToolTip(tr("Image management"));
     if(m_inDB) {
         hb->addWidget(m_returnBtn);
     } else {
-       hb->addWidget(m_folderBtn);
+        QLabel *logo = new QLabel;
+        logo->setObjectName("TopleftLogo");
+        logo->setFixedSize(LOGO_SIZE);
+        hb->addWidget(logo);
     }
     hb->addSpacing(20);
 
     connect(m_returnBtn, &ReturnButton::clicked, this, [=] {
-        emit clicked();
-    });
-    connect(m_folderBtn, &PushButton::clicked, this, [=] {
         emit clicked();
     });
     connect(m_returnBtn, &ReturnButton::returnBtnWidthChanged, this, [=]{
@@ -180,7 +177,7 @@ void TTLContent::updateFilenameLayout()
                 + (ICON_SIZE.width()+2)*6 + LEFT_SPACE;
     else
     {
-        m_leftContentWidth = m_folderBtn->width()  + 8
+        m_leftContentWidth = LOGO_SIZE.width() + 8
                 + (ICON_SIZE.width()+2)*5 + LEFT_SPACE;
     }
 #else
