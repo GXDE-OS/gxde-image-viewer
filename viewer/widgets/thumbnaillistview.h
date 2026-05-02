@@ -20,6 +20,7 @@
 #include <QListView>
 #include <QFutureWatcher>
 #include <QMetaType>
+#include <QSet>
 
 class ScrollBar;
 class QStandardItemModel;
@@ -75,6 +76,7 @@ private:
     QStandardItemModel *m_model;
     ThumbnailDelegate *m_delegate;
     ScrollBar* m_scrollbar = nullptr;
+    QSet<QString> m_paths;
 };
 
 Q_DECLARE_METATYPE(ThumbnailListView::ItemInfo)

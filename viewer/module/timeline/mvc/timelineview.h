@@ -96,6 +96,7 @@ private:
     QModelIndex movePageDown();
     void updateVerticalScrollbar();
     void updateVisualRects();
+    void updatePaintingIndexs();
 
 private slots:
     void onScrolled();

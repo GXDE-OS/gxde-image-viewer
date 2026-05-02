@@ -99,6 +99,7 @@ ThumbnailListView::~ThumbnailListView()
 void ThumbnailListView::clearData()
 {
     m_model->clear();
+    m_paths.clear();
 }
 
 void ThumbnailListView::updateThumbnail(const QString &path)
@@ -124,7 +125,7 @@ void ThumbnailListView::insertItem(const ItemInfo &info)
 {
     QMutexLocker locker(&mutex);
     // Different thread connection cause duplicate insert
-    if (indexOf(info.path) != -1)
+    if (m_paths.contains(info.path))
         return;
 
     // Lock for model's data reading and setting in different thread
@@ -134,6 +135,7 @@ void ThumbnailListView::insertItem(const ItemInfo &info)
     item->setData(QVariant(getVariantList(info)), Qt::DisplayRole);
     item->setData(QVariant(iconSize()), Qt::SizeHintRole);
     m_model->appendRow(item);
+    m_paths.insert(info.path);
 }
 
 void ThumbnailListView::updateItem(const ThumbnailListView::ItemInfo &info)
@@ -151,6 +153,7 @@ void ThumbnailListView::removeItems(const QStringList &paths)
         const int i = indexOf(path);
         if (i != -1) {
             m_model->removeRow(i);
+            m_paths.remove(path);
         }
     }
 }
