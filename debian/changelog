@@ -1,3 +1,18 @@
+gxde-image-viewer (1.6.3) unstable; urgency=medium
+
+  * 启用完整功能并优化数据库操作
+  * 修复相册打开后图片列表为空的问题
+  * 优化相册和时间线大量图片性能
+  * 添加按钮可见性控制功能并更新空相册提示
+  * 修复加载时打开图片卡死
+  * 提升大量缩略图滚动性能
+  * 优化快速滚动缩略图加载
+  * 修复时间线批量加载 moc 编译错误
+  * 修复查看界面左上角 Logo 空白
+  * 恢复普通图片查看左上角 Logo
+
+ -- shenmo <jifengshenmo@outlook.com>  Sun, 03 May 2026 00:36:46 +0800
+
 gxde-image-viewer (1.6.2) unstable; urgency=medium
 
   * 添加图片缩略图条功能
