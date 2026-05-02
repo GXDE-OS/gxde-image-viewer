@@ -86,6 +86,8 @@ private:
 ImagesView::ImagesView(QWidget *parent)
     : QStackedWidget(parent)
 {
+    qRegisterMetaType<ThumbnailListView::ItemInfo>("ThumbnailListView::ItemInfo");
+
     setObjectName("ImagesView");
 
     initContent();
@@ -440,7 +442,6 @@ void ImagesView::initItems()
 {
     auto infos = DBManager::instance()->getInfosByAlbum(m_album);
     LoadThread *t = new LoadThread(infos);
-    qRegisterMetaType<QVector<int>>("QVector<int>");
     connect(t, &LoadThread::ready, m_view, &ThumbnailListView::insertItem,
             Qt::QueuedConnection);
     connect(t, &LoadThread::finished, this, [=] {
