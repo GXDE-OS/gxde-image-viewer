@@ -30,6 +30,7 @@ public:
     explicit ImportFrame(QWidget *parent = 0);
     void setTitle(const QString &title);
     void setButtonText(const QString &text);
+    void setButtonVisible(bool visible);
     const QString buttonText() const;
 private slots:
     void onThemeChanged(ViewerThemeManager::AppTheme theme);

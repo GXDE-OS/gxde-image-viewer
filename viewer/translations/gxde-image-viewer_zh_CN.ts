@@ -103,8 +103,8 @@
         <translation>添加同步目录</translation>
     </message>
     <message>
-        <source>You can add sync directory or drag and drop  images to timeline</source>
-        <translation>您可以添加同步目录或拖拽图片到时间线</translation>
+        <source>The album is empty</source>
+        <translation>当前相册为空</translation>
     </message>
 </context>
 <context>
@@ -328,8 +328,8 @@
         <translation>添加同步目录</translation>
     </message>
     <message>
-        <source>You can add sync directory or drag and drop  images to timeline</source>
-        <translation>您可以添加同步目录或拖拽图片到时间线</translation>
+        <source>The album is empty</source>
+        <translation>当前相册为空</translation>
     </message>
     <message>
         <source>Add to album</source>

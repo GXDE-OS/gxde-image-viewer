@@ -73,6 +73,11 @@ void ImportFrame::setButtonText(const QString &text)
     m_importButton->setText(text);
 }
 
+void ImportFrame::setButtonVisible(bool visible)
+{
+    m_importButton->setVisible(visible);
+}
+
 const QString ImportFrame::buttonText() const
 {
     return m_importButton->text();

@@ -498,7 +498,8 @@ void ImagesView::initContent()
     m_importFrame = new ImportFrame(this);
 
     m_importFrame->setButtonText(tr("Add"));
-    m_importFrame->setTitle(tr("You can add sync directory or drag and drop  images to timeline"));
+    m_importFrame->setTitle(tr("The album is empty"));
+    m_importFrame->setButtonVisible(false);
     connect(m_importFrame, &ImportFrame::clicked, this, [=] {
          Importer::instance()->showImportDialog(m_album);
     });
