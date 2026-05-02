@@ -20,7 +20,7 @@ namespace {
 
 const QString WINDOW_ICON = "";
 const QString PRODUCT_ICON = ":/dialogs/images/resources/images/deepin-image-viewer.png";
-const QString VERSION = "1.2";
+
 
 }  // namespace
 
