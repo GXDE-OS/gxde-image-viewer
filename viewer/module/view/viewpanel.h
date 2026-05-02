@@ -23,6 +23,7 @@
 #include "danchors.h"
 #include "thumbnailwidget.h"
 #include "lockwidget.h"
+#include "imagestrip.h"
 
 #include <QFileInfo>
 #include <QJsonObject>
@@ -88,6 +89,8 @@ private:
     void initSwitchButtons();
     void initScaleLabel();
     void initNavigation();
+    void initImageStrip();
+    void ensureImageStrip();
 
     // Menu control
     void appendAction(int id, const QString &text, const QString &shortcut="");
@@ -139,6 +142,7 @@ private:
 
     // Floating component
     DAnchors<NavigationWidget> m_nav;
+    DAnchors<ImageStrip> m_imageStrip;
 
     SignalManager::ViewInfo m_vinfo;
     DBImgInfoList m_infos;

@@ -169,3 +169,36 @@ void ViewPanel::initNavigation()
         m_nav->setVisible(false);
     });
 }
+
+void ViewPanel::initImageStrip()
+{
+    if (m_imageStrip)
+        return;
+
+    m_imageStrip = new ImageStrip(this);
+    m_imageStrip.setAnchor(Qt::AnchorLeft, this, Qt::AnchorLeft);
+    m_imageStrip.setAnchor(Qt::AnchorBottom, this, Qt::AnchorBottom);
+    m_imageStrip.setBottomMargin(4);
+    m_imageStrip->setVisible(false);
+
+    connect(m_imageStrip, &ImageStrip::imageClicked, this, [=](const QString &path) {
+        if (m_infos.isEmpty())
+            return;
+        for (auto it = m_infos.cbegin(); it != m_infos.cend(); ++it) {
+            if (it->filePath == path) {
+                m_current = it;
+                openImage(m_current->filePath, m_vinfo.inDatabase);
+                break;
+            }
+        }
+    });
+    connect(m_imageStrip, &ImageStrip::previousRequested, this, &ViewPanel::showPrevious);
+    connect(m_imageStrip, &ImageStrip::nextRequested, this, &ViewPanel::showNext);
+}
+
+void ViewPanel::ensureImageStrip()
+{
+    if (!m_imageStrip) {
+        initImageStrip();
+    }
+}

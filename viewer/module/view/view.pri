@@ -7,7 +7,8 @@ HEADERS += \
     $$PWD/scen/imageview.h \
     $$PWD/scen/graphicsitem.h \
     $$PWD/thumbnailwidget.h \
-    $$PWD/lockwidget.h
+    $$PWD/lockwidget.h \
+    $$PWD/imagestrip.h \
     $$PWD/qrcoderesultshower.h \
 
 SOURCES += \
@@ -22,6 +23,7 @@ SOURCES += \
     $$PWD/scen/graphicsitem.cpp \
     $$PWD/thumbnailwidget.cpp \
     $$PWD/lockwidget.cpp \
+    $$PWD/imagestrip.cpp \
     $$PWD/qrcoderesultshower.cpp \
 
 RESOURCES += \

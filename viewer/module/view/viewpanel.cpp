@@ -495,6 +495,11 @@ void ViewPanel::resizeEvent(QResizeEvent *e)
     } else if (m_viewB->isFitWindow()) {
         m_viewB->fitWindow();
     }
+
+    if (m_imageStrip) {
+        m_imageStrip->setFixedWidth(width());
+        m_imageStrip->setVisible(!window()->isFullScreen() && !m_infos.isEmpty());
+    }
 }
 
 void ViewPanel::timerEvent(QTimerEvent *e)
@@ -627,6 +632,33 @@ void ViewPanel::onViewImage(const SignalManager::ViewInfo &vinfo)
     }
 
     openImage(m_current->filePath);
+
+    // Expand to all images in the same directory if only one image
+#ifdef LITE_DIV
+    if (m_infos.size() == 1) {
+        eatImageDirIterator();
+    }
+#else
+    if (m_infos.size() == 1 && !vinfo.inDatabase) {
+        m_infos = getImageInfos(getFileInfos(vinfo.path));
+        m_current = m_infos.cbegin();
+        for (; m_current != m_infos.cend(); m_current++) {
+            if (m_current->filePath == vinfo.path) {
+                break;
+            }
+        }
+    }
+#endif
+
+    // Update image strip
+    if (!m_infos.isEmpty()) {
+        ensureImageStrip();
+    }
+    if (m_imageStrip) {
+        m_imageStrip->setPaths(paths());
+        m_imageStrip->setCurrentImage(m_current->filePath);
+        m_imageStrip->setVisible(!window()->isFullScreen() && !m_infos.isEmpty());
+    }
 }
 
 void ViewPanel::toggleFullScreen()
@@ -661,6 +693,9 @@ bool ViewPanel::showPrevious()
     --m_current;
 
     openImage(m_current->filePath, m_vinfo.inDatabase);
+    if (m_imageStrip) {
+        m_imageStrip->setCurrentImage(m_current->filePath);
+    }
     return true;
 }
 
@@ -683,6 +718,9 @@ bool ViewPanel::showNext()
     }
 
     openImage(m_current->filePath, m_vinfo.inDatabase);
+    if (m_imageStrip) {
+        m_imageStrip->setCurrentImage(m_current->filePath);
+    }
     return true;
 }
 
@@ -698,6 +736,9 @@ void ViewPanel::removeCurrentImage()
 #endif
 
     m_infos.removeAt(imageIndex(m_current->filePath));
+    if (m_imageStrip) {
+        m_imageStrip->setPaths(paths());
+    }
     if (! showNext()) {
         if (! showPrevious()) {
             qDebug() << "No images to show!";
@@ -705,6 +746,10 @@ void ViewPanel::removeCurrentImage()
             emit imageChanged("");
             m_emptyWidget->setThumbnailImage(QPixmap());
             m_stack->setCurrentIndex(1);
+            if (m_imageStrip) {
+                m_imageStrip->clear();
+                m_imageStrip->setVisible(false);
+            }
         }
     }
 }
@@ -849,4 +894,8 @@ void ViewPanel::openImage(const QString &path, bool inDB)
     }
 
     QTimer::singleShot(0, m_viewB, &ImageView::autoFit);
+
+    if (m_imageStrip) {
+        m_imageStrip->setCurrentImage(path);
+    }
 }
