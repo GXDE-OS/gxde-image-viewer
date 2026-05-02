@@ -24,6 +24,7 @@
 #include <QListView>
 #include <QStyledItemDelegate>
 #include <QStandardItemModel>
+#include <QTimer>
 #include <dimagebutton.h>
 
 DWIDGET_USE_NAMESPACE
@@ -93,6 +94,7 @@ private:
     bool m_hovered;
     int m_visibleY;
     int m_hiddenY;
+    QTimer *m_hoverTimer;
 };
 
 #endif // IMAGESTRIP_H

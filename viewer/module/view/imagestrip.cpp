@@ -26,6 +26,7 @@
 #include <QWheelEvent>
 #include <QEnterEvent>
 #include <QtConcurrent>
+#include <QPropertyAnimation>
 
 namespace {
 
@@ -35,7 +36,7 @@ const int ITEM_SPACING = 4;
 const int STRIP_HEIGHT = THUMB_SIZE + ITEM_MARGIN * 2;
 const int ARROW_BUTTON_SIZE = 24;
 const int BOTTOM_MARGIN = 4;
-const int SLIDE_HINT = 6;
+const int SLIDE_HINT = 2;
 
 }
 
@@ -137,6 +138,31 @@ ImageStrip::ImageStrip(QWidget *parent)
     initUI();
     connect(dApp->viewerTheme, &ViewerThemeManager::viewerThemeChanged,
             this, &ImageStrip::onThemeChanged);
+
+    m_hoverTimer = new QTimer(this);
+    m_hoverTimer->setInterval(100);
+    connect(m_hoverTimer, &QTimer::timeout, this, [this]() {
+        QWidget *p = parentWidget();
+        if (!p || !isVisible())
+            return;
+
+        QPoint parentPos = p->mapFromGlobal(QCursor::pos());
+        int visibleY = p->height() - STRIP_HEIGHT - BOTTOM_MARGIN;
+        QRect triggerRect(0, visibleY, p->width(), STRIP_HEIGHT);
+
+        if (triggerRect.contains(parentPos)) {
+            if (!m_hovered) {
+                m_hovered = true;
+                slideIn();
+            }
+        } else {
+            if (m_hovered) {
+                m_hovered = false;
+                slideOut();
+            }
+        }
+    });
+    m_hoverTimer->start();
 }
 
 void ImageStrip::initUI()
@@ -329,7 +355,44 @@ void ImageStrip::setCurrentImage(const QString &path)
         QString itemPath = index.data(Qt::UserRole + 1).toString();
         if (itemPath == path) {
             m_listView->selectionModel()->setCurrentIndex(index, QItemSelectionModel::ClearAndSelect);
-            m_listView->scrollTo(index, QAbstractItemView::PositionAtCenter);
+
+            QRect itemRect = m_listView->visualRect(index);
+            QRect viewportRect = m_listView->viewport()->rect();
+
+            if (!itemRect.isEmpty() && !viewportRect.isEmpty()) {
+                int itemWidth = itemRect.width() + m_listView->spacing();
+                if (itemWidth <= m_listView->spacing())
+                    itemWidth = THUMB_SIZE + ITEM_MARGIN * 2 + ITEM_SPACING;
+
+                int edgeThreshold = itemWidth * 2;
+                QScrollBar *sb = m_listView->horizontalScrollBar();
+                int currentVal = sb->value();
+                int targetVal = currentVal;
+
+                if (itemRect.left() < viewportRect.left() + edgeThreshold) {
+                    // 太靠左，向右移动内容（减小滚动条值）
+                    int desiredLeft = viewportRect.left() + itemWidth * 3;
+                    targetVal = currentVal - (desiredLeft - itemRect.left());
+                } else if (itemRect.right() > viewportRect.right() - edgeThreshold) {
+                    // 太靠右，向左移动内容（增加滚动条值）
+                    int desiredRight = viewportRect.right() - itemWidth * 3;
+                    targetVal = currentVal + (itemRect.right() - desiredRight);
+                }
+
+                targetVal = qMax(sb->minimum(), qMin(sb->maximum(), targetVal));
+
+                if (targetVal != currentVal) {
+                    QPropertyAnimation *anim = new QPropertyAnimation(sb, "value");
+                    anim->setDuration(300);
+                    anim->setEasingCurve(QEasingCurve::InOutCubic);
+                    anim->setStartValue(currentVal);
+                    anim->setEndValue(targetVal);
+                    anim->start(QAbstractAnimation::DeleteWhenStopped);
+                }
+            } else {
+                m_listView->scrollTo(index, QAbstractItemView::EnsureVisible);
+            }
+
             requestThumbnail(i);
             return;
         }

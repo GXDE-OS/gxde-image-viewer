@@ -661,6 +661,7 @@ void ViewPanel::onViewImage(const SignalManager::ViewInfo &vinfo)
     if (m_imageStrip) {
         m_imageStrip->setPaths(paths());
         m_imageStrip->setCurrentImage(m_current->filePath);
+        m_imageStrip->setFixedWidth(width());
         m_imageStrip->setVisible(!window()->isFullScreen() && !m_infos.isEmpty());
         if (m_imageStrip->isVisible())
             m_imageStrip->updatePosition();
