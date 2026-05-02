@@ -1,3 +1,11 @@
+gxde-image-viewer (1.6.2) unstable; urgency=medium
+
+  * 添加图片缩略图条功能
+  * 实现图片条带悬停显示和隐藏动画
+  * 优化缩略图滚动效果
+
+ -- shenmo <jifengshenmo@outlook.com>  Sat, 02 May 2026 21:51:47 +0800
+
 gxde-image-viewer (1.6.1) UNRELEASED; urgency=medium
 
   * 新增幻灯片功能
