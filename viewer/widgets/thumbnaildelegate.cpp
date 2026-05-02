@@ -94,7 +94,9 @@ void ThumbnailDelegate::paint(QPainter *painter,
 //    pmp.end();
     painter->fillRect(rect, QBrush(utils::common::LIGHT_CHECKER_COLOR));
     using namespace utils::image;
-    painter->drawPixmap(rect, cutSquareImage(getThumbnail(data.path), rect.size() * ratio));
+    QPixmap pix = cutSquareImage(thumbnail(data), rect.size() * ratio);
+    pix.setDevicePixelRatio(ratio);
+    painter->drawPixmap(rect, pix);
 
     // Draw inside border
     QPen p(selected ? utils::common::BORDER_COLOR_SELECTED : m_borderColor,

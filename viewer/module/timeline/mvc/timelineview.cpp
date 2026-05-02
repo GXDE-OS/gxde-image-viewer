@@ -631,6 +631,7 @@ void TimelineView::updatePaintingIndexs()
 void TimelineView::onScrolled()
 {
     updatePaintingIndexs();
+    viewport()->update();
 }
 
 void TimelineView::mouseReleaseEvent(QMouseEvent *e)

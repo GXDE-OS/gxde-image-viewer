@@ -52,6 +52,7 @@ const int TOP_TOOLBAR_HEIGHT = 39;
 const QString FAVORITES_ALBUM_NAME = "My favorite";
 const QString RECENT_IMPORTED_ALBUM = "Recent imported";
 const QString SHORTCUTVIEW_GROUP = "SHORTCUTVIEW";
+const int MODEL_THUMBNAIL_SIZE = 128;
 
 QString ss(const QString &text)
 {
@@ -203,7 +204,8 @@ void ImagesView::insertItem(const DBImgInfo &info, bool update)
     ThumbnailListView::ItemInfo vi;
     vi.name = info.fileName;
     vi.path = info.filePath;
-    vi.thumb = cutSquareImage(getThumbnail(vi.path, true));
+    vi.thumb = cutSquareImage(getThumbnail(vi.path, true),
+                              QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE));
 
     m_view->insertItem(vi);
     // Update tip's info
@@ -222,7 +224,8 @@ void ImagesView::insertItems(const DBImgInfoList &infos)
         ThumbnailListView::ItemInfo vi;
         vi.name = info.fileName;
         vi.path = info.filePath;
-        vi.thumb = cutSquareImage(getThumbnail(vi.path, true));
+        vi.thumb = cutSquareImage(getThumbnail(vi.path, true),
+                                  QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE));
 
         m_view->insertItem(vi);
     }
@@ -613,7 +616,8 @@ void LoadThread::run()
         ThumbnailListView::ItemInfo vi;
         vi.name = info.fileName;
         vi.path = info.filePath;
-        vi.thumb = cutSquareImage(getThumbnail(vi.path, true));
+        vi.thumb = cutSquareImage(getThumbnail(vi.path, true),
+                                  QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE));
         emit ready(vi);
     }
 }

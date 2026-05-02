@@ -131,7 +131,7 @@ void TimelineDelegate::paint(QPainter *painter,
         using namespace utils::image;
 
         const auto ratio = qApp->devicePixelRatio();
-        QPixmap pix = cutSquareImage(getThumbnail(data.path), rect.size() * ratio);
+        QPixmap pix = cutSquareImage(thumbnail(data), rect.size() * ratio);
         pix.setDevicePixelRatio(ratio);
         painter->drawPixmap(rect, pix);
 

@@ -35,6 +35,7 @@ namespace {
 
 const int TOP_TOOLBAR_HEIGHT = 39;
 const int BOTTOM_TOOLBAR_HEIGHT = 22;
+const int MODEL_THUMBNAIL_SIZE = 128;
 const QString SCANPATHS_GROUP = "SCANPATHSGROUP";
 const QString SCANPATHS_KEY = "SCANPATHSKEY";
 
@@ -112,7 +113,8 @@ void TimelineFrame::updateThumbnail(const QString &path)
     QBuffer inBuffer( &data.thumbArray );
     inBuffer.open( QIODevice::WriteOnly );
     // write inPixmap into inByteArray
-    cutSquareImage(getThumbnail(data.path, true)).save( &inBuffer, "JPG" );
+    cutSquareImage(getThumbnail(data.path, true),
+                   QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE)).save(&inBuffer, "JPG", 75);
     data.timeline = timeToString(info.time, true);
 
     m_model.updateData(data);
@@ -354,7 +356,8 @@ void LoadThread::run()
         QBuffer inBuffer( &data.thumbArray );
         inBuffer.open( QIODevice::WriteOnly );
         // write inPixmap into inByteArray
-        if ( ! cutSquareImage(getThumbnail(data.path, true)).save( &inBuffer, "JPG", 100 )) {
+        if ( ! cutSquareImage(getThumbnail(data.path, true),
+                              QSize(MODEL_THUMBNAIL_SIZE, MODEL_THUMBNAIL_SIZE)).save(&inBuffer, "JPG", 75 )) {
 //             errorPaths << info.filePath;
         }
         data.timeline = timeToString(info.time, true);

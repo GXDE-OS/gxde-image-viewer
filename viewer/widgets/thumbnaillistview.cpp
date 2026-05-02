@@ -399,7 +399,7 @@ const QVariantList ThumbnailListView::getVariantList(const ItemInfo &info)
     QByteArray inByteArray;
     QBuffer inBuffer( &inByteArray );
     inBuffer.open( QIODevice::WriteOnly );
-    if ( !info.thumb.save( &inBuffer, "JPG", 100 )) { // write inPixmap into inByteArray
+    if ( !info.thumb.save( &inBuffer, "JPG", 75 )) { // write inPixmap into inByteArray
 //        qDebug() << "Write pixmap to buffer error!" << info.name;
     }
     datas.append(QVariant(inByteArray));
