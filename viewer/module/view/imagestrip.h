@@ -64,6 +64,9 @@ public:
     void setCurrentImage(const QString &path);
     void clear();
     void loadVisibleThumbnails();
+    void updatePosition();
+    void slideIn();
+    void slideOut();
 
 signals:
     void imageClicked(const QString &path);
@@ -71,7 +74,8 @@ signals:
     void nextRequested();
 
 protected:
-    void resizeEvent(QResizeEvent *event) override;
+    void enterEvent(QEvent *e) override;
+    void leaveEvent(QEvent *e) override;
 
 private:
     void initUI();
@@ -86,6 +90,9 @@ private:
     DImageButton *m_nextBtn;
     QString m_currentPath;
     QSet<int> m_loadedRows;
+    bool m_hovered;
+    int m_visibleY;
+    int m_hiddenY;
 };
 
 #endif // IMAGESTRIP_H

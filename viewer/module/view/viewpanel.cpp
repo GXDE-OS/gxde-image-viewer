@@ -499,6 +499,8 @@ void ViewPanel::resizeEvent(QResizeEvent *e)
     if (m_imageStrip) {
         m_imageStrip->setFixedWidth(width());
         m_imageStrip->setVisible(!window()->isFullScreen() && !m_infos.isEmpty());
+        if (m_imageStrip->isVisible())
+            m_imageStrip->updatePosition();
     }
 }
 
@@ -514,6 +516,8 @@ void ViewPanel::timerEvent(QTimerEvent *e)
 
 void ViewPanel::wheelEvent(QWheelEvent *e)
 {
+    if (m_imageStrip && m_imageStrip->underMouse())
+        return;
     if (m_viewB && !m_viewB->path().isEmpty())
         qApp->sendEvent(m_viewB->viewport(), e);
 }
@@ -658,6 +662,8 @@ void ViewPanel::onViewImage(const SignalManager::ViewInfo &vinfo)
         m_imageStrip->setPaths(paths());
         m_imageStrip->setCurrentImage(m_current->filePath);
         m_imageStrip->setVisible(!window()->isFullScreen() && !m_infos.isEmpty());
+        if (m_imageStrip->isVisible())
+            m_imageStrip->updatePosition();
     }
 }
 

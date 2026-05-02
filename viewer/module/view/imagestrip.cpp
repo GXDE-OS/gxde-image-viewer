@@ -23,8 +23,8 @@
 #include <QScrollBar>
 #include <QHBoxLayout>
 #include <QDebug>
-#include <QResizeEvent>
 #include <QWheelEvent>
+#include <QEnterEvent>
 #include <QtConcurrent>
 
 namespace {
@@ -34,6 +34,8 @@ const int ITEM_MARGIN = 4;
 const int ITEM_SPACING = 4;
 const int STRIP_HEIGHT = THUMB_SIZE + ITEM_MARGIN * 2;
 const int ARROW_BUTTON_SIZE = 24;
+const int BOTTOM_MARGIN = 4;
+const int SLIDE_HINT = 6;
 
 }
 
@@ -50,6 +52,7 @@ void ImageStripList::wheelEvent(QWheelEvent *e)
     } else {
         QListView::wheelEvent(e);
     }
+    e->accept();
 }
 
 ImageStripDelegate::ImageStripDelegate(QObject *parent)
@@ -127,6 +130,9 @@ ImageStrip::ImageStrip(QWidget *parent)
     , m_delegate(new ImageStripDelegate(this))
     , m_prevBtn(new DImageButton(this))
     , m_nextBtn(new DImageButton(this))
+    , m_hovered(false)
+    , m_visibleY(0)
+    , m_hiddenY(0)
 {
     initUI();
     connect(dApp->viewerTheme, &ViewerThemeManager::viewerThemeChanged,
@@ -212,6 +218,53 @@ void ImageStrip::updateArrowButtonState()
     m_nextBtn->setVisible(hasMultiple);
 }
 
+void ImageStrip::updatePosition()
+{
+    QWidget *p = parentWidget();
+    if (!p) return;
+
+    m_visibleY = p->height() - STRIP_HEIGHT - BOTTOM_MARGIN;
+    m_hiddenY = p->height() - SLIDE_HINT;
+
+    if (m_hovered) {
+        move(x(), m_visibleY);
+    } else {
+        move(x(), m_hiddenY);
+    }
+
+    loadVisibleThumbnails();
+}
+
+void ImageStrip::slideIn()
+{
+    emit requestStopAnimation();
+    moveWithAnimation(x(), m_visibleY);
+}
+
+void ImageStrip::slideOut()
+{
+    emit requestStopAnimation();
+    moveWithAnimation(x(), m_hiddenY);
+}
+
+void ImageStrip::enterEvent(QEvent *e)
+{
+    Q_UNUSED(e)
+    if (!m_hovered) {
+        m_hovered = true;
+        slideIn();
+    }
+}
+
+void ImageStrip::leaveEvent(QEvent *e)
+{
+    Q_UNUSED(e)
+    if (m_hovered) {
+        m_hovered = false;
+        slideOut();
+    }
+}
+
 void ImageStrip::setPaths(const QStringList &paths)
 {
     m_model->clear();
@@ -290,12 +343,6 @@ void ImageStrip::clear()
     m_currentPath.clear();
     m_loadedRows.clear();
     updateArrowButtonState();
-}
-
-void ImageStrip::resizeEvent(QResizeEvent *event)
-{
-    BlurFrame::resizeEvent(event);
-    loadVisibleThumbnails();
 }
 
 void ImageStrip::onThemeChanged(ViewerThemeManager::AppTheme theme)

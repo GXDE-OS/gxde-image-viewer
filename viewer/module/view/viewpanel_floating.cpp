@@ -176,9 +176,6 @@ void ViewPanel::initImageStrip()
         return;
 
     m_imageStrip = new ImageStrip(this);
-    m_imageStrip.setAnchor(Qt::AnchorLeft, this, Qt::AnchorLeft);
-    m_imageStrip.setAnchor(Qt::AnchorBottom, this, Qt::AnchorBottom);
-    m_imageStrip.setBottomMargin(4);
     m_imageStrip->setVisible(false);
 
     connect(m_imageStrip, &ImageStrip::imageClicked, this, [=](const QString &path) {
