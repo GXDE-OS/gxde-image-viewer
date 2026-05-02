@@ -51,7 +51,7 @@ protected:
     void run() Q_DECL_OVERRIDE;
 
 signals:
-    void ready(QList<TimelineItem::ItemData> datas);
+    void ready(TimelineItemDataList datas);
 
 private:
     const QStringList scanpathsHash();
@@ -82,7 +82,7 @@ TimelineFrame::TimelineFrame(QWidget *parent)
     , m_pendingScrollRangeUpdate(false)
 {
     qRegisterMetaType<TimelineItem::ItemData>("TimelineItem::ItemData");
-    qRegisterMetaType<QList<TimelineItem::ItemData> >("QList<TimelineItem::ItemData>");
+    qRegisterMetaType<TimelineItemDataList>("TimelineItemDataList");
 
     m_insertTimer->setInterval(16);
     connect(m_insertTimer, &QTimer::timeout,
@@ -301,7 +301,7 @@ void TimelineFrame::initItems()
     t->start();
 }
 
-void TimelineFrame::enqueueItems(const QList<TimelineItem::ItemData> &datas)
+void TimelineFrame::enqueueItems(const TimelineItemDataList &datas)
 {
     m_pendingItems << datas;
     if (!m_insertTimer->isActive()) {
@@ -408,7 +408,7 @@ void LoadThread::run()
     using namespace utils::image;
 
     const QStringList hashs = scanpathsHash();
-    QList<TimelineItem::ItemData> batch;
+    TimelineItemDataList batch;
     for (auto info : m_infos) {
         // Do not check the thumbnail for unplug devices' image
         if (onMountDevice(info.filePath) && ! mountDeviceExist(info.filePath)) {

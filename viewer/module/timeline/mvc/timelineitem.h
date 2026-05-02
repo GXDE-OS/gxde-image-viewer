@@ -59,7 +59,9 @@ private:
     TimelineItem *m_parentItem;
 };
 
+typedef QList<TimelineItem::ItemData> TimelineItemDataList;
+
 Q_DECLARE_METATYPE(TimelineItem::ItemData)
-Q_DECLARE_METATYPE(QList<TimelineItem::ItemData>)
+Q_DECLARE_METATYPE(TimelineItemDataList)
 
 #endif // TIMELINEITEM_H

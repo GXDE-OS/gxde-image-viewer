@@ -59,7 +59,7 @@ private:
     void initView();
     void initTopTip();
     void initItems();
-    void enqueueItems(const QList<TimelineItem::ItemData> &datas);
+    void enqueueItems(const TimelineItemDataList &datas);
     void processPendingItems();
     void insertItem(const TimelineItem::ItemData &data);
     void updateVisibleThumbnails();
@@ -75,7 +75,7 @@ private:
     int                     m_thumbnailSize;
     QStringList             m_loadedPaths;
     QSet<QString>           m_loadedPathSet;
-    QList<TimelineItem::ItemData> m_pendingItems;
+    TimelineItemDataList    m_pendingItems;
     QTimer                  *m_insertTimer;
     bool                    m_pendingScrollRangeUpdate;
 };
