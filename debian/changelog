@@ -1,3 +1,11 @@
+gxde-image-viewer (1.7.0) unstable; urgency=medium
+
+  * 优化时间线和相册大量图片场景下的缩略图加载性能
+  * 修复时间线加载过程中快速滚动后图片项不刷新的问题
+  * 修复查看界面左上角 Logo 显示问题
+
+ -- shenmo <jifengshenmo@outlook.com>  Sun, 03 May 2026 09:44:35 +0800
+
 gxde-image-viewer (1.6.3) unstable; urgency=medium
 
   * 启用完整功能并优化数据库操作

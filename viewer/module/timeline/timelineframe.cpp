@@ -314,6 +314,11 @@ void TimelineFrame::processPendingItems()
         ++count;
     }
 
+    if (count > 0) {
+        m_view->updateScrollbarRange();
+        m_view->updateView();
+    }
+
     if (m_pendingItems.isEmpty()) {
         m_insertTimer->stop();
         if (m_pendingScrollRangeUpdate) {
