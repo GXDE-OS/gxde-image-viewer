@@ -77,11 +77,13 @@ signals:
 protected:
     void enterEvent(QEvent *e) override;
     void leaveEvent(QEvent *e) override;
+    void resizeEvent(QResizeEvent *e) override;
 
 private:
     void initUI();
     void onThemeChanged(ViewerThemeManager::AppTheme theme);
     void updateArrowButtonState();
+    void updateArrowButtonGeometry();
     void requestThumbnail(int row);
 
     ImageStripList *m_listView;

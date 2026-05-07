@@ -35,6 +35,7 @@ const int ITEM_MARGIN = 4;
 const int ITEM_SPACING = 4;
 const int STRIP_HEIGHT = THUMB_SIZE + ITEM_MARGIN * 2;
 const int ARROW_BUTTON_SIZE = 24;
+const int ARROW_BUTTON_Y_OFFSET = 3;
 const int BOTTOM_MARGIN = 4;
 const int SLIDE_HINT = 2;
 
@@ -215,11 +216,12 @@ void ImageStrip::initUI()
     m_listView->viewport()->setAttribute(Qt::WA_TranslucentBackground);
 
     QHBoxLayout *layout = new QHBoxLayout(this);
-    layout->setContentsMargins(ITEM_MARGIN, 0, ITEM_MARGIN, 0);
+    layout->setContentsMargins(ITEM_MARGIN + ARROW_BUTTON_SIZE + ITEM_SPACING, 0,
+                               ITEM_MARGIN + ARROW_BUTTON_SIZE + ITEM_SPACING, 0);
     layout->setSpacing(4);
-    layout->addWidget(m_prevBtn, 0, Qt::AlignVCenter);
     layout->addWidget(m_listView, 1);
-    layout->addWidget(m_nextBtn, 0, Qt::AlignVCenter);
+
+    updateArrowButtonGeometry();
 
     connect(m_listView, &QListView::clicked, this, [=](const QModelIndex &index) {
         if (index.isValid()) {
@@ -242,6 +244,14 @@ void ImageStrip::updateArrowButtonState()
     bool hasMultiple = m_model->rowCount() > 1;
     m_prevBtn->setVisible(hasMultiple);
     m_nextBtn->setVisible(hasMultiple);
+    updateArrowButtonGeometry();
+}
+
+void ImageStrip::updateArrowButtonGeometry()
+{
+    const int y = (height() - ARROW_BUTTON_SIZE) / 2 + ARROW_BUTTON_Y_OFFSET;
+    m_prevBtn->move(ITEM_MARGIN, y);
+    m_nextBtn->move(width() - ITEM_MARGIN - ARROW_BUTTON_SIZE, y);
 }
 
 void ImageStrip::updatePosition()
@@ -289,6 +299,12 @@ void ImageStrip::leaveEvent(QEvent *e)
         m_hovered = false;
         slideOut();
     }
+}
+
+void ImageStrip::resizeEvent(QResizeEvent *e)
+{
+    BlurFrame::resizeEvent(e);
+    updateArrowButtonGeometry();
 }
 
 void ImageStrip::setPaths(const QStringList &paths)

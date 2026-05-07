@@ -1,3 +1,9 @@
+gxde-image-viewer (1.7.1) unstable; urgency=medium
+
+  * 修复查看界面底部图片列表左右箭头垂直位置偏上的问题
+
+ -- shenmo <jifengshenmo@outlook.com>  Thu, 07 May 2026 20:22:50 +0800
+
 gxde-image-viewer (1.7.0) unstable; urgency=medium
 
   * 优化时间线和相册大量图片场景下的缩略图加载性能
