@@ -1,3 +1,10 @@
+gxde-image-viewer (1.7.2) unstable; urgency=medium
+
+  * fix: 移除启动时强制设置默认图片查看器的逻辑
+    避免每次打开图片时覆盖 ~/.config/mimeapps.list
+
+ -- shenmo <jifengshenmo@outlook.com>  Sat, 09 May 2026 22:08:43 +0800
+
 gxde-image-viewer (1.7.1) unstable; urgency=medium
 
   * 修复查看界面底部图片列表左右箭头垂直位置偏上的问题

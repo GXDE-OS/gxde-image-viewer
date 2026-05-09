@@ -16,7 +16,6 @@
  */
 #include "application.h"
 #include "controller/commandline.h"
-#include "service/defaultimageviewer.h"
 
 #include <QApplication>
 #include <DLog>
@@ -36,14 +35,6 @@ int main(int argc, char *argv[])
     DLogManager::registerConsoleAppender();
     DLogManager::registerFileAppender();
     qDebug() << "LogFile:" << DLogManager::getlogFilePath();
-
-#ifndef LITE_DIV
-    if (!service::isDefaultImageViewer()) {
-        qDebug() << "Set defaultImage viewer succeed:" << service::setDefaultImageViewer(true);
-    } else {
-        qDebug() << "Deepin Image Viewer is defaultImage!";
-    }
-#endif
 
     CommandLine *cl = CommandLine::instance();
 
