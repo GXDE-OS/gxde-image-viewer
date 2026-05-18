@@ -40,6 +40,9 @@ public:
     void setMiddleContent(QWidget *content);
 
 protected:
+    void mousePressEvent(QMouseEvent* e) override;
+    void mouseMoveEvent(QMouseEvent* e) override;
+    void mouseReleaseEvent(QMouseEvent* e) override;
     void mouseDoubleClickEvent(QMouseEvent *e) override;
     void paintEvent(QPaintEvent *e) override;
 
@@ -95,6 +98,10 @@ private:
 #endif
     QMenu *m_menu;
     bool m_manager;
+
+    // （Wayland专用） 窗体拖拽状态
+    bool mIsMousePressed = false;
+    QPoint mDragPosStart;
 };
 
 #endif // TOPTOOLBAR_H

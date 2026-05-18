@@ -32,7 +32,9 @@
 #include <dwindowoptionbutton.h>
 #include <dtitlebar.h>
 
+#include <QApplication>
 #include <QDebug>
+#include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QPainter>
 #include <QProcess>
@@ -41,6 +43,7 @@
 #include <QMenu>
 #include <QStyleFactory>
 #include <QImageReader>
+#include <QWindow>
 
 DWIDGET_USE_NAMESPACE
 
@@ -110,6 +113,49 @@ void TopToolbar::mouseDoubleClickEvent(QMouseEvent *e)
 
     BlurFrame::mouseDoubleClickEvent(e);
 }
+
+// Patched by CharOfString: 修补程序使得在Wayland下可以拖拽标题栏
+void TopToolbar::mousePressEvent(QMouseEvent* e) {
+    // 如果是Wayland，且鼠标在标题栏上被按下，则记录拖拽开始的坐标
+    // 不急着调startSystemMove，为了保证双击最大化没毛病等到mouseMoveEvent再调用
+    if (e->button() == Qt::LeftButton
+            && QGuiApplication::platformName() == "wayland") {
+        mIsMousePressed = true;
+        mDragPosStart = e->globalPos();
+        return;
+    }
+    BlurFrame::mousePressEvent(e);
+}
+
+void TopToolbar::mouseMoveEvent(QMouseEvent* e) {
+    // 如果上述mousePressEvent中的条件满足，并且鼠标移动的距离超过Qt定义的拖动距离...
+    // 那么就可以使用startSystemMove开始拖动了（喜
+    // 这里曼哈顿距离够用了
+    if (mIsMousePressed
+            && (e->globalPos() - mDragPosStart).manhattanLength()
+               > QApplication::startDragDistance()) {
+        mIsMousePressed = false;
+
+        // 如果获取不到handle我也没辙了
+        if (QWindow* handle = window()->windowHandle()) {
+            handle->startSystemMove();
+        } else {
+            qCritical() << "Failed to get window handle during window move"
+                << "action halted!!";
+        }
+        return;
+    }
+    BlurFrame::mouseMoveEvent(e);
+}
+
+void TopToolbar::mouseReleaseEvent(QMouseEvent* e) {
+    // 释放鼠标时，需要重置状态
+    mIsMousePressed = false;
+    BlurFrame::mouseReleaseEvent(e);
+}
+
+// Patch结束
+
 void TopToolbar::onThemeChanged(ViewerThemeManager::AppTheme curTheme) {
     QLinearGradient lightLinearGrad;
     lightLinearGrad.setColorAt(0, QColor(255, 255, 255, 230));

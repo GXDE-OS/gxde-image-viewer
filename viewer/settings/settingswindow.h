@@ -18,6 +18,7 @@
 #define SETTINGSWINDOW_H
 
 #include <DMainWindow>
+#include <QPoint>
 
 DWIDGET_USE_NAMESPACE
 
@@ -30,6 +31,14 @@ public:
 
 protected:
     void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
+    void mousePressEvent(QMouseEvent* e) override;
+    void mouseMoveEvent(QMouseEvent* e) override;
+    void mouseReleaseEvent(QMouseEvent* e) override;
+
+private:
+    // （Wayland专用） 窗体拖拽状态
+    bool mIsMousePressed = false;
+    QPoint mDragPosStart;
 };
 
 #endif // SETTINGSWINDOW_H
