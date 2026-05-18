@@ -14,8 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef ALBUMDELEGATE_H
-#define ALBUMDELEGATE_H
+
+// 原header guard为ALBUMDELEGATE_H，应该是复制过来忘改了
+// QMake下可能没事，但CMake会报错，故修改
+
+#ifndef VIEWER_WIDGETS_THUMBNAILDELEGATE_H_
+#define VIEWER_WIDGETS_THUMBNAILDELEGATE_H_
 
 #include <QObject>
 #include <QDateTime>
@@ -58,4 +62,4 @@ private:
     QString  m_defaultThumbnail;
 };
 
-#endif // ALBUMDELEGATE_H
+#endif  // VIEWER_WIDGETS_THUMBNAILDELEGATE_H_

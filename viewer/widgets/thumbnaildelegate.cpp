@@ -176,6 +176,7 @@ void ThumbnailDelegate::onThemeChanged(ViewerThemeManager::AppTheme theme) {
 }
 
 #include "thumbnaildelegate.moc"
+
 TDThumbnailThread::TDThumbnailThread(const ThumbnailDelegate::ItemData &data)
     : QThread()
     , m_data(data)
