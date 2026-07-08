@@ -1,9 +1,10 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ast" version="2.1">
+<?xml version='1.0' encoding='utf-8'?>
+<TS language="ast" version="2.1">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation>Visor Deepin d&apos;imáxenes</translation>
+        <translation>Visor Deepin d'imáxenes</translation>
     </message>
     <message>
         <source>Version:</source>
@@ -136,7 +137,7 @@
     <name>Application</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation>Visor d&apos;imáxenes Deepin</translation>
+        <translation>Visor d'imáxenes Deepin</translation>
     </message>
 </context>
 <context>
@@ -170,7 +171,7 @@
     </message>
     <message>
         <source>Are you sure to add to the sync list and create the album named after this folder?</source>
-        <translation>¿De xuru que quies amestar al llistáu de sincronización y crear l&apos;álbum col nome d&apos;esta carpeta?</translation>
+        <translation>¿De xuru que quies amestar al llistáu de sincronización y crear l'álbum col nome d'esta carpeta?</translation>
     </message>
 </context>
 <context>
@@ -211,7 +212,7 @@
     <name>ImageInfoWidget</name>
     <message>
         <source>Image info</source>
-        <translation>Información d&apos;imaxe</translation>
+        <translation>Información d'imaxe</translation>
     </message>
 </context>
 <context>
@@ -273,7 +274,7 @@
     </message>
     <message>
         <source>Image info</source>
-        <translation>Información d&apos;imaxe</translation>
+        <translation>Información d'imaxe</translation>
     </message>
     <message>
         <source>Add</source>
@@ -293,7 +294,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Borrar</translation>
     </message>
 </context>
 <context>
@@ -326,7 +327,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"/>
+        <translation>Dimensión</translation>
     </message>
     <message>
         <source>File size</source>
@@ -338,15 +339,15 @@
     </message>
     <message>
         <source>Exposure mode</source>
-        <translation>Mou d&apos;esposición</translation>
+        <translation>Mou d'esposición</translation>
     </message>
     <message>
         <source>Exposure program</source>
-        <translation>Programa d&apos;esposición</translation>
+        <translation>Programa d'esposición</translation>
     </message>
     <message>
         <source>Exposure time</source>
-        <translation>Tiempu d&apos;esposición</translation>
+        <translation>Tiempu d'esposición</translation>
     </message>
     <message>
         <source>Flash</source>
@@ -390,14 +391,14 @@
     </message>
     <message>
         <source>Date captured</source>
-        <translation type="unfinished"/>
+        <translation>Fecha capturada</translation>
     </message>
 </context>
 <context>
     <name>PrintOptionsPage</name>
     <message>
         <source>No scaling</source>
-        <translation type="unfinished"/>
+        <translation>No escalada</translation>
     </message>
     <message>
         <source>Fit page to image</source>
@@ -425,7 +426,7 @@
     </message>
     <message>
         <source>Image Position</source>
-        <translation type="unfinished"/>
+        <translation>Posición d'imaxe</translation>
     </message>
     <message>
         <source>Scaling</source>
@@ -433,21 +434,21 @@
     </message>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"/>
+        <translation>Configuración d'imaxe</translation>
     </message>
 </context>
 <context>
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"/>
+        <translation>Configuración d'imaxe</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Blinds</source>
-        <translation type="unfinished"/>
+        <translation>Persianas</translation>
     </message>
     <message>
         <source>Switcher</source>
@@ -470,7 +471,7 @@
     </message>
     <message>
         <source>This directory is disabled to sync</source>
-        <translation>Esti direutoriu tien desactivao&apos;l sincronizar</translation>
+        <translation>Esti direutoriu tien desactivao'l sincronizar</translation>
     </message>
     <message>
         <source>Add folder</source>
@@ -497,7 +498,7 @@
     </message>
     <message>
         <source>The device has been removed</source>
-        <translation>Estráxose&apos;l preséu</translation>
+        <translation>Estráxose'l preséu</translation>
     </message>
     <message>
         <source>This directory no longer exists</source>
@@ -512,7 +513,7 @@
     <name>Shortcut</name>
     <message>
         <source>Image Viewing</source>
-        <translation>Visión d&apos;imáxenes</translation>
+        <translation>Visión d'imáxenes</translation>
     </message>
     <message>
         <source>Album</source>
@@ -572,7 +573,7 @@
     </message>
     <message>
         <source>Image info</source>
-        <translation>Información d&apos;imaxe</translation>
+        <translation>Información d'imaxe</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -612,7 +613,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Borrar</translation>
     </message>
 </context>
 <context>
@@ -657,7 +658,7 @@
     </message>
     <message>
         <source>End show</source>
-        <translation type="unfinished"/>
+        <translation>Fin show</translation>
     </message>
     <message>
         <source>Print</source>
@@ -697,7 +698,7 @@
     </message>
     <message>
         <source>Image info</source>
-        <translation>Información d&apos;imaxe</translation>
+        <translation>Información d'imaxe</translation>
     </message>
     <message>
         <source>New album</source>
@@ -716,7 +717,7 @@
     <name>SlideShowPanel</name>
     <message>
         <source>End show</source>
-        <translation type="unfinished"/>
+        <translation>Fin show</translation>
     </message>
     <message>
         <source>Pause/Play</source>
@@ -727,7 +728,7 @@
     <name>SlideshowFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"/>
+        <translation>Ajustes de diapositivas</translation>
     </message>
     <message>
         <source>Switch effect</source>
@@ -754,7 +755,7 @@
     </message>
     <message>
         <source>Image management</source>
-        <translation>Xestión d&apos;imáxenes</translation>
+        <translation>Xestión d'imáxenes</translation>
     </message>
     <message>
         <source>My favorite</source>
@@ -778,26 +779,26 @@
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished"/>
+        <translation>Desfavoritar</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished"/>
+        <translation>Favoritu</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Borrar</translation>
     </message>
 </context>
 <context>
     <name>ThumbnailWidget</name>
     <message>
         <source>No image files found</source>
-        <translation>Nun s&apos;alcontraron imáxenes</translation>
+        <translation>Nun s'alcontraron imáxenes</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"/>
+        <translation>Imaxe aberta</translation>
     </message>
 </context>
 <context>
@@ -851,7 +852,7 @@
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished"/>
+        <translation>Presentación de diapositivas</translation>
     </message>
     <message>
         <source>Print</source>
@@ -891,18 +892,18 @@
     </message>
     <message>
         <source>Image info</source>
-        <translation>Información d&apos;imaxe</translation>
+        <translation>Información d'imaxe</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Borrar</translation>
     </message>
 </context>
 <context>
     <name>TitleFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"/>
+        <translation>Ajustes de diapositivas</translation>
     </message>
     <message>
         <source>Effect</source>
@@ -952,11 +953,11 @@
     </message>
     <message>
         <source>Deepin Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation>El visor Deepin d&apos;imáxenes ye un visor d&apos;imáxenes modernu y suave.</translation>
+        <translation>El visor Deepin d'imáxenes ye un visor d'imáxenes modernu y suave.</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
-        <translation>Tien como carauterístiques la xestión, visión y edición básica d&apos;imáxenes.</translation>
+        <translation>Tien como carauterístiques la xestión, visión y edición básica d'imáxenes.</translation>
     </message>
     <message>
         <source>Dark theme</source>
@@ -964,7 +965,7 @@
     </message>
     <message>
         <source>Deepin Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"/>
+        <translation>Deepin Image Viewer ye un programa pa ver imáxenes con interfaz moderna y rendimientu suave.</translation>
     </message>
 </context>
 <context>
@@ -991,7 +992,7 @@
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished"/>
+        <translation>Presentación de diapositivas</translation>
     </message>
     <message>
         <source>Print</source>
@@ -1039,15 +1040,15 @@
     </message>
     <message>
         <source>Image info</source>
-        <translation>información d&apos;imaxe</translation>
+        <translation>información d'imaxe</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"/>
+        <translation>Borrar</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"/>
+        <translation>Imaxe aberta</translation>
     </message>
     <message>
         <source>All images</source>

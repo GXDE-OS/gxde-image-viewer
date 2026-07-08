@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="fr">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation>Visionneuse d&apos;images Deepin</translation>
+        <translation>Visionneuse d'images Deepin</translation>
     </message>
     <message>
         <source>Version:</source>
@@ -138,11 +137,11 @@
     <name>Application</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation type="vanished">Visionneuse d&apos;images Deepin</translation>
+        <translation type="vanished">Visionneuse d'images Deepin</translation>
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualiseur d'images GXDE</translation>
     </message>
 </context>
 <context>
@@ -164,7 +163,7 @@
     </message>
     <message>
         <source>Are you sure to add the pictures to the album?</source>
-        <translation>Êtes-vous sûr d&apos;ajouter cette image dans cet album ?</translation>
+        <translation>Êtes-vous sûr d'ajouter cette image dans cet album ?</translation>
     </message>
     <message>
         <source>Sync and Create</source>
@@ -176,34 +175,34 @@
     </message>
     <message>
         <source>Are you sure to add to the sync list and create the album named after this folder?</source>
-        <translation>Êtes-vous sûr d&apos;ajouter à la synchronisation et de créer l&apos;album lié à ce dossier ?</translation>
+        <translation>Êtes-vous sûr d'ajouter à la synchronisation et de créer l'album lié à ce dossier ?</translation>
     </message>
 </context>
 <context>
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Couper</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Retour</translation>
+        <translation>Arrière</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Rétablir</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Tourner dans le sens inverse des aiguilles d'une montre</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Tourner dans le sens des aiguilles d'une montre</translation>
     </message>
 </context>
 <context>
@@ -218,7 +217,7 @@
     </message>
     <message>
         <source>Failed to export</source>
-        <translation>Échec de l&apos;exportation</translation>
+        <translation>Échec de l'exportation</translation>
     </message>
     <message>
         <source>Save</source>
@@ -229,7 +228,7 @@
     <name>FileDeleteDialog</name>
     <message>
         <source>Are you sure to throw pictures to TRASH?</source>
-        <translation>Êtes-vous sûr d&apos;envoyer ces images dans la corbeille ?</translation>
+        <translation>Êtes-vous sûr d'envoyer ces images dans la corbeille ?</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Simple</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Annuler</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Sauvegarder</translation>
+        <translation>Économisez</translation>
     </message>
 </context>
 <context>
@@ -266,7 +265,7 @@
     <name>ImageView</name>
     <message>
         <source>This file contains multiple pages, please use Evince to view all pages.</source>
-        <translation>Ce fichier contient plusieurs pages, merci d&apos;utiliser Evince pour visualiser toutes les pages.</translation>
+        <translation>Ce fichier contient plusieurs pages, merci d'utiliser Evince pour visualiser toutes les pages.</translation>
     </message>
 </context>
 <context>
@@ -293,7 +292,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Enlever de l&apos;album</translation>
+        <translation>Enlever de l'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -313,7 +312,7 @@
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Définir comme fond d&apos;écran</translation>
+        <translation>Définir comme fond d'écran</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -333,7 +332,7 @@
     </message>
     <message>
         <source>Add to album</source>
-        <translation>Ajouter à l&apos;album</translation>
+        <translation>Ajouter à l'album</translation>
     </message>
     <message>
         <source>Add to new album</source>
@@ -355,7 +354,7 @@
     <name>LockWidget</name>
     <message>
         <source>You have no permission to view the image</source>
-        <translation>Vous n&apos;avez pas l&apos;autorisation de voir cette image</translation>
+        <translation>Vous n'avez pas l'autorisation de voir cette image</translation>
     </message>
 </context>
 <context>
@@ -386,15 +385,15 @@
     </message>
     <message>
         <source>Exposure mode</source>
-        <translation>Mode d&apos;exposition</translation>
+        <translation>Mode d'exposition</translation>
     </message>
     <message>
         <source>Exposure program</source>
-        <translation>Mode d&apos;exposition</translation>
+        <translation>Mode d'exposition</translation>
     </message>
     <message>
         <source>Exposure time</source>
-        <translation>Temps d&apos;exposition</translation>
+        <translation>Temps d'exposition</translation>
     </message>
     <message>
         <source>Flash</source>
@@ -430,7 +429,7 @@
     </message>
     <message>
         <source>Camera model</source>
-        <translation>Modèle d&apos;appareil photo</translation>
+        <translation>Modèle d'appareil photo</translation>
     </message>
     <message>
         <source>Lens model</source>
@@ -445,19 +444,19 @@
     <name>PrintOptionsPage</name>
     <message>
         <source>No scaling</source>
-        <translation>Pas de mise à l&apos;échelle</translation>
+        <translation>Pas de mise à l'échelle</translation>
     </message>
     <message>
         <source>Fit page to image</source>
-        <translation>Adapter la page à l&apos;image</translation>
+        <translation>Adapter la page à l'image</translation>
     </message>
     <message>
         <source>Fit image to page</source>
-        <translation>Ajuster l&apos;image à la page</translation>
+        <translation>Ajuster l'image à la page</translation>
     </message>
     <message>
         <source>Scale to:</source>
-        <translation>Échelle jusqu&apos;à :</translation>
+        <translation>Échelle jusqu'à :</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -473,22 +472,22 @@
     </message>
     <message>
         <source>Image Position</source>
-        <translation>Position de l&apos;image</translation>
+        <translation>Position de l'image</translation>
     </message>
     <message>
         <source>Scaling</source>
-        <translation>Mise à l&apos;échelle</translation>
+        <translation>Mise à l'échelle</translation>
     </message>
     <message>
         <source>Image Settings</source>
-        <translation>Paramètres de l&apos;image</translation>
+        <translation>Paramètres de l'image</translation>
     </message>
 </context>
 <context>
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation>Paramètres d&apos;image</translation>
+        <translation>Paramètres d'image</translation>
     </message>
 </context>
 <context>
@@ -514,19 +513,19 @@
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Résultat du décodage</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Résultat :</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Copier le texte</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir le navigateur</translation>
     </message>
 </context>
 <context>
@@ -568,7 +567,7 @@
     </message>
     <message>
         <source>This directory no longer exists</source>
-        <translation>Ce dossier n&apos;existe plus</translation>
+        <translation>Ce dossier n'existe plus</translation>
     </message>
     <message>
         <source>Calculating...</source>
@@ -579,7 +578,7 @@
     <name>Shortcut</name>
     <message>
         <source>Image Viewing</source>
-        <translation>Visionneuse d&apos;image</translation>
+        <translation>Visionneuse d'image</translation>
     </message>
     <message>
         <source>Album</source>
@@ -611,7 +610,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Enlever de l&apos;album</translation>
+        <translation>Enlever de l'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -631,7 +630,7 @@
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Définir comme fond d&apos;écran</translation>
+        <translation>Définir comme fond d'écran</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -736,7 +735,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Enlever de l&apos;album</translation>
+        <translation>Enlever de l'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -756,7 +755,7 @@
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Définir comme fond d&apos;écran</translation>
+        <translation>Définir comme fond d'écran</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -821,7 +820,7 @@
     </message>
     <message>
         <source>Image management</source>
-        <translation>Gestionnaire d&apos;image</translation>
+        <translation>Gestionnaire d'image</translation>
     </message>
     <message>
         <source>My favorite</source>
@@ -837,11 +836,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation>Tourner dans le sens inverse des aiguilles d&apos;une montre</translation>
+        <translation>Tourner dans le sens inverse des aiguilles d'une montre</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation>Tourner dans le sens des aiguilles d&apos;une montre</translation>
+        <translation>Tourner dans le sens des aiguilles d'une montre</translation>
     </message>
     <message>
         <source>Unfavorite</source>
@@ -860,7 +859,7 @@
     <name>ThumbnailWidget</name>
     <message>
         <source>No image files found</source>
-        <translation>Pas d&apos;images trouvées</translation>
+        <translation>Pas d'images trouvées</translation>
     </message>
     <message>
         <source>Open Image</source>
@@ -902,7 +901,7 @@
     </message>
     <message>
         <source>Add to album</source>
-        <translation>Ajouter à l&apos;album</translation>
+        <translation>Ajouter à l'album</translation>
     </message>
     <message>
         <source>Add to new album</source>
@@ -950,7 +949,7 @@
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Définir comme fond d&apos;écran</translation>
+        <translation>Définir comme fond d'écran</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -958,7 +957,7 @@
     </message>
     <message>
         <source>Image info</source>
-        <translation>Informations sur l&apos;image</translation>
+        <translation>Informations sur l'image</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1019,11 +1018,11 @@
     </message>
     <message>
         <source>Deepin Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="vanished">Deepin Image Viewer est un gestionnaire d&apos;images souple et moderne.</translation>
+        <translation type="vanished">Deepin Image Viewer est un gestionnaire d'images souple et moderne.</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
-        <translation>Il permet la gestion, la visualisation et l&apos;édition d&apos;images.</translation>
+        <translation>Il permet la gestion, la visualisation et l'édition d'images.</translation>
     </message>
     <message>
         <source>Dark theme</source>
@@ -1031,15 +1030,15 @@
     </message>
     <message>
         <source>Deepin Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="vanished">Deepin Image Viewer est un outil de visionnage d&apos;images avec une interface simple et des performances accrue.</translation>
+        <translation type="vanished">Deepin Image Viewer est un outil de visionnage d'images avec une interface simple et des performances accrue.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer est un outil de visualisation d'images avec une interface à la mode et des performances fluides.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer est un gestionnaire d'images élégant et fluide.</translation>
     </message>
 </context>
 <context>
@@ -1050,7 +1049,7 @@
     </message>
     <message>
         <source>Add to album</source>
-        <translation>Ajouter à l&apos;album</translation>
+        <translation>Ajouter à l'album</translation>
     </message>
     <message>
         <source>Add to new album</source>
@@ -1078,7 +1077,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Enlever de l&apos;album</translation>
+        <translation>Enlever de l'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -1106,7 +1105,7 @@
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Définir comme fond d&apos;écran</translation>
+        <translation>Définir comme fond d'écran</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -1114,7 +1113,7 @@
     </message>
     <message>
         <source>Image info</source>
-        <translation>Informations sur l&apos;image</translation>
+        <translation>Informations sur l'image</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1130,11 +1129,11 @@
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Image OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Décoder le QRCode</translation>
     </message>
 </context>
 </TS>

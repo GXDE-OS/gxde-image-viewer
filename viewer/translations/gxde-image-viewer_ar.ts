@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="ar">
 <context>
     <name>AboutDialog</name>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهد صور GXDE</translation>
     </message>
 </context>
 <context>
@@ -183,27 +182,27 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">إلغاء</translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>قطع</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">رجوع</translation>
+        <translation>الرجوع</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">تدوير عكس اتجاه عقارب الساعة</translation>
+        <translation>تدوير عكس عقارب الساعة</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">تدوير باتجاه عقارب الساعة</translation>
+        <translation>دور في اتجاه عقارب الساعة</translation>
     </message>
 </context>
 <context>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>بسيط</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">إلغاء</translation>
+        <translation>إلغاء</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">حفظ</translation>
+        <translation>حفظ</translation>
     </message>
 </context>
 <context>
@@ -266,7 +265,7 @@
     <name>ImageView</name>
     <message>
         <source>This file contains multiple pages, please use Evince to view all pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف يحتوي على عدة صفحات، يرجى استخدام Evince لمشاهدة جميع الصفحات.</translation>
     </message>
 </context>
 <context>
@@ -341,7 +340,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
 </context>
 <context>
@@ -374,7 +373,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>أبعاد</translation>
     </message>
     <message>
         <source>File size</source>
@@ -438,57 +437,57 @@
     </message>
     <message>
         <source>Date captured</source>
-        <translation type="unfinished"></translation>
+        <translation>تاريخ التقاط</translation>
     </message>
 </context>
 <context>
     <name>PrintOptionsPage</name>
     <message>
         <source>No scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>لا تكبير</translation>
     </message>
     <message>
         <source>Fit page to image</source>
-        <translation type="unfinished"></translation>
+        <translation>ملاءمة الصفحة للصورة</translation>
     </message>
     <message>
         <source>Fit image to page</source>
-        <translation type="unfinished"></translation>
+        <translation>ملاءمة الصورة للصفحة</translation>
     </message>
     <message>
         <source>Scale to:</source>
-        <translation type="unfinished"></translation>
+        <translation>مقياس إلى:</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>مليمترات</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>سنتيمترات</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished"></translation>
+        <translation>سنتيمترات</translation>
     </message>
     <message>
         <source>Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>موقع الصورة</translation>
     </message>
     <message>
         <source>Scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>توسيع</translation>
     </message>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>إعدادات الصورة</translation>
     </message>
 </context>
 <context>
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>إعدادات الصورة</translation>
     </message>
 </context>
 <context>
@@ -514,19 +513,22 @@
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>نتيجة فك التشفير</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>النتيجة:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>المتطلبات:
+1. إرجاع نتيجة الترجمة فقط، دون أي شرح أو تعليقات أو محتوى إضافي
+2. الحفاظ على تنسيق النص الأصلي ونقاط الترقيم
+3. التأكد من دقة الترجمة وطبيعتها وسلامتها اللغوية في اللغة المستهدفة</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>افتح المتصفح</translation>
     </message>
 </context>
 <context>
@@ -679,7 +681,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
 </context>
 <context>
@@ -829,31 +831,31 @@
     </message>
     <message>
         <source>1:1 Size</source>
-        <translation type="unfinished"></translation>
+        <translation>1:1 حجم</translation>
     </message>
     <message>
         <source>Fit to window</source>
-        <translation type="unfinished"></translation>
+        <translation>ملائم للنافذة</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">تدوير عكس اتجاه عقارب الساعة</translation>
+        <translation>تدوير عكس عقارب الساعة</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">تدوير باتجاه عقارب الساعة</translation>
+        <translation>دور في اتجاه عقارب الساعة</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">إزالة من المفضلة</translation>
+        <translation>غير مفضل</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">المفضلة</translation>
+        <translation>المفضل</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
 </context>
 <context>
@@ -864,7 +866,7 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>الصورة المفتوحة</translation>
     </message>
 </context>
 <context>
@@ -962,7 +964,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
 </context>
 <context>
@@ -1031,11 +1033,11 @@
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهد GXDE للصور هو أداة لعرض الصور تتميز واجهة أنيقة وأداء سلس.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهلة صور GXDE هي مدير صور أنيق وسلس.</translation>
     </message>
 </context>
 <context>
@@ -1114,23 +1116,23 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">حذف</translation>
+        <translation>حذف</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>الصورة المفتوحة</translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"></translation>
+        <translation>جميع الصور</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>تصوير النص</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>ترجمة الرمز القري</translation>
     </message>
 </context>
 </TS>

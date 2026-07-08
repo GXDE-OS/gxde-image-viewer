@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="zh_TW">
 <context>
     <name>AboutDialog</name>
@@ -187,7 +186,7 @@
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>剪下</translation>
     </message>
     <message>
         <source>Back</source>
@@ -195,7 +194,7 @@
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>恢復</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
@@ -244,7 +243,7 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>簡單</translation>
     </message>
     <message>
         <source>Cancel</source>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="id">
 <context>
     <name>AboutDialog</name>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer</translation>
     </message>
 </context>
 <context>
@@ -183,27 +182,27 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Batal</translation>
+        <translation>Batal</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Potong</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Kembali</translation>
+        <translation>Kembali</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Kembalikan</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Putar kebalikan arah jarum jam</translation>
+        <translation>Memutar berlawanan arah jarum jam</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Putar arah jarum jam</translation>
+        <translation>Putar searah jarum jam</translation>
     </message>
 </context>
 <context>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Sederhana</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Batal</translation>
+        <translation>Batal</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Simpan</translation>
+        <translation>Simpan</translation>
     </message>
 </context>
 <context>
@@ -438,7 +437,7 @@
     </message>
     <message>
         <source>Date captured</source>
-        <translation type="unfinished"></translation>
+        <translation>Tanggal ditangkap</translation>
     </message>
 </context>
 <context>
@@ -503,30 +502,36 @@
     </message>
     <message>
         <source>Sliding</source>
-        <translation type="unfinished"></translation>
+        <translation>Geser</translation>
     </message>
     <message>
         <source>Ring</source>
-        <translation type="unfinished"></translation>
+        <translation>Cincin</translation>
     </message>
 </context>
 <context>
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasil dekode</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasil:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Persyaratan:
+1. Hanya kembalikan hasil terjemahan, tanpa penjelasan, komentar, atau konten tambahan
+2. Pertahankan format asli dan tanda baca
+3. Pastikan terjemahan akurat, alami, dan idiomatis dalam bahasa target
+
+Teks asli:
+Salin teks</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Buka Browser</translation>
     </message>
 </context>
 <context>
@@ -599,7 +604,7 @@
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Pertunjukan slide</translation>
+        <translation>Presensi</translation>
     </message>
     <message>
         <source>End show</source>
@@ -720,7 +725,7 @@
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Pertunjukan slide</translation>
+        <translation>Presensi</translation>
     </message>
     <message>
         <source>End show</source>
@@ -783,7 +788,7 @@
     <name>SlideShowPanel</name>
     <message>
         <source>End show</source>
-        <translation type="unfinished">Akhiri tampilan</translation>
+        <translation>Tutup acara</translation>
     </message>
     <message>
         <source>Pause/Play</source>
@@ -794,11 +799,11 @@
     <name>SlideshowFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Slide</translation>
     </message>
     <message>
         <source>Switch effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Efek peralihan</translation>
     </message>
     <message>
         <source>Duration</source>
@@ -829,27 +834,27 @@
     </message>
     <message>
         <source>1:1 Size</source>
-        <translation type="unfinished"></translation>
+        <translation>1:1 Ukuran</translation>
     </message>
     <message>
         <source>Fit to window</source>
-        <translation type="unfinished"></translation>
+        <translation>Sesuaikan dengan jendela</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Putar kebalikan arah jarum jam</translation>
+        <translation>Memutar berlawanan arah jarum jam</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Putar arah jarum jam</translation>
+        <translation>Putar searah jarum jam</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Batalkan favorit</translation>
+        <translation>Tidak favorit</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Favorit</translation>
+        <translation>Kesukaan</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -898,7 +903,7 @@
     </message>
     <message>
         <source>You can add sync directory or drag and drop  images to timeline</source>
-        <translation type="unfinished"></translation>
+        <translation>Anda dapat menambahkan direktori sinkronisasi atau seret dan tarik gambar ke garis waktu</translation>
     </message>
     <message>
         <source>Add to album</source>
@@ -918,7 +923,7 @@
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Pertunjukan slide</translation>
+        <translation>Presensi</translation>
     </message>
     <message>
         <source>Print</source>
@@ -969,7 +974,7 @@
     <name>TitleFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Pengaturan Slide</translation>
     </message>
     <message>
         <source>Effect</source>
@@ -1019,19 +1024,19 @@
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fiturnya meliputi manajemen gambar, pemandangan gambar, dan penyuntingan gambar dasar.</translation>
     </message>
     <message>
         <source>Dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Tema gelap</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer adalah alat pemandangan gambar dengan antarmuka mode dan kinerja yang lancar.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer adalah pengelola gambar yang elegan &amp; halus.</translation>
     </message>
 </context>
 <context>
@@ -1058,7 +1063,7 @@
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Pertunjukan slide</translation>
+        <translation>Presensi</translation>
     </message>
     <message>
         <source>Print</source>
@@ -1110,23 +1115,23 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Hapus</translation>
+        <translation>Hapus</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished">Buka Gambar</translation>
+        <translation>Gambar terbuka</translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"></translation>
+        <translation>Semua gambar</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Gambar OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Terjemahkan kode QR</translation>
     </message>
 </context>
 </TS>

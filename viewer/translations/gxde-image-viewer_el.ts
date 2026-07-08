@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="el">
 <context>
     <name>AboutDialog</name>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Επεξεργαστής Εικόνας GXDE</translation>
     </message>
 </context>
 <context>
@@ -183,27 +182,27 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Ακύρωση</translation>
+        <translation>Ακύρωση</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Κόψτε</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Πίσω</translation>
+        <translation>Πίσω</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναίρεση</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Στρέψτε κατά το αντίθετο των δεικτών του ρολογιού</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Περιστροφή δεξιά</translation>
+        <translation>Περιστρέψτε προς τα δεξιά</translation>
     </message>
 </context>
 <context>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Απλό</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Ακύρωση</translation>
+        <translation>Ακύρωση</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Αποθήκευση</translation>
+        <translation>Αποθηκεύστε</translation>
     </message>
 </context>
 <context>
@@ -341,7 +340,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
 </context>
 <context>
@@ -374,7 +373,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαστάσεις</translation>
     </message>
     <message>
         <source>File size</source>
@@ -438,7 +437,7 @@
     </message>
     <message>
         <source>Date captured</source>
-        <translation type="unfinished"></translation>
+        <translation>Ημερομηνία καταγραφής</translation>
     </message>
 </context>
 <context>
@@ -488,7 +487,7 @@
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished">Ρυθμίσεις εικόνας</translation>
+        <translation>Επιλογές Εικόνας</translation>
     </message>
 </context>
 <context>
@@ -507,26 +506,26 @@
     </message>
     <message>
         <source>Ring</source>
-        <translation type="unfinished"></translation>
+        <translation>Δαχτυλίδι</translation>
     </message>
 </context>
 <context>
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποκωδικοποιημένο αποτέλεσμα</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτέλεσμα:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτυχία</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιξε Περιηγητή</translation>
     </message>
 </context>
 <context>
@@ -659,474 +658,486 @@
     </message>
     <message>
         <source>New album</source>
-        <translation type="unfinished">Νέο άλμπουμ</translation>
+        <translation>Νέο άλμπουμ</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished">Μετονομασία</translation>
+        <translation>Μετονομασία</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Έξοδος</translation>
     </message>
     <message>
         <source>Display shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση συντομεύσεων</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
 </context>
 <context>
     <name>ShortcutEditor</name>
     <message>
         <source>Please enter a new shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλώ εισάγετε ένα νέο συντομεύμα</translation>
     </message>
 </context>
 <context>
     <name>ShortcutFrame</name>
     <message>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Συντόμευση</translation>
     </message>
     <message>
         <source>View Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Προβολή Εικόνας</translation>
     </message>
     <message>
         <source>Album</source>
-        <translation type="unfinished">Άλμπουμ</translation>
+        <translation>Άλμπουμ</translation>
     </message>
     <message>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Επαναφορά Προεπιλογών</translation>
     </message>
 </context>
 <context>
     <name>ShortcutKey</name>
     <message>
         <source>View</source>
-        <translation type="unfinished">Προβολή</translation>
+        <translation>Προβολή</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Πλήρης οθόνη</translation>
+        <translation>Ολοέκρανη</translation>
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Παρουσίαση εικόνων</translation>
+        <translation>Παρουσίαση διαφανειών</translation>
     </message>
     <message>
         <source>End show</source>
-        <translation type="unfinished">Τέλος παρουσίασης</translation>
+        <translation>Τέλος εκδήλωσης</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Εκτύπωση</translation>
+        <translation>Αποτύπωση</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Αντιγραφή</translation>
+        <translation>Απαιτήσεις:
+1. Επιστρέψτε μόνο το αποτέλεσμα μετάφρασης, χωρίς καμία εξήγηση, σχόλια ή επιπλέον περιεχόμενο
+2. Διατηρήστε την αρχική μορφοποίηση και στίξηση
+3. Βεβαιωθείτε ότι η μετάφραση είναι ακριβής, φυσική και ιδιομορφία στη γλώσσα προορισμού</translation>
     </message>
     <message>
         <source>Remove from album</source>
-        <translation type="unfinished"></translation>
+        <translation>Αφαίρεση από άλμπουμ</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Αγαπημένο</translation>
+        <translation>Αγαπημένο</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Μη αγαπημένο</translation>
+        <translation>Αποθέτηση από αγαπημένα</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Περιστροφή δεξιά</translation>
+        <translation>Περιστρέψτε προς τα δεξιά</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Στρέψτε κατά το αντίθετο των δεικτών του ρολογιού</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation type="unfinished">Θέσε ως ταπετσαρία</translation>
+        <translation>Ορίστε ως φόντο</translation>
     </message>
     <message>
         <source>Display in file manager</source>
-        <translation type="unfinished">Προβολή στον διαχειριστή αρχείον</translation>
+        <translation>Εμφάνιση στο διαχειριστής αρχείων</translation>
     </message>
     <message>
         <source>Image info</source>
-        <translation type="unfinished">Πληροφοριες εικονας</translation>
+        <translation>Εικόνα πληροφορίες</translation>
     </message>
     <message>
         <source>New album</source>
-        <translation type="unfinished">Νέο άλμπουμ</translation>
+        <translation>Νέο άλμπουμ</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished">Μετονομασία</translation>
+        <translation>Μετονομασία</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
 </context>
 <context>
     <name>SlideShowPanel</name>
     <message>
         <source>End show</source>
-        <translation type="unfinished">Τέλος παρουσίασης</translation>
+        <translation>Τέλος εκδήλωσης</translation>
     </message>
     <message>
         <source>Pause/Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Παύση/Αναπαύση</translation>
     </message>
 </context>
 <context>
     <name>SlideshowFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμίσεις διαφανειών</translation>
     </message>
     <message>
         <source>Switch effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή αποτελέσματος</translation>
     </message>
     <message>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάρκεια</translation>
     </message>
     <message>
         <source>Switch duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάρκεια μεταγωγής</translation>
     </message>
     <message>
         <source>second</source>
-        <translation type="unfinished"></translation>
+        <translation>δεύτερος</translation>
     </message>
 </context>
 <context>
     <name>TTLContent</name>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Πίσω</translation>
+        <translation>Πίσω</translation>
     </message>
     <message>
         <source>Image management</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιχείρηση διαχείρισης εικόνας</translation>
     </message>
     <message>
         <source>My favorite</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αγαπημένο μου</translation>
     </message>
     <message>
         <source>1:1 Size</source>
-        <translation type="unfinished"></translation>
+        <translation>1:1 Μέγεθος</translation>
     </message>
     <message>
         <source>Fit to window</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσαρμοσμένο στο παράθυρο</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Στρέψτε κατά το αντίθετο των δεικτών του ρολογιού</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Περιστροφή δεξιά</translation>
+        <translation>Περιστρέψτε προς τα δεξιά</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Μη αγαπημένο</translation>
+        <translation>Αποθέτηση από αγαπημένα</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Αγαπημένο</translation>
+        <translation>Αγαπημένο</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
 </context>
 <context>
     <name>ThumbnailWidget</name>
     <message>
         <source>No image files found</source>
-        <translation type="unfinished"></translation>
+        <translation>Κανένα αρχείο εικόνας δεν βρέθηκε</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιγμα Εικόνας</translation>
     </message>
 </context>
 <context>
     <name>TimelineBTContent</name>
     <message>
         <source>%1 image</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 εικόνα</translation>
     </message>
     <message>
         <source>%1 images</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 εικόνες</translation>
     </message>
     <message>
         <source>Manage sync</source>
-        <translation type="unfinished">Διαχείριση συγχρονισμού</translation>
+        <translation>Διαχείριση συγχρονισμού</translation>
     </message>
     <message>
         <source>Syncing: </source>
-        <translation type="unfinished">Συγχρονίζει:</translation>
+        <translation>Συγχρονισμός:</translation>
     </message>
 </context>
 <context>
     <name>TimelinePanel</name>
     <message>
         <source>Album</source>
-        <translation type="unfinished">Άλμπουμ</translation>
+        <translation>Άλμπουμ</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Προσθήκη</translation>
+        <translation>Προσθέστε</translation>
     </message>
     <message>
         <source>You can add sync directory or drag and drop  images to timeline</source>
-        <translation type="unfinished">Μπορείτε να επιλέξετε φάκελο χρονισμού ή να σύρετε τις εικόνες στο χρονοδιαγραμμα</translation>
+        <translation>Μπορείτε να προσθέσετε κατάλογο συγχρονισμού ή να σύρετε και να αφήσετε εικόνες στη γραμμή χρόνου</translation>
     </message>
     <message>
         <source>Add to album</source>
-        <translation type="unfinished">Προσθήκη στο άλμπουμ</translation>
+        <translation>Προσθήκη στο άλμπουμ</translation>
     </message>
     <message>
         <source>Add to new album</source>
-        <translation type="unfinished">Προσθήκη σε νέο άλμπουμ</translation>
+        <translation>Προσθέστε στο νέο άλμπουμ</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished">Προβολή</translation>
+        <translation>Προβολή</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Πλήρης οθόνη</translation>
+        <translation>Ολοέκρανη</translation>
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Παρουσίαση εικόνων</translation>
+        <translation>Παρουσίαση διαφανειών</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Εκτύπωση</translation>
+        <translation>Αποτύπωση</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Αντιγραφή</translation>
+        <translation>Απαιτήσεις:
+1. Επιστρέψτε μόνο το αποτέλεσμα μετάφρασης, χωρίς καμία εξήγηση, σχόλια ή επιπλέον περιεχόμενο
+2. Διατηρήστε την αρχική μορφοποίηση και στίξηση
+3. Βεβαιωθείτε ότι η μετάφραση είναι ακριβής, φυσική και ιδιομορφία στη γλώσσα προορισμού</translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Απαιτήσεις:
+1. Επιστρέψτε μόνο το αποτέλεσμα μετάφρασης, χωρίς καμία εξήγηση, σχόλια ή επιπλέον περιεχόμενο
+2. Διατηρήστε τη μορφοποίηση και την τυπογραφία του πρωτοτύπου
+3. Βεβαιωθείτε ότι η μετάφραση είναι ακριβής, φυσική και ιδιωματική στη γλώσσα προορισμού</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Αγαπημένο</translation>
+        <translation>Αγαπημένο</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Μη αγαπημένο</translation>
+        <translation>Αποθέτηση από αγαπημένα</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Περιστροφή δεξιά</translation>
+        <translation>Περιστρέψτε προς τα δεξιά</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Στρέψτε κατά το αντίθετο των δεικτών του ρολογιού</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation type="unfinished">Θέσε ως ταπετσαρία</translation>
+        <translation>Ορίστε ως φόντο</translation>
     </message>
     <message>
         <source>Display in file manager</source>
-        <translation type="unfinished">Προβολή στον διαχειριστή αρχείον</translation>
+        <translation>Εμφάνιση στο διαχειριστής αρχείων</translation>
     </message>
     <message>
         <source>Image info</source>
-        <translation type="unfinished">Πληροφοριες εικονας</translation>
+        <translation>Εικόνα πληροφορίες</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
 </context>
 <context>
     <name>TitleFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ρυθμίσεις διαφανειών</translation>
     </message>
     <message>
         <source>Effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτέλεσμα</translation>
     </message>
     <message>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Διάρκεια</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Συντόμευση</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished">Προβολή</translation>
+        <translation>Προβολή</translation>
     </message>
     <message>
         <source>Album</source>
-        <translation type="unfinished">Άλμπουμ</translation>
+        <translation>Άλμπουμ</translation>
     </message>
 </context>
 <context>
     <name>TopAlbumTips</name>
     <message>
         <source>dd MMMM yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>dd ΜΜΜΜ έτος</translation>
     </message>
     <message>
         <source>My favorite</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αγαπημένο μου</translation>
     </message>
     <message>
         <source>Recent imported</source>
-        <translation type="unfinished">Πρόσφατα εισαγόμενα</translation>
+        <translation>Πρόσφατα εισαγόμενα</translation>
     </message>
 </context>
 <context>
     <name>TopToolbar</name>
     <message>
         <source>New album</source>
-        <translation type="unfinished">Νέο άλμπουμ</translation>
+        <translation>Νέο άλμπουμ</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Ρυθμίσεις</translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Είναι εξοπλισμένο με διαχείριση εικόνων, προβολή εικόνων και βασική επεξεργασία εικόνων.</translation>
     </message>
     <message>
         <source>Dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Σκούρο θέμα</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer είναι ένα εργαλείο προβολής εικόνων με μοντέρνο διεπαφή και ομαλή απόδοση.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer είναι ένας μοντέρνος &amp; ομαλός διαχειριστής εικόνων.</translation>
     </message>
 </context>
 <context>
     <name>ViewPanel</name>
     <message>
         <source>Timeline</source>
-        <translation type="unfinished">Χρονοδιάγραμμα</translation>
+        <translation>Χρονοδιάγραμμα</translation>
     </message>
     <message>
         <source>Add to album</source>
-        <translation type="unfinished">Προσθήκη στο άλμπουμ</translation>
+        <translation>Προσθήκη στο άλμπουμ</translation>
     </message>
     <message>
         <source>Add to new album</source>
-        <translation type="unfinished">Προσθήκη σε νέο άλμπουμ</translation>
+        <translation>Προσθέστε στο νέο άλμπουμ</translation>
     </message>
     <message>
         <source>Exit fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Έξοδος από ολόγυρη οθόνη</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Πλήρης οθόνη</translation>
+        <translation>Ολοέκρανη</translation>
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Παρουσίαση εικόνων</translation>
+        <translation>Παρουσίαση διαφανειών</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Εκτύπωση</translation>
+        <translation>Αποτύπωση</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Αντιγραφή</translation>
+        <translation>Απαιτήσεις:
+1. Επιστρέψτε μόνο το αποτέλεσμα μετάφρασης, χωρίς καμία εξήγηση, σχόλια ή επιπλέον περιεχόμενο
+2. Διατηρήστε την αρχική μορφοποίηση και στίξηση
+3. Βεβαιωθείτε ότι η μετάφραση είναι ακριβής, φυσική και ιδιομορφία στη γλώσσα προορισμού</translation>
     </message>
     <message>
         <source>Remove from album</source>
-        <translation type="unfinished"></translation>
+        <translation>Αφαίρεση από άλμπουμ</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Αγαπημένο</translation>
+        <translation>Αγαπημένο</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Μη αγαπημένο</translation>
+        <translation>Αποθέτηση από αγαπημένα</translation>
     </message>
     <message>
         <source>Show navigation window</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση παραθύρου πλοήγησης</translation>
     </message>
     <message>
         <source>Hide navigation window</source>
-        <translation type="unfinished"></translation>
+        <translation>Απόκρυψη παραθύρου πλοήγησης</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Περιστροφή δεξιά</translation>
+        <translation>Περιστρέψτε προς τα δεξιά</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished"></translation>
+        <translation>Στρέψτε κατά το αντίθετο των δεικτών του ρολογιού</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation type="unfinished">Θέσε ως ταπετσαρία</translation>
+        <translation>Ορίστε ως φόντο</translation>
     </message>
     <message>
         <source>Display in file manager</source>
-        <translation type="unfinished">Προβολή στον διαχειριστή αρχείον</translation>
+        <translation>Εμφάνιση στο διαχειριστής αρχείων</translation>
     </message>
     <message>
         <source>Image info</source>
-        <translation type="unfinished">Πληροφοριες εικονας</translation>
+        <translation>Εικόνα πληροφορίες</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Διαγραφή</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Άνοιγμα Εικόνας</translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"></translation>
+        <translation>Όλα τα εικόνα</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Εικόνα OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποκωδικοποίηση QRCode</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="es_419">
 <context>
     <name>AboutDialog</name>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Visor de imágenes GXDE</translation>
     </message>
 </context>
 <context>
@@ -183,27 +182,27 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Cortar</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Atrás</translation>
+        <translation>Atrás</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Revertir</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Gire hacia la izquierda</translation>
+        <translation>Girar en sentido antihorario</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Gire hacia la derecha</translation>
+        <translation>Girar en el sentido de las agujas del reloj</translation>
     </message>
 </context>
 <context>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Simple</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancelar</translation>
+        <translation>Cancelar</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Guardar</translation>
+        <translation>Guardar</translation>
     </message>
 </context>
 <context>
@@ -266,7 +265,7 @@
     <name>ImageView</name>
     <message>
         <source>This file contains multiple pages, please use Evince to view all pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Este archivo contiene múltiples páginas, por favor use Evince para ver todas las páginas.</translation>
     </message>
 </context>
 <context>
@@ -374,7 +373,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Dimensión</translation>
     </message>
     <message>
         <source>File size</source>
@@ -445,50 +444,50 @@
     <name>PrintOptionsPage</name>
     <message>
         <source>No scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin escalado</translation>
     </message>
     <message>
         <source>Fit page to image</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustar página a la imagen</translation>
     </message>
     <message>
         <source>Fit image to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustar imagen a la página</translation>
     </message>
     <message>
         <source>Scale to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalar a:</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>Milímetros</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>Centímetros</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulgadas</translation>
     </message>
     <message>
         <source>Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Posición de la imagen</translation>
     </message>
     <message>
         <source>Scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>Escalado</translation>
     </message>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de imagen</translation>
     </message>
 </context>
 <context>
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de imagen</translation>
     </message>
 </context>
 <context>
@@ -514,19 +513,25 @@
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado de decodificación</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultado:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Requisitos:
+1. Devuelve solo el resultado de la traducción, sin explicaciones, comentarios o contenido adicional.
+2. Conserva la formateo y puntuación originales.
+3. Asegúrate de que la traducción sea precisa, natural e idiomática en el idioma objetivo.
+
+Texto original:
+Copiar texto</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Abrir navegador</translation>
     </message>
 </context>
 <context>
@@ -864,7 +869,7 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen abierta</translation>
     </message>
 </context>
 <context>
@@ -1035,11 +1040,11 @@
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer es una herramienta de visualización de imágenes con interfaz de moda y rendimiento suave.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer es un administrador de imágenes elegante y fluido.</translation>
     </message>
 </context>
 <context>
@@ -1122,19 +1127,19 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen abierta</translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"></translation>
+        <translation>Todas las imágenes</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Imagen OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Decodificar código QR</translation>
     </message>
 </context>
 </TS>

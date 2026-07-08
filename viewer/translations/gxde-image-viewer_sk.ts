@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="sk">
 <context>
     <name>AboutDialog</name>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer</translation>
     </message>
 </context>
 <context>
@@ -183,27 +182,27 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Zrušiť</translation>
+        <translation>Zrušiť</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Rez</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Späť</translation>
+        <translation>Späť</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrátiť</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Otočiť proti smeru hodinových ručičiek</translation>
+        <translation>Otoči proti smeri hodinových ručičiek</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Otočiť v smere hodinových ručičiek</translation>
+        <translation>Otočiť hodinovým smerom</translation>
     </message>
 </context>
 <context>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Jednoduchý</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Zrušiť</translation>
+        <translation>Zrušiť</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Uložiť</translation>
+        <translation>Uložiť</translation>
     </message>
 </context>
 <context>
@@ -374,7 +373,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmer</translation>
     </message>
     <message>
         <source>File size</source>
@@ -514,19 +513,25 @@
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledok dekódovania</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledok:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Požadavky:
+1. Vráťte len výsledok prekladu, bez žiadnych vysvetlení, komentárov alebo ďalšieho obsahu
+2. Udržte pôvodné formátovanie a interpunkciu
+3. Uistite sa, že preklad je presný, prirodzený a idiomatický v cílovom jazyku
+
+Pôvodný text:
+Kopírovať text</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvoriť prehliadač</translation>
     </message>
 </context>
 <context>
@@ -864,7 +869,7 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvoriť obrázok</translation>
     </message>
 </context>
 <context>
@@ -1035,11 +1040,11 @@
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer je nástroj na prezeranie obrázkov s módnym rozhraním a hladkým výkonom.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer je módny a plynulý sprievodca obrázkami.</translation>
     </message>
 </context>
 <context>
@@ -1122,19 +1127,19 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Otvoriť obrázok</translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"></translation>
+        <translation>Všetky obrázky</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Obrázok OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Dekóduj QR kód</translation>
     </message>
 </context>
 </TS>

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="am_ET">
 <context>
     <name>AboutDialog</name>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>ግክደ ምስል ባለሙያ</translation>
     </message>
 </context>
 <context>
@@ -183,27 +182,27 @@
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">መሰረዣ</translation>
+        <translation>የሚያጠፋው</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>የተጠቀምበት የሆነ የተጠቀምበት የሆነ የተጠቀምበት የሆነ</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">ወደ ኋላ</translation>
+        <translation>የተላበችው</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>ወደ አቋም ይመልስ</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">ማዞሪያ ከ ቀኝ ወደ ግራ</translation>
+        <translation>አቋርጣ እንደ ስራይ በኋላ</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">ማዞሪያ ከ ግራ ወደ ቀኝ</translation>
+        <translation>አንፎች እንደ ሰዓት እውርድ ይጫኑ</translation>
     </message>
 </context>
 <context>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>ስልጣን</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">መሰረዣ</translation>
+        <translation>የሚያጠፋው</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">ማስቀመጫ</translation>
+        <translation>ስምምር</translation>
     </message>
 </context>
 <context>
@@ -266,7 +265,7 @@
     <name>ImageView</name>
     <message>
         <source>This file contains multiple pages, please use Evince to view all pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>ይህ ፋይል ብዙ ገጽሎችን ያስፈልገው፤ እባክዎን Evince አጠቃቀም።</translation>
     </message>
 </context>
 <context>
@@ -341,7 +340,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">ማጥፊያ</translation>
+        <translation>ሰርዝ</translation>
     </message>
 </context>
 <context>
@@ -374,7 +373,7 @@
     </message>
     <message>
         <source>Dimension</source>
-        <translation type="unfinished"></translation>
+        <translation>ደረጃ</translation>
     </message>
     <message>
         <source>File size</source>
@@ -438,57 +437,57 @@
     </message>
     <message>
         <source>Date captured</source>
-        <translation type="unfinished"></translation>
+        <translation>የቀረበው ቀን</translation>
     </message>
 </context>
 <context>
     <name>PrintOptionsPage</name>
     <message>
         <source>No scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>አልተሳስበም</translation>
     </message>
     <message>
         <source>Fit page to image</source>
-        <translation type="unfinished"></translation>
+        <translation>የምስል በሚገኝ ምርት ለማጠናቀቅ የገጽ ማስተካከል</translation>
     </message>
     <message>
         <source>Fit image to page</source>
-        <translation type="unfinished"></translation>
+        <translation>ማስገኛውን ሳምንት ለገጽ ማጠንቀቅ</translation>
     </message>
     <message>
         <source>Scale to:</source>
-        <translation type="unfinished"></translation>
+        <translation>የሚያስቀለው ተሳካውንት:</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>ሚልሊሜቶር</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>ሸምተትሮች</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished"></translation>
+        <translation>ንጥፋት</translation>
     </message>
     <message>
         <source>Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>የስእል አካል</translation>
     </message>
     <message>
         <source>Scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>ስካላንግ</translation>
     </message>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>የስእል ማንነት</translation>
     </message>
 </context>
 <context>
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>የስእል ማንነት</translation>
     </message>
 </context>
 <context>
@@ -514,19 +513,22 @@
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>የውጥረት ውጤት</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>የውጤት:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>የሚፈልጉት ምክንያት።
+1. በትርጉም የተስማሙ በደህና መልስ ሊሆን የለባችሁ።
+2. የቅርብ ገጽታ እና የፖንክትዩዎችን ማስተካከል ይጠቀሙ።
+3. በማስተካከል የተስማሙ እና የሚያገለግሉ ቋንቋ ይሆናል።</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>አባልተር አፅንብብ</translation>
     </message>
 </context>
 <context>
@@ -679,7 +681,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">ማጥፊያ</translation>
+        <translation>ሰርዝ</translation>
     </message>
 </context>
 <context>
@@ -829,31 +831,31 @@
     </message>
     <message>
         <source>1:1 Size</source>
-        <translation type="unfinished"></translation>
+        <translation>የተባበሩት ስም በአንድ በአንድ ሆኖ</translation>
     </message>
     <message>
         <source>Fit to window</source>
-        <translation type="unfinished"></translation>
+        <translation>አንቀጽ ለፍራሽ</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">ማዞሪያ ከ ቀኝ ወደ ግራ</translation>
+        <translation>አቋርጣ እንደ ስራይ በኋላ</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">ማዞሪያ ከ ግራ ወደ ቀኝ</translation>
+        <translation>አንፎች እንደ ሰዓት እውርድ ይጫኑ</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">የማልወዳቸው</translation>
+        <translation>የተወዳጅበት</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">የምወዳቸው</translation>
+        <translation>አገዛም</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">ማጥፊያ</translation>
+        <translation>ሰርዝ</translation>
     </message>
 </context>
 <context>
@@ -864,7 +866,7 @@
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>አባት ምስል</translation>
     </message>
 </context>
 <context>
@@ -962,7 +964,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">ማጥፊያ</translation>
+        <translation>ሰርዝ</translation>
     </message>
 </context>
 <context>
@@ -1031,11 +1033,11 @@
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer እንግዳ ማሳያ እንደተማርኩ የሚያደርግ አገልግሎት ነው። የተማርኩ አካል እንደ ፎሽን የሚከናወን እና የሚያጠቃለን የሚገኝ እንደሆነ ነው።</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer አንድ የቅርብ የምርጫ የምርጫ ድርጊት ነው።</translation>
     </message>
 </context>
 <context>
@@ -1114,23 +1116,23 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">ማጥፊያ</translation>
+        <translation>ሰርዝ</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>አባት ምስል</translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"></translation>
+        <translation>ቅዱስ ቃላት</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>የስራ አስተካክል</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>የኳር ኮድ ፎርማት ያስተካክል</translation>
     </message>
 </context>
 </TS>

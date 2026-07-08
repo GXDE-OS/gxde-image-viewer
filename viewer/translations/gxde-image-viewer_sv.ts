@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="sv">
 <context>
     <name>AboutDialog</name>
@@ -104,7 +103,7 @@
     </message>
     <message>
         <source>You can add sync directory or drag and drop  images to timeline</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan lägga till synkroniseringskatalog eller dra och släppa bilder till tidslinjen</translation>
     </message>
 </context>
 <context>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Bildvisare</translation>
     </message>
 </context>
 <context>
@@ -176,41 +175,41 @@
     </message>
     <message>
         <source>Are you sure to add to the sync list and create the album named after this folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>Är du säker på att lägga till i synkroniseringslistan och skapa albumet med namnet efter denna mapp?</translation>
     </message>
 </context>
 <context>
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Avbryt</translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Klipp</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Tillbaka</translation>
+        <translation>Tillbaka</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Återställ</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Rotera moturs</translation>
+        <translation>Vrid åt vänster</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Rotera medurs</translation>
+        <translation>Vrid åt höger</translation>
     </message>
 </context>
 <context>
     <name>Exporter</name>
     <message>
         <source>JPEG(*.bmp *.gif *.jpg; *.jpeg; *.png *.pbm;*.pgm *.ppm *.xbm *.xpm *.svg *.dds *.icns*.jp2 *.mng *.tga *.tiff *.wbmp *.webp;)</source>
-        <translation type="unfinished"></translation>
+        <translation>JPEG(*.bmp *.gif *.jpg; *.jpeg; *.png *.pbm;*.pgm *.ppm *.xbm *.xpm *.svg *.dds *.icns *.jp2 *.mng *.tga *.tiff *.wbmp *.webp;)</translation>
     </message>
     <message>
         <source>Exported successfully</source>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Enkel</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Avbryt</translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Spara</translation>
+        <translation>Spara</translation>
     </message>
 </context>
 <context>
@@ -266,7 +265,7 @@
     <name>ImageView</name>
     <message>
         <source>This file contains multiple pages, please use Evince to view all pages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denna fil innehåller flera sidor, använd Evince för att visa alla sidor.</translation>
     </message>
 </context>
 <context>
@@ -329,7 +328,7 @@
     </message>
     <message>
         <source>You can add sync directory or drag and drop  images to timeline</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan lägga till synkroniseringskatalog eller dra och släppa bilder till tidslinjen</translation>
     </message>
     <message>
         <source>Add to album</source>
@@ -438,695 +437,730 @@
     </message>
     <message>
         <source>Date captured</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum inhämtat</translation>
     </message>
 </context>
 <context>
     <name>PrintOptionsPage</name>
     <message>
         <source>No scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen skalering</translation>
     </message>
     <message>
         <source>Fit page to image</source>
-        <translation type="unfinished"></translation>
+        <translation>Anpassa sidan till bilden</translation>
     </message>
     <message>
         <source>Fit image to page</source>
-        <translation type="unfinished"></translation>
+        <translation>Anpassa bild till sida</translation>
     </message>
     <message>
         <source>Scale to:</source>
-        <translation type="unfinished"></translation>
+        <translation>Skala till:</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>Millimeter</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>Centimeter</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished"></translation>
+        <translation>Tum</translation>
     </message>
     <message>
         <source>Image Position</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildposition</translation>
     </message>
     <message>
         <source>Scaling</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalning</translation>
     </message>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildinställningar</translation>
     </message>
 </context>
 <context>
     <name>PrintPreviewDialog</name>
     <message>
         <source>Image Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildinställningar</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Blinds</source>
-        <translation type="unfinished"></translation>
+        <translation>Persienner</translation>
     </message>
     <message>
         <source>Switcher</source>
-        <translation type="unfinished"></translation>
+        <translation>Växlaren</translation>
     </message>
     <message>
         <source>Sliding</source>
-        <translation type="unfinished"></translation>
+        <translation>Glidande</translation>
     </message>
     <message>
         <source>Ring</source>
-        <translation type="unfinished"></translation>
+        <translation>Ring</translation>
     </message>
 </context>
 <context>
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Avkodningsresultat</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Result:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Krav:
+1. Returnera endast översättningsresultatet, utan någon förklaring, kommentarer eller extra innehåll
+2. Bevara originalformatet och skiljetecken
+3. Se till att översättningen är korrekt, naturlig och idiomatisk på målspråket
+
+Original text:
+Kopiera text</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna webbläsare</translation>
     </message>
 </context>
 <context>
     <name>ScanPathsDialog</name>
     <message>
         <source>Select Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj katalog</translation>
     </message>
     <message>
         <source>This directory is disabled to sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Den här katalogen är inaktiverad för synkronisering</translation>
     </message>
     <message>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till mapp</translation>
     </message>
     <message>
         <source>Sync Directory Management</source>
-        <translation type="unfinished"></translation>
+        <translation>Synkroniseringskatalogshantering</translation>
     </message>
     <message>
         <source>The directory list is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalogen är tom.</translation>
     </message>
 </context>
 <context>
     <name>ScanPathsItem</name>
     <message>
         <source>Cancel sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt synkronisering</translation>
     </message>
     <message>
         <source>Images</source>
-        <translation type="unfinished">Bilder</translation>
+        <translation>Bilder</translation>
     </message>
     <message>
         <source>The device has been removed</source>
-        <translation type="unfinished"></translation>
+        <translation>Enheten har tagits bort</translation>
     </message>
     <message>
         <source>This directory no longer exists</source>
-        <translation type="unfinished"></translation>
+        <translation>Den här katalogen finns inte längre</translation>
     </message>
     <message>
         <source>Calculating...</source>
-        <translation type="unfinished"></translation>
+        <translation>Beräknar...</translation>
     </message>
 </context>
 <context>
     <name>Shortcut</name>
     <message>
         <source>Image Viewing</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildvisning</translation>
     </message>
     <message>
         <source>Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Album</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished">Visa</translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Helskärm</translation>
+        <translation>Heltäckande</translation>
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Bildspel</translation>
+        <translation>Bildspel</translation>
     </message>
     <message>
         <source>End show</source>
-        <translation type="unfinished"></translation>
+        <translation>Slut på föreställning</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Krav:
+1. Returnera endast översättningsresultatet, utan någon förklaring, kommentarer eller extra innehåll
+2. Bevara originalformateringen och skiljetecken
+3. Se till att översättningen är korrekt, naturlig och idiomatisk på målspråket
+
+Originaltext:
+Kopiera</translation>
     </message>
     <message>
         <source>Remove from album</source>
-        <translation type="unfinished">Radera från album</translation>
+        <translation>Ta bort från album</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Favorit</translation>
+        <translation>Favorit</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Ta bort favorit</translation>
+        <translation>Omarkera som ogillad</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Rotera medurs</translation>
+        <translation>Vrid åt höger</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Rotera moturs</translation>
+        <translation>Vrid åt vänster</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation type="unfinished">Ange som bakgrundsbild</translation>
+        <translation>Ställ in som bakgrund</translation>
     </message>
     <message>
         <source>Display in file manager</source>
-        <translation type="unfinished">Visa i filhanteraren</translation>
+        <translation>Visa i filhanteraren</translation>
     </message>
     <message>
         <source>Image info</source>
-        <translation type="unfinished">Bildinformation</translation>
+        <translation>Bildinfo</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Föregående</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Nästa</translation>
     </message>
     <message>
         <source>Previous screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Föregående skärm</translation>
     </message>
     <message>
         <source>Next screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Nästa skärm</translation>
     </message>
     <message>
         <source>New album</source>
-        <translation type="unfinished">Nytt album</translation>
+        <translation>Ny album</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished">Ändra namn</translation>
+        <translation>Omnamn</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjälp</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Avgång</translation>
     </message>
     <message>
         <source>Display shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa genvägar</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Radera</translation>
+        <translation>Ta bort</translation>
     </message>
 </context>
 <context>
     <name>ShortcutEditor</name>
     <message>
         <source>Please enter a new shortcut</source>
-        <translation type="unfinished"></translation>
+        <translation>Vänligen ange en ny genväg</translation>
     </message>
 </context>
 <context>
     <name>ShortcutFrame</name>
     <message>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Genvägar</translation>
     </message>
     <message>
         <source>View Picture</source>
-        <translation type="unfinished"></translation>
+        <translation>Se bild</translation>
     </message>
     <message>
         <source>Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Album</translation>
     </message>
     <message>
         <source>Restore Defaults</source>
-        <translation type="unfinished"></translation>
+        <translation>Återställ standardinställningar</translation>
     </message>
 </context>
 <context>
     <name>ShortcutKey</name>
     <message>
         <source>View</source>
-        <translation type="unfinished">Visa</translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Helskärm</translation>
+        <translation>Heltäckande</translation>
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Bildspel</translation>
+        <translation>Bildspel</translation>
     </message>
     <message>
         <source>End show</source>
-        <translation type="unfinished"></translation>
+        <translation>Slut på föreställning</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Skriv ut</translation>
+        <translation>Skriv ut</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Krav:
+1. Returnera endast översättningsresultatet, utan någon förklaring, kommentarer eller extra innehåll
+2. Bevara originalformateringen och skiljetecken
+3. Se till att översättningen är korrekt, naturlig och idiomatisk på målspråket
+
+Originaltext:
+Kopiera</translation>
     </message>
     <message>
         <source>Remove from album</source>
-        <translation type="unfinished">Radera från album</translation>
+        <translation>Ta bort från album</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Favorit</translation>
+        <translation>Favorit</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Ta bort favorit</translation>
+        <translation>Omarkera som ogillad</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Rotera medurs</translation>
+        <translation>Vrid åt höger</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Rotera moturs</translation>
+        <translation>Vrid åt vänster</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation type="unfinished">Ange som bakgrundsbild</translation>
+        <translation>Ställ in som bakgrund</translation>
     </message>
     <message>
         <source>Display in file manager</source>
-        <translation type="unfinished">Visa i filhanteraren</translation>
+        <translation>Visa i filhanteraren</translation>
     </message>
     <message>
         <source>Image info</source>
-        <translation type="unfinished">Bildinformation</translation>
+        <translation>Bildinfo</translation>
     </message>
     <message>
         <source>New album</source>
-        <translation type="unfinished">Nytt album</translation>
+        <translation>Ny album</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished">Ändra namn</translation>
+        <translation>Omnamn</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Radera</translation>
+        <translation>Ta bort</translation>
     </message>
 </context>
 <context>
     <name>SlideShowPanel</name>
     <message>
         <source>End show</source>
-        <translation type="unfinished"></translation>
+        <translation>Slut på föreställning</translation>
     </message>
     <message>
         <source>Pause/Play</source>
-        <translation type="unfinished"></translation>
+        <translation>Pausera/Spela upp</translation>
     </message>
 </context>
 <context>
     <name>SlideshowFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Glidinställningar</translation>
     </message>
     <message>
         <source>Switch effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Byt effekt</translation>
     </message>
     <message>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Varaktighet</translation>
     </message>
     <message>
         <source>Switch duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Byta varaktighet</translation>
     </message>
     <message>
         <source>second</source>
-        <translation type="unfinished"></translation>
+        <translation>andra</translation>
     </message>
 </context>
 <context>
     <name>TTLContent</name>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Tillbaka</translation>
+        <translation>Tillbaka</translation>
     </message>
     <message>
         <source>Image management</source>
-        <translation type="unfinished"></translation>
+        <translation>Bildhantering</translation>
     </message>
     <message>
         <source>My favorite</source>
-        <translation type="unfinished">Min favorit</translation>
+        <translation>Mitt favorit</translation>
     </message>
     <message>
         <source>1:1 Size</source>
-        <translation type="unfinished"></translation>
+        <translation>1:1 Storlek</translation>
     </message>
     <message>
         <source>Fit to window</source>
-        <translation type="unfinished"></translation>
+        <translation>Passar till fönster</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Rotera moturs</translation>
+        <translation>Vrid åt vänster</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Rotera medurs</translation>
+        <translation>Vrid åt höger</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Ta bort favorit</translation>
+        <translation>Omarkera som ogillad</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Favorit</translation>
+        <translation>Favorit</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Radera</translation>
+        <translation>Ta bort</translation>
     </message>
 </context>
 <context>
     <name>ThumbnailWidget</name>
     <message>
         <source>No image files found</source>
-        <translation type="unfinished"></translation>
+        <translation>Inga bildfiler hittades</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppen bild</translation>
     </message>
 </context>
 <context>
     <name>TimelineBTContent</name>
     <message>
         <source>%1 image</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bild</translation>
     </message>
     <message>
         <source>%1 images</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 bilder</translation>
     </message>
     <message>
         <source>Manage sync</source>
-        <translation type="unfinished">Hantera synk</translation>
+        <translation>Hantera synkronisering</translation>
     </message>
     <message>
         <source>Syncing: </source>
-        <translation type="unfinished">Synkar:</translation>
+        <translation>Syncande:</translation>
     </message>
 </context>
 <context>
     <name>TimelinePanel</name>
     <message>
         <source>Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Album</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation type="unfinished">Lägg till</translation>
+        <translation>Lägg till</translation>
     </message>
     <message>
         <source>You can add sync directory or drag and drop  images to timeline</source>
-        <translation type="unfinished"></translation>
+        <translation>Du kan lägga till synkroniseringskatalog eller dra och släppa bilder till tidslinjen</translation>
     </message>
     <message>
         <source>Add to album</source>
-        <translation type="unfinished">Lägg till i album</translation>
+        <translation>Lägg till i album</translation>
     </message>
     <message>
         <source>Add to new album</source>
-        <translation type="unfinished">Lägg till i nytt album</translation>
+        <translation>Lägg till i ny album</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished">Visa</translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Helskärm</translation>
+        <translation>Heltäckande</translation>
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Bildspel</translation>
+        <translation>Bildspel</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Skriv ut</translation>
+        <translation>Skriv ut</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Krav:
+1. Returnera endast översättningsresultatet, utan någon förklaring, kommentarer eller extra innehåll
+2. Bevara originalformateringen och skiljetecken
+3. Se till att översättningen är korrekt, naturlig och idiomatisk på målspråket
+
+Originaltext:
+Kopiera</translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Krav:
+1. Returnera endast översättningsresultatet, utan någon förklaring, kommentarer eller extra innehåll
+2. Bevara originalformateringen och skiljetecken
+3. Se till att översättningen är korrekt, naturlig och idiomatisk på målspråket
+
+Originaltext:</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Favorit</translation>
+        <translation>Favorit</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Ta bort favorit</translation>
+        <translation>Omarkera som ogillad</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Rotera medurs</translation>
+        <translation>Vrid åt höger</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Rotera moturs</translation>
+        <translation>Vrid åt vänster</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation type="unfinished">Ange som bakgrundsbild</translation>
+        <translation>Ställ in som bakgrund</translation>
     </message>
     <message>
         <source>Display in file manager</source>
-        <translation type="unfinished">Visa i filhanteraren</translation>
+        <translation>Visa i filhanteraren</translation>
     </message>
     <message>
         <source>Image info</source>
-        <translation type="unfinished">Bildinformation</translation>
+        <translation>Bildinfo</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Radera</translation>
+        <translation>Ta bort</translation>
     </message>
 </context>
 <context>
     <name>TitleFrame</name>
     <message>
         <source>Slide Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Glidinställningar</translation>
     </message>
     <message>
         <source>Effect</source>
-        <translation type="unfinished"></translation>
+        <translation>Effekt</translation>
     </message>
     <message>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Varaktighet</translation>
     </message>
     <message>
         <source>Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Genvägar</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished">Visa</translation>
+        <translation>Visa</translation>
     </message>
     <message>
         <source>Album</source>
-        <translation type="unfinished"></translation>
+        <translation>Album</translation>
     </message>
 </context>
 <context>
     <name>TopAlbumTips</name>
     <message>
         <source>dd MMMM yyyy</source>
-        <translation type="unfinished"></translation>
+        <translation>dd MMMM åååå</translation>
     </message>
     <message>
         <source>My favorite</source>
-        <translation type="unfinished">Min favorit</translation>
+        <translation>Mitt favorit</translation>
     </message>
     <message>
         <source>Recent imported</source>
-        <translation type="unfinished">Senast importerat</translation>
+        <translation>Nyligen importerad</translation>
     </message>
 </context>
 <context>
     <name>TopToolbar</name>
     <message>
         <source>New album</source>
-        <translation type="unfinished">Nytt album</translation>
+        <translation>Ny album</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det har funktioner för bildhantering, bildvisning och grundläggande bildredigering.</translation>
     </message>
     <message>
         <source>Dark theme</source>
-        <translation type="unfinished"></translation>
+        <translation>Mörkt tema</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer är ett bildvisningsverktyg med stilren gränssnitt och smidig prestanda.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer är en stilren och smidig bildhanterare.</translation>
     </message>
 </context>
 <context>
     <name>ViewPanel</name>
     <message>
         <source>Timeline</source>
-        <translation type="unfinished">Tidslinje</translation>
+        <translation>Tidslinje</translation>
     </message>
     <message>
         <source>Add to album</source>
-        <translation type="unfinished">Lägg till i album</translation>
+        <translation>Lägg till i album</translation>
     </message>
     <message>
         <source>Add to new album</source>
-        <translation type="unfinished">Lägg till i nytt album</translation>
+        <translation>Lägg till i ny album</translation>
     </message>
     <message>
         <source>Exit fullscreen</source>
-        <translation type="unfinished"></translation>
+        <translation>Avsluta helskärm</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished">Helskärm</translation>
+        <translation>Heltäckande</translation>
     </message>
     <message>
         <source>Slide show</source>
-        <translation type="unfinished">Bildspel</translation>
+        <translation>Bildspel</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Skriv ut</translation>
+        <translation>Skriv ut</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished">Kopiera</translation>
+        <translation>Krav:
+1. Returnera endast översättningsresultatet, utan någon förklaring, kommentarer eller extra innehåll
+2. Bevara originalformateringen och skiljetecken
+3. Se till att översättningen är korrekt, naturlig och idiomatisk på målspråket
+
+Originaltext:
+Kopiera</translation>
     </message>
     <message>
         <source>Remove from album</source>
-        <translation type="unfinished">Radera från album</translation>
+        <translation>Ta bort från album</translation>
     </message>
     <message>
         <source>Favorite</source>
-        <translation type="unfinished">Favorit</translation>
+        <translation>Favorit</translation>
     </message>
     <message>
         <source>Unfavorite</source>
-        <translation type="unfinished">Ta bort favorit</translation>
+        <translation>Omarkera som ogillad</translation>
     </message>
     <message>
         <source>Show navigation window</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa navigationsfönster</translation>
     </message>
     <message>
         <source>Hide navigation window</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj navigationsfönstret</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Rotera medurs</translation>
+        <translation>Vrid åt höger</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Rotera moturs</translation>
+        <translation>Vrid åt vänster</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation type="unfinished">Ange som bakgrundsbild</translation>
+        <translation>Ställ in som bakgrund</translation>
     </message>
     <message>
         <source>Display in file manager</source>
-        <translation type="unfinished">Visa i filhanteraren</translation>
+        <translation>Visa i filhanteraren</translation>
     </message>
     <message>
         <source>Image info</source>
-        <translation type="unfinished">Bildinformation</translation>
+        <translation>Bildinfo</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished">Radera</translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <source>Open Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppen bild</translation>
     </message>
     <message>
         <source>All images</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla bilder</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Bild OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Avkoda QR-kod</translation>
     </message>
 </context>
 </TS>

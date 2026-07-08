@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="it">
 <context>
     <name>AboutDialog</name>
@@ -142,7 +141,7 @@
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizzatore di immagini GXDE</translation>
     </message>
 </context>
 <context>
@@ -164,7 +163,7 @@
     </message>
     <message>
         <source>Are you sure to add the pictures to the album?</source>
-        <translation>Sicuro di voler aggiungere le immagini all&apos;album?</translation>
+        <translation>Sicuro di voler aggiungere le immagini all'album?</translation>
     </message>
     <message>
         <source>Sync and Create</source>
@@ -176,34 +175,34 @@
     </message>
     <message>
         <source>Are you sure to add to the sync list and create the album named after this folder?</source>
-        <translation>Sicuro di voler aggiungere la lista e creare l&apos;album rinominandolo?</translation>
+        <translation>Sicuro di voler aggiungere la lista e creare l'album rinominandolo?</translation>
     </message>
 </context>
 <context>
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Taglio</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Indietro</translation>
+        <translation>Indietro</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Ripristina</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Ruota in senso antiorario</translation>
+        <translation>Ruota in senso antiorario</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Ruota in senso orario</translation>
+        <translation>Ruota in senso orario</translation>
     </message>
 </context>
 <context>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Semplice</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Salva</translation>
+        <translation>Salva</translation>
     </message>
 </context>
 <context>
@@ -293,7 +292,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Rimuovi dall&apos;album</translation>
+        <translation>Rimuovi dall'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -355,7 +354,7 @@
     <name>LockWidget</name>
     <message>
         <source>You have no permission to view the image</source>
-        <translation>Non hai i permessi per visualizzare l&apos;immagine</translation>
+        <translation>Non hai i permessi per visualizzare l'immagine</translation>
     </message>
 </context>
 <context>
@@ -514,19 +513,25 @@
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Risultato decodificato</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Risultato:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Requisiti:
+1. Restituire solo il risultato della traduzione, senza spiegazioni, commenti o contenuti aggiuntivi
+2. Conservare la formattazione e la punteggiatura originali
+3. Assicurarsi che la traduzione sia accurata, naturale e idiomatica nella lingua di destinazione
+
+Testo originale:
+Copia testo</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri il browser</translation>
     </message>
 </context>
 <context>
@@ -611,7 +616,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Rimuovi dall&apos;album</translation>
+        <translation>Rimuovi dall'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -736,7 +741,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Rimuovi dall&apos;album</translation>
+        <translation>Rimuovi dall'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -1036,11 +1041,11 @@ Localizzazione italiana a cura di Massimo A. Carofano.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer è uno strumento di visualizzazione immagini con un'interfaccia alla moda e prestazioni fluide.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer è un gestore di immagini elegante e fluido.</translation>
     </message>
 </context>
 <context>
@@ -1079,7 +1084,7 @@ Localizzazione italiana a cura di Massimo A. Carofano.</translation>
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Rimuovi dall&apos;album</translation>
+        <translation>Rimuovi dall'album</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -1131,11 +1136,11 @@ Localizzazione italiana a cura di Massimo A. Carofano.</translation>
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Immagine OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Decodifica QRCode</translation>
     </message>
 </context>
 </TS>

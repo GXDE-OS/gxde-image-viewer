@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
+<?xml version='1.0' encoding='utf-8'?>
 <TS version="2.1" language="ca">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation>Visualitzador d&apos;imatges del Deepin</translation>
+        <translation>Visualitzador d'imatges del Deepin</translation>
     </message>
     <message>
         <source>Version:</source>
@@ -47,7 +46,7 @@
     </message>
     <message>
         <source>OK</source>
-        <translation>D&apos;acord</translation>
+        <translation>D'acord</translation>
     </message>
     <message>
         <source>New album</source>
@@ -123,7 +122,7 @@
     </message>
     <message>
         <source>Rename</source>
-        <translation>Canvia&apos;n el nom</translation>
+        <translation>Canvia'n el nom</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -138,11 +137,11 @@
     <name>Application</name>
     <message>
         <source>Deepin Image Viewer</source>
-        <translation type="vanished">Visualitzador d&apos;imatges del Deepin</translation>
+        <translation type="vanished">Visualitzador d'imatges del Deepin</translation>
     </message>
     <message>
         <source>GXDE Image Viewer</source>
-        <translation type="unfinished"></translation>
+        <translation>Visor d'imatges GXDE</translation>
     </message>
 </context>
 <context>
@@ -160,7 +159,7 @@
     </message>
     <message>
         <source>OK</source>
-        <translation>D&apos;acord</translation>
+        <translation>D'acord</translation>
     </message>
     <message>
         <source>Are you sure to add the pictures to the album?</source>
@@ -176,34 +175,34 @@
     </message>
     <message>
         <source>Are you sure to add to the sync list and create the album named after this folder?</source>
-        <translation>Segur que ho voleu afegir a la llista de sincronització i crear l&apos;àlbum amb el nom d&apos;aquesta carpeta?</translation>
+        <translation>Segur que ho voleu afegir a la llista de sincronització i crear l'àlbum amb el nom d'aquesta carpeta?</translation>
     </message>
 </context>
 <context>
     <name>EditPanel</name>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>Cancel·la</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Talla</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished">Enrere</translation>
+        <translation>Enrere</translation>
     </message>
     <message>
         <source>Revert</source>
-        <translation type="unfinished"></translation>
+        <translation>Revertir</translation>
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation type="unfinished">Gira a l&apos;esquerra</translation>
+        <translation>Gira en sentit contrari a les agulles del rellotge</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
-        <translation type="unfinished">Gira a la dreta</translation>
+        <translation>Gira en sentit de les agulles del rellotge</translation>
     </message>
 </context>
 <context>
@@ -218,7 +217,7 @@
     </message>
     <message>
         <source>Failed to export</source>
-        <translation>Ha fallat l&apos;exportació</translation>
+        <translation>Ha fallat l'exportació</translation>
     </message>
     <message>
         <source>Save</source>
@@ -244,15 +243,15 @@
     <name>FilterSetup</name>
     <message>
         <source>Simple</source>
-        <translation type="unfinished"></translation>
+        <translation>Senzill</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Cancel·la</translation>
+        <translation>Cancel·la</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation type="unfinished">Desa</translation>
+        <translation>Estalvia</translation>
     </message>
 </context>
 <context>
@@ -266,7 +265,7 @@
     <name>ImageView</name>
     <message>
         <source>This file contains multiple pages, please use Evince to view all pages.</source>
-        <translation>Aquest fitxer conté múltiples pàgines. Si us plau, useu l&apos;Evince per veure-les totes.</translation>
+        <translation>Aquest fitxer conté múltiples pàgines. Si us plau, useu l'Evince per veure-les totes.</translation>
     </message>
 </context>
 <context>
@@ -293,7 +292,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Elimina de l&apos;àlbum</translation>
+        <translation>Elimina de l'àlbum</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -309,11 +308,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation>Gira a l&apos;esquerra</translation>
+        <translation>Gira a l'esquerra</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Estableix com a fons d&apos;escriptori</translation>
+        <translation>Estableix com a fons d'escriptori</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -333,7 +332,7 @@
     </message>
     <message>
         <source>Add to album</source>
-        <translation>Afegeix a l&apos;àlbum</translation>
+        <translation>Afegeix a l'àlbum</translation>
     </message>
     <message>
         <source>Add to new album</source>
@@ -386,15 +385,15 @@
     </message>
     <message>
         <source>Exposure mode</source>
-        <translation>Mode d&apos;exposició</translation>
+        <translation>Mode d'exposició</translation>
     </message>
     <message>
         <source>Exposure program</source>
-        <translation>Programa d&apos;exposició</translation>
+        <translation>Programa d'exposició</translation>
     </message>
     <message>
         <source>Exposure time</source>
-        <translation>Hora d&apos;exposició</translation>
+        <translation>Hora d'exposició</translation>
     </message>
     <message>
         <source>Flash</source>
@@ -514,19 +513,25 @@
     <name>QRCodeResultShower</name>
     <message>
         <source>Decode result</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultat de descodificació</translation>
     </message>
     <message>
         <source>Result:</source>
-        <translation type="unfinished"></translation>
+        <translation>Result:</translation>
     </message>
     <message>
         <source>Copy text</source>
-        <translation type="unfinished"></translation>
+        <translation>Requisits:
+1. Torni només el resultat de la traducció, sense cap explicació, comentaris o contingut addicional
+2. Preserva la formatació i la puntuació originals
+3. Assegura't que la traducció sigui precisa, natural i idiomàtica en la llengua de destí
+
+Text original:
+Copia el text</translation>
     </message>
     <message>
         <source>Open Browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Obre el navegador</translation>
     </message>
 </context>
 <context>
@@ -564,7 +569,7 @@
     </message>
     <message>
         <source>The device has been removed</source>
-        <translation>El dispositiu s&apos;ha extret.</translation>
+        <translation>El dispositiu s'ha extret.</translation>
     </message>
     <message>
         <source>This directory no longer exists</source>
@@ -579,7 +584,7 @@
     <name>Shortcut</name>
     <message>
         <source>Image Viewing</source>
-        <translation>Visualització d&apos;imatges</translation>
+        <translation>Visualització d'imatges</translation>
     </message>
     <message>
         <source>Album</source>
@@ -611,7 +616,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Elimina de l&apos;àlbum</translation>
+        <translation>Elimina de l'àlbum</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -627,11 +632,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation>Gira a l&apos;esquerra</translation>
+        <translation>Gira a l'esquerra</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Estableix com a fons d&apos;escriptori</translation>
+        <translation>Estableix com a fons d'escriptori</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -663,7 +668,7 @@
     </message>
     <message>
         <source>Rename</source>
-        <translation>Canvia&apos;n el nom</translation>
+        <translation>Canvia'n el nom</translation>
     </message>
     <message>
         <source>Help</source>
@@ -736,7 +741,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Elimina de l&apos;àlbum</translation>
+        <translation>Elimina de l'àlbum</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -752,11 +757,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation>Gira a l&apos;esquerra</translation>
+        <translation>Gira a l'esquerra</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Estableix com a fons d&apos;escriptori</translation>
+        <translation>Estableix com a fons d'escriptori</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -772,7 +777,7 @@
     </message>
     <message>
         <source>Rename</source>
-        <translation>Canvia&apos;n el nom</translation>
+        <translation>Canvia'n el nom</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -837,7 +842,7 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation>Gira a l&apos;esquerra</translation>
+        <translation>Gira a l'esquerra</translation>
     </message>
     <message>
         <source>Rotate clockwise</source>
@@ -860,7 +865,7 @@
     <name>ThumbnailWidget</name>
     <message>
         <source>No image files found</source>
-        <translation>No s&apos;ha trobat cap fitxer d&apos;imatge.</translation>
+        <translation>No s'ha trobat cap fitxer d'imatge.</translation>
     </message>
     <message>
         <source>Open Image</source>
@@ -902,7 +907,7 @@
     </message>
     <message>
         <source>Add to album</source>
-        <translation>Afegeix a l&apos;àlbum</translation>
+        <translation>Afegeix a l'àlbum</translation>
     </message>
     <message>
         <source>Add to new album</source>
@@ -946,11 +951,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation>Gira a l&apos;esquerra</translation>
+        <translation>Gira a l'esquerra</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Estableix com a fons d&apos;escriptori</translation>
+        <translation>Estableix com a fons d'escriptori</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -1019,11 +1024,11 @@
     </message>
     <message>
         <source>Deepin Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="vanished">El Visualitzador d&apos;imatges del Deepin és un gestor d&apos;imatges modern i fàcil d&apos;usar.</translation>
+        <translation type="vanished">El Visualitzador d'imatges del Deepin és un gestor d'imatges modern i fàcil d'usar.</translation>
     </message>
     <message>
         <source>It is featured with image management, image viewing and basic image editing.</source>
-        <translation>Té les funcions de gestió, visualització i edició bàsica d&apos;imatges.</translation>
+        <translation>Té les funcions de gestió, visualització i edició bàsica d'imatges.</translation>
     </message>
     <message>
         <source>Dark theme</source>
@@ -1031,15 +1036,15 @@
     </message>
     <message>
         <source>Deepin Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="vanished">El Visualitzador d&apos;imatges del Deepin és una eina de visualitzador d&apos;imatges amb una interfície moderna i un rendiment eficient.</translation>
+        <translation type="vanished">El Visualitzador d'imatges del Deepin és una eina de visualitzador d'imatges amb una interfície moderna i un rendiment eficient.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is an image viewing tool with fashion interface and smooth performance.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer és una eina de visualització d'imatges amb una interfície de moda i un rendiment suau.</translation>
     </message>
     <message>
         <source>GXDE Image Viewer is a fashion &amp; smooth image manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>GXDE Image Viewer és un gestor d'imatges elegant i fluït.</translation>
     </message>
 </context>
 <context>
@@ -1050,7 +1055,7 @@
     </message>
     <message>
         <source>Add to album</source>
-        <translation>Afegeix a l&apos;àlbum</translation>
+        <translation>Afegeix a l'àlbum</translation>
     </message>
     <message>
         <source>Add to new album</source>
@@ -1078,7 +1083,7 @@
     </message>
     <message>
         <source>Remove from album</source>
-        <translation>Elimina de l&apos;àlbum</translation>
+        <translation>Elimina de l'àlbum</translation>
     </message>
     <message>
         <source>Favorite</source>
@@ -1102,11 +1107,11 @@
     </message>
     <message>
         <source>Rotate counterclockwise</source>
-        <translation>Gira a l&apos;esquerra</translation>
+        <translation>Gira a l'esquerra</translation>
     </message>
     <message>
         <source>Set as wallpaper</source>
-        <translation>Estableix com a fons d&apos;escriptori</translation>
+        <translation>Estableix com a fons d'escriptori</translation>
     </message>
     <message>
         <source>Display in file manager</source>
@@ -1130,11 +1135,11 @@
     </message>
     <message>
         <source>Image OCR</source>
-        <translation type="unfinished"></translation>
+        <translation>Imatge OCR</translation>
     </message>
     <message>
         <source>Decode QRCode</source>
-        <translation type="unfinished"></translation>
+        <translation>Decodificar codi QR</translation>
     </message>
 </context>
 </TS>
