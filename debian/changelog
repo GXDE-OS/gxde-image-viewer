@@ -1,3 +1,9 @@
+gxde-image-viewer (1.7.3) UNRELEASED; urgency=medium
+
+  * 完善翻译
+
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 11 Jul 2026 13:44:55 +0800
+
 gxde-image-viewer (1.7.2-1) unstable; urgency=medium
 
   * fix: Wayland下无法拖动主窗体与设置窗标题栏的问题
