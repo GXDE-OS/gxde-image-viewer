@@ -36,6 +36,10 @@ BlurFrame::BlurFrame(QWidget *parent)
       m_coverBrush(QBrush(QColor(0, 0, 0, 200)))
 {
     setRadius(50);
+    
+    if (QApplication::platformName() == "wayland") {
+        setBlendMode(DBlurEffectWidget::BehindWindowBlend);
+    }
 }
 
 void BlurFrame::setCoverBrush(const QBrush &brush)
