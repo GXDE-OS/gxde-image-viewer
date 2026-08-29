@@ -21,7 +21,6 @@
 #include <QFontMetrics>
 #include <QPainter>
 #include <QPainterPath>
-#include <QTextCodec>
 #include <QDebug>
 
 namespace {
@@ -73,7 +72,7 @@ void ShortcutEditor::paintEvent(QPaintEvent *e)
     // Draw key
     // "Return" and "Enter" should show as "Enter" only
     QString s = m_shortcut.replace("Return", "Enter");
-    QStringList keys = s.split("+", QString::SkipEmptyParts);
+    QStringList keys = s.split("+", Qt::SkipEmptyParts);
 
     if (keys.isEmpty()) {
         // Draw tips

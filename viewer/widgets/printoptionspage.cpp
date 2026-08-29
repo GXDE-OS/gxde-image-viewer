@@ -39,7 +39,7 @@ PrintOptionsPage::PrintOptionsPage(QWidget *parent)
     QVBoxLayout *vLayout = new QVBoxLayout;
     QWidget *btnsWidget = new QWidget;
     QGridLayout *btnsLayout = new QGridLayout(btnsWidget);
-    btnsLayout->setMargin(50);
+    btnsLayout->setContentsMargins(50, 50, 50, 50);
     btnsLayout->setSpacing(1);
 
     vLayout->addWidget(btnsWidget, Qt::AlignCenter);

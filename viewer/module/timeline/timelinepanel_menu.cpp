@@ -270,7 +270,7 @@ void TimelinePanel::onMenuItemClicked(QAction *action)
         if (m_rotateList.isEmpty()) {
             m_rotateList = paths;
             for (QString path : paths) {
-                QtConcurrent::run(this, &TimelinePanel::rotateImage, path, 90);
+                QtConcurrent::run(&TimelinePanel::rotateImage, this, path, 90);
             }
         }
         break;
@@ -278,7 +278,7 @@ void TimelinePanel::onMenuItemClicked(QAction *action)
         if (m_rotateList.isEmpty()) {
             m_rotateList = paths;
             for (QString path : paths) {
-                QtConcurrent::run(this, &TimelinePanel::rotateImage, path, -90);
+                QtConcurrent::run(&TimelinePanel::rotateImage, this, path, -90);
             }
         }
         break;

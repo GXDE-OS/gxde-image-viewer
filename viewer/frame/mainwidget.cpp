@@ -31,7 +31,6 @@
 #include <QFileSystemWatcher>
 #include <QLabel>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QFile>
 #include <QHBoxLayout>
 

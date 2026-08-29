@@ -213,7 +213,7 @@ const ThumbnailListView::ItemInfo ThumbnailListView::itemInfo(
     info.path = datas[1].toString();
     if (datas[2].isValid()) {
         QPixmap thumb;
-        if (thumb.loadFromData(datas[2].toByteArray())) {
+        if (thumb.loadFromData(datas[2].toByteArray(), "JPG")) {
             info.thumb = thumb;
         }
     }
@@ -232,7 +232,7 @@ const QList<ThumbnailListView::ItemInfo> ThumbnailListView::ItemInfos()
         info.path = datas[1].toString();
         if (datas[2].isValid()) {
             QPixmap thumb;
-            if (thumb.loadFromData(datas[2].toByteArray())) {
+            if (thumb.loadFromData(datas[2].toByteArray(), "JPG")) {
                 info.thumb = thumb;
             }
         }
@@ -329,11 +329,11 @@ void ThumbnailListView::paintEvent(QPaintEvent *e)
 void ThumbnailListView::wheelEvent(QWheelEvent *e)
 {
     QScrollBar *sb = verticalScrollBar();
-    if (e->orientation() == Qt::Vertical &&
+    if (e->angleDelta().y() != 0 &&
             sb->value() <= sb->maximum() &&
             sb->value() >= sb->minimum()) {
         if (e->modifiers() == Qt::ControlModifier) {
-            emit changeItemSize(e->delta() > 0);
+            emit changeItemSize(e->angleDelta().y() > 0);
         }
         else {
             QApplication::sendEvent(sb, e);

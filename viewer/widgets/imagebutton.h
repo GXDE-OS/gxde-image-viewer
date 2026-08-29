@@ -48,7 +48,7 @@ signals:
     void mouseLeave();
 
 protected:
-    void enterEvent(QEvent *e) Q_DECL_OVERRIDE;
+    void enterEvent(QEnterEvent *e) Q_DECL_OVERRIDE;
     bool event(QEvent *e) Q_DECL_OVERRIDE;
 
 private:

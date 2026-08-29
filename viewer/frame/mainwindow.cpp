@@ -19,8 +19,8 @@
 #include "mainwindow.h"
 #include "mainwidget.h"
 #include <DTitlebar>
-#include <QDesktopWidget>
 #include <QFile>
+#include <QGuiApplication>
 #include <QStandardPaths>
 //#include <QDebug>
 #include <QDir>
@@ -41,11 +41,12 @@ MainWindow::MainWindow(bool manager, QWidget *parent):
     DMainWindow(parent)
 {
     onThemeChanged(dApp->viewerTheme->getCurrentTheme());
-    QDesktopWidget dw;
-    const int defaultW = dw.geometry().width() * 0.65 < MAINWIDGET_MINIMUN_WIDTH
-            ? MAINWIDGET_MINIMUN_WIDTH : dw.geometry().width() * 0.65;
-    const int defaultH = dw.geometry().height() * 0.7 < MAINWIDGET_MINIMUN_HEIGHT
-            ? MAINWIDGET_MINIMUN_HEIGHT : dw.geometry().height() * 0.7;
+    QScreen *screen = QGuiApplication::primaryScreen();
+    const QRect screenGeometry = screen ? screen->geometry() : QRect(0, 0, 1920, 1080);
+    const int defaultW = screenGeometry.width() * 0.65 < MAINWIDGET_MINIMUN_WIDTH
+            ? MAINWIDGET_MINIMUN_WIDTH : screenGeometry.width() * 0.65;
+    const int defaultH = screenGeometry.height() * 0.7 < MAINWIDGET_MINIMUN_HEIGHT
+            ? MAINWIDGET_MINIMUN_HEIGHT : screenGeometry.height() * 0.7;
     const int ww = dApp->setter->value(SETTINGS_GROUP, SETTINGS_WINSIZE_W_KEY,
                                        QVariant(defaultW)).toInt();
     const int wh = dApp->setter->value(SETTINGS_GROUP, SETTINGS_WINSIZE_H_KEY,

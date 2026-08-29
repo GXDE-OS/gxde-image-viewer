@@ -94,7 +94,7 @@ QVariant TimelineModel::data(const QModelIndex &index, int role) const
 Qt::ItemFlags TimelineModel::flags(const QModelIndex &index) const
 {
     if (!index.isValid())
-        return 0;
+        return Qt::NoItemFlags;
 
     return QAbstractItemModel::flags(index);
 }

@@ -18,7 +18,7 @@
 #include "application.h"
 
 #include <QDebug>
-#include <QDesktopWidget>
+#include <QFile>
 #include <QFrame>
 #include <QHBoxLayout>
 #include <QLabel>
@@ -27,6 +27,7 @@
 #include <QTimer>
 #include <QIcon>
 #include <QApplication>
+#include <QScreen>
 
 PushButton::PushButton(QWidget *parent)
     : QWidget(parent)
@@ -235,7 +236,7 @@ void PushButton::paintEvent(QPaintEvent *e)
 //    painter.drawRect(this->rect());
 }
 
-void PushButton::enterEvent(QEvent *e)
+void PushButton::enterEvent(QEnterEvent *e)
 {
     Q_UNUSED(e)
     m_currentPic = hoverPic();
@@ -283,7 +284,7 @@ QSize PushButton::sizeHint() const
     QFontMetrics fm(font());
     int spacing = p.isNull() ? 0 : m_spacing;
     int h = p.height() + m.top() + m.bottom();
-    int w = p.width() + fm.width(m_text) + m.left() + m.right() + spacing + 3;
+    int w = p.width() + fm.horizontalAdvance(m_text) + m.left() + m.right() + spacing + 3;
 
     return QSize(w, qMax(h, fm.height()));
 }
@@ -325,7 +326,7 @@ void PushButton::showTooltip(const QPoint &pos)
     layout->addWidget(tl);
 
     tf->show();
-    QRect dr = qApp->desktop()->geometry();
+    QRect dr = QGuiApplication::primaryScreen()->geometry();
     int y = pos.y() + tf->height();
     if (y > dr.y() + dr.height()) {
         y = pos.y() - tf->height() - 10;

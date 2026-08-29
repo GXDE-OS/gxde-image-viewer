@@ -132,7 +132,7 @@ const QDateTime getDateTime(const QString &path, bool createTime = true)
     if (datas.isEmpty()) {
         QFileInfo info(path);
         if (createTime) {
-            return info.created();
+            return info.birthTime();
         }
         else {
             return info.lastModified();
@@ -168,12 +168,12 @@ QMap<QString, QString> getAllMetaData(const QString &path)
 {
     FIBITMAP *dib = readFileToFIBITMAP(path, FIF_LOAD_NOPIXELS);
     QMap<QString, QString> admMap;
-    admMap.unite(getMetaData(FIMD_EXIF_MAIN, dib));
-    admMap.unite(getMetaData(FIMD_EXIF_EXIF, dib));
-    admMap.unite(getMetaData(FIMD_EXIF_GPS, dib));
-    admMap.unite(getMetaData(FIMD_EXIF_MAKERNOTE, dib));
-    admMap.unite(getMetaData(FIMD_EXIF_INTEROP, dib));
-    admMap.unite(getMetaData(FIMD_IPTC, dib));
+    admMap.insert(getMetaData(FIMD_EXIF_MAIN, dib));
+    admMap.insert(getMetaData(FIMD_EXIF_EXIF, dib));
+    admMap.insert(getMetaData(FIMD_EXIF_GPS, dib));
+    admMap.insert(getMetaData(FIMD_EXIF_MAKERNOTE, dib));
+    admMap.insert(getMetaData(FIMD_EXIF_INTEROP, dib));
+    admMap.insert(getMetaData(FIMD_IPTC, dib));
 
     // Basic extended data
     QFileInfo info(path);
@@ -196,7 +196,7 @@ QMap<QString, QString> getAllMetaData(const QString &path)
 
             // NO valid date information
             if (! ot.isValid()) {
-                admMap.insert("DateTimeOriginal", info.created().toString("yyyy.MM.dd HH:mm:ss"));
+                admMap.insert("DateTimeOriginal", info.birthTime().toString("yyyy.MM.dd HH:mm:ss"));
                 admMap.insert("DateTimeDigitized", info.lastModified().toString("yyyy.MM.dd HH:mm:ss"));
             }
         }

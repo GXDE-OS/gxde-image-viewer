@@ -19,6 +19,7 @@
 #include <QPropertyAnimation>
 #include <QTimer>
 #include <QWheelEvent>
+#include <QtMath>
 
 namespace {
 
@@ -78,21 +79,22 @@ void ScrollBar::wheelEvent(QWheelEvent *e)
     //this judge(e->pixelDelta.y() != m_oldScrollStep)
     //isn't precise!
     if (e->pixelDelta().y() == 0) {
-        QWheelEvent ve(e->pos(), e->globalPos(), e->pixelDelta()
-                       , e->angleDelta(), e->delta() * 16/*speed up*/
-                       , Qt::Vertical, e->buttons(), e->modifiers());
+        QWheelEvent ve(e->position(), e->globalPosition(), e->pixelDelta()
+                       , e->angleDelta() * 16/*speed up*/
+                       , e->buttons(), e->modifiers(), Qt::NoScrollPhase,
+                       false);
         QScrollBar::wheelEvent(&ve);
         m_timer->start();
     }
     // Active by mouse
     else {
         // Direction inverted
-        if (m_directionFlag * e->delta() < 0) {
+        if (m_directionFlag * e->angleDelta().y() < 0) {
             m_speedTime = DEFAULT_SPEED_TIME;
-            m_directionFlag = e->delta();
+            m_directionFlag = e->angleDelta().y();
         }
 
-        int offset = - e->delta() * 2.5;
+        int offset = qRound(- e->angleDelta().y() * 2.5);
         if (m_animation->state() == QPropertyAnimation::Running) {
             m_speedTime += 0.4;
         }

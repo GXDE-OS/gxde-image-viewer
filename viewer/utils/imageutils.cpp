@@ -116,7 +116,7 @@ const QDateTime getCreateDateTime(const QString &path)
     // fallback to file create time.
     if (!dt.isValid()) {
         QFileInfo finfo(path);
-        dt = finfo.created();
+        dt = finfo.birthTime();
     }
 
     // fallback to today.
@@ -380,7 +380,7 @@ QMap<QString,QString> thumbnailAttribute(const QUrl&  url)
         set.insert("Thumb::Mimetype", QMimeDatabase().mimeTypeForFile(path).name());
         set.insert("Thumb::Size", QString::number(info.size()));
         set.insert("Thumb::URI", url.toString());
-        set.insert("Thumb::MTime", QString::number(info.lastModified().toTime_t()));
+        set.insert("Thumb::MTime", QString::number(info.lastModified().toSecsSinceEpoch()));
         set.insert("Software", "GXDE Image Viewer");
 
         QImageReader reader(path);
@@ -450,6 +450,30 @@ const QPixmap getThumbnail(const QString &path, bool cacheOnly)
         else {
             return QPixmap();
         }
+    }
+}
+
+const QImage getThumbnailImage(const QString &path, bool cacheOnly)
+{
+    QMutexLocker locker(&mutex);
+
+    const QString cacheP = thumbnailCachePath();
+    const QUrl url = QUrl::fromLocalFile(path);
+    const QString md5s = toMd5(url.toString(QUrl::FullyEncoded).toLocal8Bit());
+    const QString encodePath = cacheP + "/large/" + md5s + ".png";
+    const QString failEncodePath = cacheP + "/fail/" + md5s + ".png";
+    if (QFileInfo(encodePath).exists()) {
+        return QImage(encodePath);
+    }
+    else if (QFileInfo(failEncodePath).exists()) {
+        qDebug() << "Fail-thumbnail exist, won't regenerate: " << path;
+        return QImage();
+    }
+    else if (!cacheOnly && generateThumbnail(path)) {
+        return QImage(encodePath);
+    }
+    else {
+        return QImage();
     }
 }
 

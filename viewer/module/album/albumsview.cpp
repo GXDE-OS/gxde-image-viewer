@@ -225,7 +225,7 @@ void AlbumsView::showEvent(QShowEvent *e)
 void AlbumsView::wheelEvent(QWheelEvent *e)
 {
     if (e->modifiers() == Qt::ControlModifier) {
-        emit changeItemSize(e->delta() > 0);
+        emit changeItemSize(e->angleDelta().y() > 0);
         e->accept();
     }
     else {

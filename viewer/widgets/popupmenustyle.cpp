@@ -242,7 +242,7 @@ void PopupMenuStyle::drawMenuItemText(const QStyleOptionMenuItem* menuItem,
     shortcutFont.setPixelSize(SHORTCUT_FONT_PIXEL_SIZE);
     QFontMetrics shortcutFM(shortcutFont);
     const QString shortcutContent = menuItem->text.split(SHORTCUT_SPLIT_FLAG).last();
-    const int shortcutWidth = shortcutFM.width(shortcutContent.trimmed());
+    const int shortcutWidth = shortcutFM.horizontalAdvance(shortcutContent.trimmed());
     const int shortcutX = width - SEPARATOR_RIGHT_MARGIN - shortcutWidth;
     QPen shortcutPen((menuItem->state & QStyle::State_Selected) ?
                          SHORTCUT_HOVER_COLOR : SHORTCUT_COLOR);

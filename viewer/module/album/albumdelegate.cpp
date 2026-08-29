@@ -38,7 +38,7 @@ const int THUMBNAIL_BG_MARGIN = 8;
 const int BG_TEXT_SPACING = 5;
 const int TEXTRECT_MARGIN = 20;
 const int ALBUMNAME_FONTSIZE = 12;
-const int FONT_WEIGHT = 25;
+const QFont::Weight FONT_WEIGHT = QFont::Light;
 }
 
 AlbumDelegate::AlbumDelegate(QObject *parent)
@@ -292,7 +292,7 @@ void AlbumDelegate::drawTitle(const QStyleOptionViewItem &option,
         albumNameFont.setPixelSize(ALBUMNAME_FONTSIZE);
         albumNameFont.setWeight(FONT_WEIGHT);
         const QFontMetrics fm(albumNameFont);
-        QSize ts(qMin(fm.width(albumName) + TEXTRECT_MARGIN, rect.width()),
+        QSize ts(qMin(fm.horizontalAdvance(albumName) + TEXTRECT_MARGIN, rect.width()),
                  fm.height() + 2);
 
         const int TextTotalHeight = rect.height()*0.81;
@@ -330,7 +330,7 @@ QPixmap AlbumDelegate::getCompoundPixmap(const QStyleOptionViewItem &option,
     const QDateTime endTime = datas[3].toDateTime();
 
     QPixmap thumbnail;
-    thumbnail.loadFromData(datas[4].toByteArray());
+    thumbnail.loadFromData(datas[4].toByteArray(), "JPG");
 
     // Render background
     QSize bgSize;
@@ -406,9 +406,9 @@ const QRect AlbumDelegate::yearTitleRect(const QSize &bgSize, const QString
     QFont font;
     font.setPixelSize(bgSize.height() * 0.068);
     QFontMetrics fm(font);
-    QRect rect(bgSize.width() - bgSize.width() * 0.1857 - fm.width(title),
+    QRect rect(bgSize.width() - bgSize.width() * 0.1857 - fm.horizontalAdvance(title),
                     bgSize.height() - bgSize.height() * 0.08 - fm.height() + 2,
-                    fm.width(title), fm.height());
+                    fm.horizontalAdvance(title), fm.height());
     return rect;
 }
 

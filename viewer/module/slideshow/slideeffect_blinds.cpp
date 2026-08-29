@@ -83,7 +83,6 @@ bool SlideEffect_Blinds::prepare()
     else
         calculateRegion_ptr = &SlideEffect_Blinds::calculateRegion_TopToBottom; //calculateRegion_Random
 
-    qsrand(time(0));
     leafs = 5;
 
     if (effect_type==kBlindsLeftToRight || effect_type==kBlindsRightToLeft) {

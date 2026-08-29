@@ -1,7 +1,6 @@
 #include "elidedlabel.h"
 
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QFont>
 #include <QFontMetrics>
 #include <QPainter>

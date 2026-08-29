@@ -1,3 +1,10 @@
+gxde-image-viewer (1.7.5) UNRELEASED; urgency=medium
+
+  * 迁移到 Qt6 / dtk2widget-qt6
+  * 修复图库缩略图加载异常与打开图库后 CPU 占用过高的问题
+
+ -- shenmo <shenmo@spark-app.store>  Sat, 29 Aug 2026 13:36:30 +0800
+
 gxde-image-viewer (1.7.4) UNRELEASED; urgency=medium
 
   * 完善翻译

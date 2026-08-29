@@ -6,20 +6,23 @@ Image viewer for GXDE Desktop Environment.
 
 ### Build dependencies
 
-* [deepin-tool-kit](https://github.com/linuxdeepin/deepin-tool-kit) (developer package)
-
-### Runtime dependencies
-
-* [deepin-tool-kit](https://github.com/linuxdeepin/deepin-tool-kit)
-* [deepin-shortcut-viewer](https://github.com/linuxdeepin/deepin-shortcut-viewer)
-* [deepin-manual](https://github.com/linuxdeepin/deepin-manual)
+* [dtk2widget-qt6](https://github.com/GXDE-OS/dtk2widget-qt6) (developer package: `libdtk2widget6-dev`)
 * libexif
 * freeimage
 * libraw
-* Qt5 (>= 5.6)
-  * Qt5-DBus
-  * Qt5-Svg
-  * Qt5-X11extras
+* Qt6 (>= 6.4)
+  * Qt6-DBus
+  * Qt6-Svg
+  * Qt6-SvgWidgets
+  * Qt6-Core5Compat
+
+### Runtime dependencies
+
+* dtk2widget-qt6 (`libdtk2widget6`)
+* libexif
+* freeimage
+* libraw
+* Qt6 base + SQLite plugin + image format plugins
 
 ## Installation
 
@@ -32,7 +35,7 @@ Image viewer for GXDE Desktop Environment.
 $ cd gxde-image-viewer
 $ mkdir Build
 $ cd Build
-$ qmake ..
+$ qmake6 ..
 $ make
 ```
 

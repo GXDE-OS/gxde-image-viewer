@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 include /usr/share/dpkg/default.mk
 
-export QT_SELECT = qt5
+export QT_SELECT = qt6
+export PATH := /usr/lib/qt6/bin:$(PATH)
 
 %:
 	dh $@ --parallel

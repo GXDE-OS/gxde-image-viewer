@@ -95,7 +95,7 @@ void SlideshowPreview::paintEvent(QPaintEvent *e)
     const QString name = nameMap().value(m_effect);
     QFont f;
     f.setPixelSize(FONT_SIZE);
-    const int tw = QFontMetrics(f).width(name);
+    const int tw = QFontMetrics(f).horizontalAdvance(name);
     QRect titleRect((MAX_WIDTH - tw) / 2, pixmapRect.y() + pixmapRect.height() + 4,
                     tw, 15);
     painter.setPen(QPen(QColor("#303030")));
@@ -127,7 +127,7 @@ void SlideshowPreview::timerEvent(QTimerEvent *e)
     QFrame::timerEvent(e);
 }
 
-void SlideshowPreview::enterEvent(QEvent *e)
+void SlideshowPreview::enterEvent(QEnterEvent *e)
 {
     Q_UNUSED(e)
     m_animationTID = startTimer(1000 / 25);

@@ -32,7 +32,7 @@ TopAlbumTips::TopAlbumTips(QWidget *parent) : QFrame(parent)
     m_infoLabel->setObjectName("AlbumInfoTipsLabel");
 
     QFont font;
-    font.setWeight(25);
+    font.setWeight(QFont::Light);
     m_infoLabel->setFont(font);
     m_layout = new QHBoxLayout(this);
     m_layout->setContentsMargins(13, 0, 13, 0);

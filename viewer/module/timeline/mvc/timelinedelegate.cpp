@@ -50,13 +50,6 @@ private:
 TimelineDelegate::TimelineDelegate(QObject *parent)
     : QStyledItemDelegate(parent)
 {
-    // Avoid thumbnail-thread being called too ofen
-    QTimer *t = new QTimer(this);
-    connect(t, &QTimer::timeout, this, [=] {
-        m_threads.clear();
-    });
-    t->start(1000);
-
     onThemeChanged(dApp->viewerTheme->getCurrentTheme());
     connect(dApp->viewerTheme, &ViewerThemeManager::viewerThemeChanged, this,
             &TimelineDelegate::onThemeChanged);
@@ -82,8 +75,7 @@ void TimelineDelegate::paint(QPainter *painter,
 {
     auto data = itemData(index);
 
-    painter->setRenderHints(QPainter::HighQualityAntialiasing |
-                            QPainter::SmoothPixmapTransform |
+    painter->setRenderHints(QPainter::SmoothPixmapTransform |
                             QPainter::Antialiasing);
 
     // Draw Timeline title
@@ -92,7 +84,7 @@ void TimelineDelegate::paint(QPainter *painter,
 
         QPen p(m_dateColor);
         QFont f;f.setPixelSize(12);
-        f.setWeight(25);
+        f.setWeight(QFont::Light);
         painter->setPen(p);
         painter->setFont(f);
         QRect r = option.rect;
@@ -177,7 +169,7 @@ TimelineItem::ItemData TimelineDelegate::itemData(const QModelIndex &index) cons
 QPixmap TimelineDelegate::thumbnail(const TimelineItem::ItemData &data) const
 {
     QPixmap thumb;
-    thumb.loadFromData(data.thumbArray);
+    thumb.loadFromData(data.thumbArray, "JPG");
     if (thumb.isNull()) {
         if (! QPixmapCache::find("NO_IMAGE_TMP_KEY", &thumb)) {
             const QSize ms(utils::common::THUMBNAIL_MAX_SCALE_SIZE,
@@ -198,7 +190,8 @@ void TimelineDelegate::startThumbnailThread(const TimelineItem::ItemData &data) 
     }
 
     TLThumbnailThread *t = new TLThumbnailThread(data);
-    connect(t, &TLThumbnailThread::finished, this, [=] {
+    connect(t, &TLThumbnailThread::finished, this, [this, data, t] {
+        m_threads.remove(data.path);
         t->deleteLater();
     });
     connect(t, &TLThumbnailThread::reGenerated,
@@ -230,8 +223,8 @@ void TLThumbnailThread::run()
         return;
     }
 
-    QString thumbMTime = getThumbnail(m_data.path, true).toImage().text("Thumb::MTime");
-    QString sourceMTime = QString::number(QFileInfo(m_data.path).lastModified().toTime_t());
+    QString thumbMTime = getThumbnailImage(m_data.path, true).text("Thumb::MTime");
+    QString sourceMTime = QString::number(QFileInfo(m_data.path).lastModified().toSecsSinceEpoch());
     // If the file has been changed and thumbnail didn't
     if (thumbMTime != sourceMTime) {
         generateThumbnail(m_data.path);
@@ -240,7 +233,7 @@ void TLThumbnailThread::run()
     }
     else {
         QPixmap thumb;
-        thumb.loadFromData(m_data.thumbArray);
+        thumb.loadFromData(m_data.thumbArray, "JPG");
         // The thumbnail may regenerate by other model
         if (thumb.toImage().text("Thumb::MTime") != sourceMTime) {
             generateThumbnail(m_data.path);

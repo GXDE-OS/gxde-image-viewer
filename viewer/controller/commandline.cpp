@@ -29,7 +29,6 @@
 
 #include <QCommandLineOption>
 #include <QDBusConnection>
-#include <QDesktopWidget>
 #include <QDebug>
 #include <QFileInfo>
 

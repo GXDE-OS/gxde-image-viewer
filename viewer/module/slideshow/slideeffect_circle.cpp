@@ -34,8 +34,8 @@
 ******************************************************************************/
 
 #include "slideeffect.h"
+#include <QTransform>
 #include <cmath>
-#include <QtGui/QMatrix>
 
 static const EffectId kEllipseOpen = "ellipse_open";
 static const EffectId kEllipseClose = "ellipse_close";
@@ -122,7 +122,7 @@ bool SlideEffect_Circle::prepareFrameAt_EllipseOpen(int frame)
 	int rk = r*k;
 	QRegion E(0.5*width-rk, 0.5*height-rk, 2*rk, 2*rk, QRegion::Ellipse); //(x, y, w, h)=>center(x+w/2,y+h/2)
 	//transform to an ellipse
-	QMatrix m;
+	QTransform m;
 	m.translate(width*0.5, height*0.5);
 	m.scale(ab, 1.0);
 	m.translate(-width*0.5, -height*0.5);
@@ -143,7 +143,7 @@ bool SlideEffect_Circle::prepareFrameAt_EllipseClose(int frame)
 	int rk = r*(1.0-k);
 	QRegion E(0.5*width-rk, 0.5*height-rk, 2*rk, 2*rk, QRegion::Ellipse); //(x, y, w, h)=>center(x+w/2,y+h/2)
 	//transform to an ellipse
-	QMatrix m;
+	QTransform m;
 	m.translate(width*0.5, height*0.5);
 	m.scale(ab, 1.0);
 	m.translate(-width*0.5, -height*0.5);

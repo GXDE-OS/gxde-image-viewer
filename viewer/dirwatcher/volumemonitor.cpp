@@ -32,7 +32,8 @@ QSet<QString> parseMountFile()
 {
     using namespace utils::base;
     QString fileContent = getFileContent(mountFile);
-    return QSet<QString>::fromList(fileContent.split("\n"));
+    const QStringList lines = fileContent.split("\n");
+    return QSet<QString>(lines.constBegin(), lines.constEnd());
 }
 
 QString getMountPoint(const QString& record)

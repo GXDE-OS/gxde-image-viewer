@@ -1,7 +1,8 @@
 TARGET = xfreeimage
 TEMPLATE = lib
+QT += core gui
 CONFIG += \
-        c++11 \
+        c++17 \
 	link_pkgconfig \
 	plugin
 

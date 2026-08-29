@@ -355,7 +355,7 @@ void ImagesView::onMenuItemClicked(QAction *action)
         if (m_rotateList.isEmpty()) {
             m_rotateList = paths;
             for (QString path : paths) {
-                QtConcurrent::run(this, &ImagesView::rotateImage, path, 90);
+                QtConcurrent::run(&ImagesView::rotateImage, this, path, 90);
             }
         }
         break;
@@ -363,7 +363,7 @@ void ImagesView::onMenuItemClicked(QAction *action)
         if (m_rotateList.isEmpty()) {
             m_rotateList = paths;
             for (QString path : paths) {
-                QtConcurrent::run(this, &ImagesView::rotateImage, path, -90);
+                QtConcurrent::run(&ImagesView::rotateImage, this, path, -90);
             }
         }
         break;

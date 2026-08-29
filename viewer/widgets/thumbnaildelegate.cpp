@@ -52,12 +52,6 @@ ThumbnailDelegate::ThumbnailDelegate(QObject *parent)
     onThemeChanged(dApp->viewerTheme->getCurrentTheme());
     connect(dApp->viewerTheme, &ViewerThemeManager::viewerThemeChanged, this,
             &ThumbnailDelegate::onThemeChanged);
-    // Avoid thumbnail-thread being called too ofen
-    QTimer *t = new QTimer(this);
-    connect(t, &QTimer::timeout, this, [=] {
-        m_threads.clear();
-    });
-    t->start(3000);
 }
 
 void ThumbnailDelegate::paint(QPainter *painter,
@@ -73,8 +67,7 @@ void ThumbnailDelegate::paint(QPainter *painter,
         selected = true;
     }
 
-    painter->setRenderHints(QPainter::HighQualityAntialiasing |
-                            QPainter::SmoothPixmapTransform |
+    painter->setRenderHints(QPainter::SmoothPixmapTransform |
                             QPainter::Antialiasing);
     QRect rect = option.rect;
     QPainterPath bp;
@@ -127,7 +120,7 @@ ThumbnailDelegate::ItemData ThumbnailDelegate::itemData(const QModelIndex &index
         data.path = datas[1].toString();
     }
     if (datas.length() >= 3) {
-        data.thumbnail.loadFromData(datas[2].toByteArray());
+        data.thumbnail.loadFromData(datas[2].toByteArray(), "JPG");
     }
 
     return data;
@@ -156,7 +149,8 @@ void ThumbnailDelegate::startThumbnailThread(const ItemData &data) const
     }
 
     TDThumbnailThread *t = new TDThumbnailThread(data);
-    connect(t, &TDThumbnailThread::finished, this, [=] {
+    connect(t, &TDThumbnailThread::finished, this, [this, data, t] {
+        m_threads.remove(data.path);
         t->deleteLater();
     });
     connect(t, &TDThumbnailThread::ready,
@@ -199,8 +193,8 @@ void TDThumbnailThread::run()
         return;
     }
 
-    QString thumbMTime = getThumbnail(m_data.path, true).toImage().text("Thumb::MTime");
-    QString sourceMTime = QString::number(QFileInfo(m_data.path).lastModified().toTime_t());
+    QString thumbMTime = getThumbnailImage(m_data.path, true).text("Thumb::MTime");
+    QString sourceMTime = QString::number(QFileInfo(m_data.path).lastModified().toSecsSinceEpoch());
     // If the file has been changed and thumbnail didn't
     if (thumbMTime != sourceMTime) {
         generateThumbnail(m_data.path);

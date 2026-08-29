@@ -34,7 +34,7 @@ SlideEffect* SlideEffect::create(const EffectId &id)
     if (id == EffectId()) {
         srand(time(0));
         int count = 0; // To avoid find no match effect
-        while (true || count < 100) {
+        while (count < 100) {
             QList<std::function<SlideEffect*()>> cs = effects.values();
             const int idx = rand() % cs.size();
             std::function<SlideEffect*()> c = cs.at(idx);

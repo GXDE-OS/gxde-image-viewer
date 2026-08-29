@@ -48,8 +48,11 @@ ImageStripList::ImageStripList(QWidget *parent)
 
 void ImageStripList::wheelEvent(QWheelEvent *e)
 {
-    if (e->orientation() == Qt::Vertical) {
-        QWheelEvent hEvent(e->pos(), e->globalPos(), e->delta() * 2, e->buttons(), e->modifiers(), Qt::Horizontal);
+    if (e->angleDelta().y() != 0) {
+        QWheelEvent hEvent(e->position(), e->globalPosition(),
+                           QPoint(), QPoint(e->angleDelta().y() * 2, 0),
+                           e->buttons(), e->modifiers(), Qt::NoScrollPhase,
+                           false);
         QCoreApplication::sendEvent(horizontalScrollBar(), &hEvent);
     } else {
         QListView::wheelEvent(e);
@@ -283,7 +286,7 @@ void ImageStrip::slideOut()
     moveWithAnimation(x(), m_hiddenY);
 }
 
-void ImageStrip::enterEvent(QEvent *e)
+void ImageStrip::enterEvent(QEnterEvent *e)
 {
     Q_UNUSED(e)
     if (!m_hovered) {
@@ -332,17 +335,17 @@ void ImageStrip::requestThumbnail(int row)
     QString path = m_model->index(row, 0).data(Qt::UserRole + 1).toString();
 
     QtConcurrent::run([this, path, row]() {
-        QPixmap thumb = utils::image::getThumbnail(path, true);
-        if (thumb.isNull()) {
-            thumb = utils::image::getThumbnail(path);
+        QImage thumbImage = utils::image::getThumbnailImage(path, true);
+        if (thumbImage.isNull()) {
+            thumbImage = utils::image::getThumbnailImage(path);
         }
-        if (!thumb.isNull()) {
-            QMetaObject::invokeMethod(this, [this, thumb, path, row]() {
+        if (!thumbImage.isNull()) {
+            QMetaObject::invokeMethod(this, [this, thumbImage, path, row]() {
                 if (row >= m_model->rowCount())
                     return;
                 QModelIndex idx = m_model->index(row, 0);
                 if (idx.data(Qt::UserRole + 1).toString() == path) {
-                    m_model->setData(idx, thumb, Qt::DecorationRole);
+                    m_model->setData(idx, QPixmap::fromImage(thumbImage), Qt::DecorationRole);
                 }
             }, Qt::QueuedConnection);
         }

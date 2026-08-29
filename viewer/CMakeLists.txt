@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
-project(gxde-image-viewer VERSION 1.7.2 LANGUAGES CXX)
+project(gxde-image-viewer VERSION 1.7.5 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -10,12 +10,13 @@ set(CMAKE_AUTORCC ON)
 # 此可选项默认开启
 option(FULL_FUNCTIONALITY "Enable full functionality (album, timeline, settings, etc.)" ON)
 
-find_package(Qt5 REQUIRED COMPONENTS
-    Core Gui Widgets Sql DBus Concurrent Svg X11Extras PrintSupport)
-find_package(Qt5OpenGL QUIET)
+find_package(Qt6 REQUIRED COMPONENTS
+    Core Gui Widgets Sql DBus Concurrent Svg SvgWidgets PrintSupport Core5Compat)
+find_package(Qt6OpenGL QUIET)
+find_package(Qt6OpenGLWidgets QUIET)
 
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(DTKWidget REQUIRED dtkwidget)
+pkg_check_modules(DTK2Widget REQUIRED dtk2widget)
 pkg_check_modules(X11 REQUIRED x11)
 pkg_check_modules(Xext REQUIRED xext)
 pkg_check_modules(LibExif REQUIRED libexif)
@@ -297,7 +298,7 @@ set(LOCAL_MOC_SOURCES
 set_property(SOURCE ${LOCAL_MOC_SOURCES} PROPERTY SKIP_AUTOMOC ON)
 foreach(MOC_CPP ${LOCAL_MOC_SOURCES})
     get_filename_component(MOC_BASENAME ${MOC_CPP} NAME_WE)
-    qt5_generate_moc(${CMAKE_CURRENT_SOURCE_DIR}/${MOC_CPP}
+    qt6_generate_moc(${CMAKE_CURRENT_SOURCE_DIR}/${MOC_CPP}
         "${CMAKE_CURRENT_BINARY_DIR}/${MOC_BASENAME}.moc")
     target_sources(${PROJECT_NAME} PRIVATE
         "${CMAKE_CURRENT_BINARY_DIR}/${MOC_BASENAME}.moc")
@@ -315,7 +316,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}/utils
-    ${DTKWidget_INCLUDE_DIRS}
+    ${DTK2Widget_INCLUDE_DIRS}
     ${X11_INCLUDE_DIRS} ${Xext_INCLUDE_DIRS}
     ${LibExif_INCLUDE_DIRS} ${GIO_INCLUDE_DIRS}
     ${CMAKE_CURRENT_SOURCE_DIR}/module/JQLibrary/include/JQQRCodeReader
@@ -323,15 +324,19 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::DBus Qt5::Concurrent
-    Qt5::Svg Qt5::X11Extras Qt5::PrintSupport
-    ${DTKWidget_LIBRARIES} ${X11_LIBRARIES} ${Xext_LIBRARIES}
+    Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql Qt6::DBus Qt6::Concurrent
+    Qt6::Svg Qt6::SvgWidgets Qt6::PrintSupport Qt6::Core5Compat
+    ${DTK2Widget_LIBRARIES} ${X11_LIBRARIES} ${Xext_LIBRARIES}
     ${LibExif_LIBRARIES} ${GIO_LIBRARIES} ${FREEIMAGE_LIBRARY}
     ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS}
 )
 
-if(Qt5OpenGL_FOUND)
-    target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::OpenGL)
+if(Qt6OpenGL_FOUND)
+    target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGL)
+endif()
+
+if(Qt6OpenGLWidgets_FOUND)
+    target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::OpenGLWidgets)
 endif()
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)

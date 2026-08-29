@@ -35,7 +35,6 @@
 
 #include "slideeffect.h"
 #include <cmath>
-#include <QtGui/QMatrix>
 
 static const EffectId kHorizontalOpen = "horizontal_open";
 static const EffectId kHorizontalClose = "horizontal_close";

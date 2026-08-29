@@ -42,10 +42,6 @@
 #include "widgets/dspinner.h"
 #include <DSvgRenderer>
 
-#ifndef QT_NO_OPENGL
-#include <QGLWidget>
-#endif
-
 DWIDGET_USE_NAMESPACE
 
 namespace
@@ -220,7 +216,7 @@ void ImageView::setImage(const QString &path)
                 QWidget *w = new QWidget();
                 w->setFixedSize(SPINNER_SIZE);
                 QHBoxLayout *hLayout = new QHBoxLayout;
-                hLayout->setMargin(0);
+                hLayout->setContentsMargins(0, 0, 0, 0);
                 hLayout->setSpacing(0);
                 hLayout->addWidget(spinner, 0, Qt::AlignCenter);
                 w->setLayout(hLayout);
@@ -409,7 +405,7 @@ bool ImageView::isFitWindow() const
 void ImageView::setHighQualityAntialiasing(bool highQualityAntialiasing)
 {
 #ifndef QT_NO_OPENGL
-    setRenderHint(QPainter::HighQualityAntialiasing, highQualityAntialiasing);
+    setRenderHint(QPainter::Antialiasing, highQualityAntialiasing);
 #else
     Q_UNUSED(highQualityAntialiasing);
 #endif
@@ -591,8 +587,8 @@ void ImageView::swipeTriggered(QSwipeGesture *gesture)
 
 void ImageView::wheelEvent(QWheelEvent *event)
 {
-    qreal factor = qPow(1.2, event->delta() / 240.0);
-    scaleAtPoint(event->pos(), factor);
+    qreal factor = qPow(1.2, event->angleDelta().y() / 240.0);
+    scaleAtPoint(event->position().toPoint(), factor);
 
     event->accept();
 }

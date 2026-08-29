@@ -75,7 +75,7 @@ signals:
     void nextRequested();
 
 protected:
-    void enterEvent(QEvent *e) override;
+    void enterEvent(QEnterEvent *e) override;
     void leaveEvent(QEvent *e) override;
     void resizeEvent(QResizeEvent *e) override;
 

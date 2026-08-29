@@ -56,6 +56,8 @@ const QImage                        decryptRpgmvpToQImage(const QString &filePat
 bool                                generateThumbnail(const QString &path);
 const QPixmap                       getThumbnail(const QString &path,
                                                  bool cacheOnly = false);
+const QImage                        getThumbnailImage(const QString &path,
+                                                      bool cacheOnly = false);
 void                                removeThumbnail(const QString &path);
 const QString                       thumbnailCachePath();
 const QString                       thumbnailPath(const QString &path, ThumbnailType type = ThumbLarge);

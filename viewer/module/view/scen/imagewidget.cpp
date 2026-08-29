@@ -3,7 +3,6 @@
 #include "controller/databasemanager.h"
 #include "utils/imageutils.h"
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QFileInfo>
 #include <QMouseEvent>
 #include <QPainter>

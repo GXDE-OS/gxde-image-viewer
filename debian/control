@@ -2,19 +2,22 @@ Source: gxde-image-viewer
 Section: utils
 Priority: optional
 Maintainer: Deepin Packages Builder <packages@deepin.com>
-Build-Depends: debhelper (>=9), qt5-qmake, qtbase5-dev, pkg-config,libexif-dev, libqt5svg5-dev, libqt5x11extras5-dev, libsqlite3-dev,
- qttools5-dev-tools, libxcb-util0-dev, libstartup-notification0-dev,
- libraw-dev,libfreeimage-dev, libqt5opengl5-dev, qtbase5-private-dev,
- qtmultimedia5-dev, x11proto-xext-dev, libmtdev-dev, libegl1-mesa-dev,
- libudev-dev, libfontconfig1-dev, libfreetype6-dev, libglib2.0-dev,
- libxrender-dev, libdtkwidget2-dev, libdtkcore-bin
+Build-Depends: debhelper (>=9), pkg-config,
+ qt6-base-dev, qt6-base-private-dev, qt6-5compat-dev, qt6-svg-dev,
+ qt6-tools-dev-tools, qt6-multimedia-dev, qt6-wayland-dev,
+ qt6-wayland-private-dev, libdtk2widget6-dev,
+ libexif-dev, libsqlite3-dev, libxcb-util0-dev,
+ libstartup-notification0-dev, libraw-dev, libfreeimage-dev,
+ libx11-dev, libxext-dev, x11proto-xext-dev, libmtdev-dev,
+ libegl1-mesa-dev, libudev-dev, libfontconfig1-dev,
+ libfreetype6-dev, libglib2.0-dev, libxrender-dev, libdtkcore-bin
 Standards-Version: 3.9.8
 Homepage: http://www.deepin.org
 
 Package: gxde-image-viewer
 Architecture: any
 Replaces: deepin-image-viewer
-Depends: ${shlibs:Depends}, ${misc:Depends}, libqt5sql5-sqlite, qt5-image-formats-plugins
-Recommends: libqt5libqgtk2, kimageformat-plugins, gxde-ocr, libheif-plugins-all
+Depends: ${shlibs:Depends}, ${misc:Depends}, libqt6sql6-sqlite, qt6-image-formats-plugins
+Recommends: qt6-gtk-platformtheme, kimageformat-plugins, gxde-ocr, libheif-plugins-all
 Description: Image Viewer for GXDE Desktop Environment
  GXDE Image Viewer is GXDE Desktop Environment Image Viewer.

@@ -4,13 +4,14 @@
 #
 #-------------------------------------------------
 
-QT += core gui sql dbus concurrent svg x11extras printsupport
+QT += core gui sql dbus concurrent svg svgwidgets printsupport core5compat dtk2widget
 qtHaveModule(opengl): QT += opengl
+qtHaveModule(openglwidgets): QT += openglwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG -= app_bundle
-CONFIG += c++11 link_pkgconfig
-PKGCONFIG += x11 xext libexif dtkwidget gio-unix-2.0
+CONFIG += c++17 link_pkgconfig
+PKGCONFIG += x11 xext libexif gio-unix-2.0
 LIBS += -lfreeimage
 
 #gtk+-2.0
@@ -88,8 +89,7 @@ INSTALLS = target desktop dbus_service icons manual manual_icon app_icon transla
 DISTFILES += \
     com.gxde.ImageViewer.service
 
-load(dtk_qmake)
-host_sw_64: {
+contains(QMAKE_HOST.arch, "sw_64") {
 # 在 sw_64 平台上添加此参数，否则会在旋转图片时崩溃
     QMAKE_CFLAGS += -mieee
     QMAKE_CXXFLAGS += -mieee

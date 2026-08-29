@@ -137,8 +137,8 @@ void TimelineView::selectAll()
         // Data row
         const int columnCount = model()->columnCount(titleIndex);
         if (columnCount > 0) {
-            QModelIndex topLeft = titleIndex.child(0, 0);
-            QModelIndex bottomRight = titleIndex.child(0, columnCount - 1);
+            QModelIndex topLeft = model()->index(0, 0, titleIndex);
+            QModelIndex bottomRight = model()->index(0, columnCount - 1, titleIndex);
 
             QItemSelection s;
             s.select(topLeft, bottomRight);
@@ -356,7 +356,8 @@ void TimelineView::paintEvent(QPaintEvent *event)
     QPainter painter(viewport());
 
     QModelIndexList sis = selectionModel()->selectedIndexes();
-    QStyleOptionViewItem option = viewOptions();
+    QStyleOptionViewItem option;
+    option.initFrom(this);
     painter.fillRect(this->rect(), m_backgroundColor);
 
     for (auto index : m_paintingIndexs) {
@@ -402,11 +403,11 @@ void TimelineView::wheelEvent(QWheelEvent *e)
     }
 
     QScrollBar *sb = verticalScrollBar();
-    if (e->orientation() == Qt::Vertical &&
+    if (e->angleDelta().y() != 0 &&
             sb->value() <= sb->maximum() &&
             sb->value() >= sb->minimum()) {
         if (e->modifiers() == Qt::ControlModifier) {
-            emit changeItemSize(e->delta() > 0);
+            emit changeItemSize(e->angleDelta().y() > 0);
         }
         else {
             QApplication::sendEvent(sb, e);
@@ -599,7 +600,7 @@ void TimelineView::updateVisualRects()
         // Data row
         const int columnCount = model()->columnCount(titleIndex);
         for (int c = 0; c < columnCount; c++) {
-            QModelIndex dataIndex = titleIndex.child(0, c);
+            QModelIndex dataIndex = model()->index(0, c, titleIndex);
             int subRow = c / maxColumnCount();
             int subColumn = c % maxColumnCount();
             int y = viewportHeight

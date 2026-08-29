@@ -24,8 +24,8 @@
 #include "utils/imageutils.h"
 #include <QApplication>
 #include <QDebug>
-#include <QDesktopWidget>
 #include <QMenu>
+#include <QScreen>
 #include <QPainter>
 #include <QResizeEvent>
 #include <QShortcut>
@@ -306,9 +306,11 @@ void SlideShowPanel::showFullScreen()
  */
 QImage SlideShowPanel::getFitImage(const QString &path)
 {
-    QDesktopWidget *dw = dApp->desktop();
-    const int dww = dw->screenGeometry(window()).width();
-    const int dwh = dw->screenGeometry(window()).height();
+    QScreen *screen = window() ? window()->screen() : nullptr;
+    if (!screen)
+        screen = QGuiApplication::primaryScreen();
+    const int dww = screen->geometry().width();
+    const int dwh = screen->geometry().height();
 
     QImage ti(dww, dwh, QImage::Format_ARGB32);
     QImage image = utils::image::getRotatedImage(path);

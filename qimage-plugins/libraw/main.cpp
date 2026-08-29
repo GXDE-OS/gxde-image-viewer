@@ -64,7 +64,7 @@ FreeimageQt5Plugin::capabilities(QIODevice *device, const QByteArray &format) co
         format == "tiff")
         return Capabilities(CanRead);
     if (!format.isEmpty())
-        return 0;
+        return Capabilities();
 
     Capabilities cap;
     if (device->isReadable() && RawIOHandler::canRead(device))

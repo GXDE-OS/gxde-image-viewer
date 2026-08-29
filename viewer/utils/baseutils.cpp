@@ -34,6 +34,7 @@
 #include <QImage>
 #include <QMimeData>
 #include <QProcess>
+#include <QStandardPaths>
 #include <QUrl>
 #include <QUrlQuery>
 #include <QDebug>
@@ -209,7 +210,7 @@ bool writeTextFile(QString filePath, QString content) {
     QFile file(filePath);
     if (file.open(QIODevice::WriteOnly|QIODevice::Text)) {
         QTextStream in(&file);
-        in << content << endl;
+        in << content << Qt::endl;
         file.close();
         return true;
     }

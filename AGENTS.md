@@ -2,18 +2,18 @@
 
 ## 项目概述
 
-GXDE Image Viewer 是 GXDE 桌面环境的图片查看器，基于 Qt5 (QWidget) 和 DTK (Deepin Tool Kit) 开发。项目最初源自 Deepin Image Viewer，使用 GPLv3 许可证。
+GXDE Image Viewer 是 GXDE 桌面环境的图片查看器，基于 Qt6 (QWidget) 和 dtk2widget-qt6 开发。项目最初源自 Deepin Image Viewer，使用 GPLv3 许可证。
 
 ## 技术栈
 
-- **语言**: C++11
-- **UI 框架**: Qt5 (QWidget) + DTK (Deepin Tool Kit)
-- **构建系统**: qmake (.pro 文件)
+- **语言**: C++17
+- **UI 框架**: Qt6 (QWidget) + dtk2widget-qt6
+- **构建系统**: qmake (.pro 文件) / CMake
 - **包管理**: pkg-config
 - **数据库**: SQLite (通过 Qt SQL 模块)
 - **图像处理**: FreeImage, libexif, libraw
-- **IPC**: D-Bus (Qt5-DBus)
-- **其他依赖**: x11, xext, gio-unix-2.0, dtkwidget
+- **IPC**: D-Bus (Qt6-DBus)
+- **其他依赖**: x11, xext, gio-unix-2.0, dtk2widget
 
 ## 项目结构
 
@@ -113,14 +113,14 @@ gxde-image-viewer/
 ### 安装依赖
 
 ```bash
-sudo apt install qt5-default libdtkwidget-dev libexif-dev libfreeimage-dev libraw-dev
+sudo apt install qt6-base-dev qt6-5compat-dev qt6-svg-dev qt6-tools-dev-tools qt6-multimedia-dev qt6-wayland-dev qt6-wayland-private-dev libdtk2widget6-dev libexif-dev libfreeimage-dev libraw-dev
 ```
 
 ### 构建
 
 ```bash
 mkdir Build && cd Build
-qmake .. && make -j$(nproc)
+qmake6 .. && make -j$(nproc)
 ```
 
 ### 运行

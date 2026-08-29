@@ -45,7 +45,7 @@ public:
     ScanPathsItem(const QString &path);
 
 protected:
-    void enterEvent(QEvent *e) Q_DECL_OVERRIDE {
+    void enterEvent(QEnterEvent *e) Q_DECL_OVERRIDE {
         QFrame::enterEvent(e);
         emit showRemoveIconChanged(true);
     }

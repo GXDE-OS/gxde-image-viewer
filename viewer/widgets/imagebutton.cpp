@@ -17,8 +17,8 @@
 #include "imagebutton.h"
 #include "application.h"
 #include <QApplication>
-#include <QDesktopWidget>
 #include <QFrame>
+#include <QScreen>
 #include <QFile>
 #include <QHelpEvent>
 #include <QDebug>
@@ -110,7 +110,7 @@ bool ImageButton::tooltipVisible() {
     return m_tooltipVisiable;
 }
 
-void ImageButton::enterEvent(QEvent *e)
+void ImageButton::enterEvent(QEnterEvent *e)
 {
     if (isEnabled()) {
         DImageButton::enterEvent(e);
@@ -138,7 +138,7 @@ void ImageButton::showTooltip(const QPoint &gPos)
     layout->addWidget(tl);
 
     tf->show();
-    QRect dr = qApp->desktop()->geometry();
+    QRect dr = QGuiApplication::primaryScreen()->geometry();
     int y = gPos.y() + tf->height();
     if (y > dr.y() + dr.height()) {
         y = gPos.y() - tf->height() - 10;

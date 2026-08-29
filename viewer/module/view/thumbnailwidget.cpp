@@ -128,7 +128,7 @@ void ThumbnailWidget::paintEvent(QPaintEvent *event)
                           m_defaultImage.width(), m_defaultImage.height());
 
     QPainter painter(this);
-    painter.setRenderHints(QPainter::HighQualityAntialiasing |
+    painter.setRenderHints(QPainter::Antialiasing |
                            QPainter::SmoothPixmapTransform);
     painter.drawPixmap(imgRect, m_defaultImage);
 }
