@@ -1,0 +1,51 @@
+# Maintainer: CharOfString <root@charofstring.cc>
+pkgname=gxde-image-viewer-git
+pkgver=1.7.5
+pkgrel=1
+pkgdesc='Image viewer for the GXDE desktop environment'
+arch=('x86_64' 'aarch64')
+url="https://github.com/GXDE-OS/gxde-image-viewer"
+license=('GPL-3.0-or-later')
+# 与 debian/control 相同需要 Qt 的图像格式插件（SQLite 驱动在 qt6-base 中） ・ As in debian/control, the Qt image format plugins are needed (the SQLite driver is in qt6-base).
+depends=('dtk2widget-qt6-git' 'freeimage-git' 'qt6-base' 'qt6-svg' 'qt6-5compat' 'qt6-imageformats' 'libraw'
+         'libexif' 'glib2' 'libx11' 'libxext' 'hicolor-icon-theme' 'libgcc' 'libstdc++' 'glibc')
+makedepends=('git' 'pkgconf' 'qt6-tools')
+optdepends=('kimageformats: more image formats'
+            'gxde-ocr-git: text recognition'
+            'libheif: HEIF images')
+provides=('gxde-image-viewer')
+conflicts=('gxde-image-viewer')
+source=()
+sha512sums=()
+
+# 直接使用 PKGBUILD 所在的 git 仓库作为源码 ・ Build from the git checkout this PKGBUILD lives in.
+_srcroot() {
+  git -C "$startdir" rev-parse --show-toplevel
+}
+
+prepare() {
+  # viewer.pro 在 qmake 所在目录下查找 translations/*.ts，只能像 Debian 一样在源码目录中构建，
+  # 因此在 $srcdir 中的副本里构建，不改动仓库
+  # viewer.pro looks for translations/*.ts in the directory qmake runs in, so
+  # it only builds in the source tree as on Debian.  Build in a copy in
+  # $srcdir and leave the checkout untouched.
+  rm -rf "$srcdir/$pkgname"
+  mkdir "$srcdir/$pkgname"
+  tar -C "$(_srcroot)" --exclude=./.git -cf - . | tar -C "$srcdir/$pkgname" -xf -
+}
+
+build() {
+  # 与 debian/rules 相同 ・ Same as debian/rules.
+  cd "$srcdir/$pkgname"
+  qmake6 gxde-image-viewer.pro \
+    PREFIX=/usr \
+    DEFINES+="VERSION=$pkgver" \
+    QMAKE_CFLAGS_RELEASE="$CFLAGS" \
+    QMAKE_CXXFLAGS_RELEASE="$CXXFLAGS" \
+    QMAKE_LFLAGS_RELEASE="$LDFLAGS"
+  make
+}
+
+package() {
+  make -C "$srcdir/$pkgname" INSTALL_ROOT="$pkgdir" install
+}
