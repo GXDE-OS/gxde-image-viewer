@@ -1,3 +1,14 @@
+gxde-image-viewer (1.7.6) UNRELEASED; urgency=medium
+
+  [ gfdgd_xi ]
+  * 修复高分屏下看图工具栏图标大小异常的问题
+
+  [ CharOfString ]
+  * 修复HDPI下修复返回按钮过大的问题
+  * 修复窗口圆角不跟系统设置的问题
+
+ -- CharOfString <markus_verify@126.com>  Tue, 20 Oct 2026 17:13:14 -0500
+
 gxde-image-viewer (1.7.5) UNRELEASED; urgency=medium
 
   * 迁移到 Qt6 / dtk2widget-qt6

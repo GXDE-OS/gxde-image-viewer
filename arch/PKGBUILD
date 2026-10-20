@@ -1,6 +1,6 @@
 # Maintainer: CharOfString <root@charofstring.cc>
 pkgname=gxde-image-viewer-git
-pkgver=1.7.5
+pkgver=1.7.6
 pkgrel=1
 pkgdesc='Image viewer for the GXDE desktop environment'
 arch=('x86_64' 'aarch64')
