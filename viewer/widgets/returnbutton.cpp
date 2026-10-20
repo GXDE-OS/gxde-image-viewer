@@ -28,6 +28,8 @@
 #include <QIcon>
 #include <QApplication>
 #include <QScreen>
+#include <QImageReader>
+#include <QImage>
 
 ReturnButton::ReturnButton(QWidget *parent)
     : QWidget(parent)
@@ -200,29 +202,33 @@ bool ReturnButton::event(QEvent *e)
 void ReturnButton::paintEvent(QPaintEvent *e)
 {
     QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     QMargins m = contentsMargins();
-    int ph = 0;
-    qreal ration = this->devicePixelRatioF();
-    QIcon icon(getPixmap());
+    const qreal dpr = this->devicePixelRatioF();
 
-    QPixmap pixmap = icon.pixmap(QPixmap(getPixmap()).size());
-    pixmap.setDevicePixelRatio(ration);
+    const int ch = qMax(1, height() - m.top() - m.bottom());
+    const QString pic = getPixmap();
 
-    const qreal pixWidth = pixmap.width() / ration;
-    const qreal pixHeight = pixmap.height() / ration;
+    int pixWidth = 0;
+    int pixHeight = ch;
 
-    if (! pixmap.isNull()) {
-        if (pixWidth > width() || pixHeight > height()) {
-            ph = height() - m.top() - m.bottom();
-            const QRect pr(m.left(), (height() - ph) / 2, ph, ph);
-            painter.drawPixmap(QPoint(pr.x(), pr.y()), pixmap
-                               /*pixmap.scaled(pr.size(), Qt::KeepAspectRatioByExpanding)*/);
-        }
-        else {
-            ph = pixHeight;
-            const QRect pr(m.left(), (height() - ph) / 2, pixWidth, ph);
-            painter.drawPixmap(QPoint(pr.x(), pr.y()), pixmap);
+    if (! pic.isEmpty()) {
+        // 读取 SVG 原生尺寸以保留宽高比, 防止高分屏下尺寸异常/溢出
+        QImageReader reader(pic);
+        QSize native = reader.size();
+        if (! native.isValid() || native.isEmpty())
+            native = QSize(1, 1);
+        const qreal aspect = qreal(native.width()) / native.height();
+
+        pixHeight = ch;
+        pixWidth = qMax(1, qRound(pixHeight * aspect));
+        reader.setScaledSize(QSize(pixWidth, pixHeight) * dpr);
+        const QPixmap pixmap = QPixmap::fromImage(reader.read());
+        if (! pixmap.isNull()) {
+            const int ix = m.left();
+            const int iy = m.top() + (ch - pixHeight) / 2;
+            painter.drawPixmap(QRect(ix, iy, pixWidth, pixHeight), pixmap);
         }
     }
 

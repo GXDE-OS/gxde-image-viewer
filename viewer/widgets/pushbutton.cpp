@@ -28,6 +28,8 @@
 #include <QIcon>
 #include <QApplication>
 #include <QScreen>
+#include <QImageReader>
+#include <QImage>
 
 PushButton::PushButton(QWidget *parent)
     : QWidget(parent)
@@ -195,32 +197,43 @@ void PushButton::paintEvent(QPaintEvent *e)
     QWidget::paintEvent(e);
 
     QPainter painter(this);
+    painter.setRenderHint(QPainter::Antialiasing);
 
     QMargins m = contentsMargins();
+    const qreal dpr = this->devicePixelRatioF();
+
+    // 内容区域(逻辑像素)
+    const int cw = qMax(1, width() - m.left() - m.right());
+    const int ch = qMax(1, height() - m.top() - m.bottom());
+
     int ph = 0;
     int spacing = 0;
 
-    qreal ration = this->devicePixelRatioF();
-    QIcon icon(getPixmap());
+    const QString pic = getPixmap();
+    if (! pic.isEmpty()) {
+        // 读取 SVG 原生尺寸以保留宽高比, 防止高分屏下尺寸异常/溢出
+        QImageReader reader(pic);
+        QSize native = reader.size();
+        if (! native.isValid() || native.isEmpty())
+            native = QSize(cw, ch);
+        const qreal aspect = qreal(native.width()) / native.height();
 
-    QPixmap pixmap = icon.pixmap(QPixmap(getPixmap()).size());
-    pixmap.setDevicePixelRatio(ration);
+        int iw = cw;
+        int ih = ch;
+        if (iw / aspect > ih)
+            iw = qMax(1, qRound(ih * aspect));
+        else
+            ih = qMax(1, qRound(iw / aspect));
 
-    const qreal pixWidth = pixmap.width() / ration;
-    const qreal pixHeight = pixmap.height() / ration;
-
-    if (! pixmap.isNull()) {
-        if (pixWidth > width() || pixHeight > height()) {
-            ph = height() - m.top() - m.bottom();
-            const QRect pr(m.left(), (height() - ph) / 2, ph, ph);
-            painter.drawPixmap(QPoint(pr.x(), pr.y()), pixmap
-                               /*pixmap.scaled(pr.size(), Qt::KeepAspectRatioByExpanding)*/);
+        reader.setScaledSize(QSize(iw, ih) * dpr);
+        const QPixmap pixmap = QPixmap::fromImage(reader.read());
+        if (! pixmap.isNull()) {
+            const int ix = m.left() + (cw - iw) / 2;
+            const int iy = m.top() + (ch - ih) / 2;
+            painter.drawPixmap(QRect(ix, iy, iw, ih), pixmap);
         }
-        else {
-            ph = pixHeight;
-            const QRect pr(m.left(), (height() - ph) / 2, pixWidth, ph);
-            painter.drawPixmap(QPoint(pr.x(), pr.y()), pixmap);
-        }
+
+        ph = iw;
         spacing = m_spacing;
     }
 
@@ -232,8 +245,6 @@ void PushButton::paintEvent(QPaintEvent *e)
     const QString mt = fm.elidedText(m_text, Qt::ElideMiddle, tw);
     painter.setPen(QPen(getTextColor()));
     painter.drawText(textRect, Qt::AlignCenter, mt);
-//    painter.setPen(Qt::red);
-//    painter.drawRect(this->rect());
 }
 
 void PushButton::enterEvent(QEnterEvent *e)
