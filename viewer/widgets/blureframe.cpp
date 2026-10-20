@@ -37,8 +37,12 @@ BlurFrame::BlurFrame(QWidget *parent)
 {
     setRadius(50);
     
+    // 不知道怎么说了 让Claude小姐解释吧：
+    // Wayland 下 InWindowBlend 抓取 backingStore 会崩溃, 但 BehindWindowBlend 会让 DTK
+    // 通过 dde-shell 把整个窗口的圆角设为 5, 覆盖系统设定的圆角大小.
+    // 内容已由 m_coverBrush 覆盖, 直接关闭模糊即可
     if (QApplication::platformName() == "wayland") {
-        setBlendMode(DBlurEffectWidget::BehindWindowBlend);
+        setBlurEnabled(false);
     }
 }
 
