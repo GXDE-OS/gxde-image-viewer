@@ -214,21 +214,22 @@ void ReturnButton::paintEvent(QPaintEvent *e)
     int pixHeight = ch;
 
     if (! pic.isEmpty()) {
-        // 读取 SVG 原生尺寸以保留宽高比, 防止高分屏下尺寸异常/溢出
         QImageReader reader(pic);
-        QSize native = reader.size();
-        if (! native.isValid() || native.isEmpty())
-            native = QSize(1, 1);
-        const qreal aspect = qreal(native.width()) / native.height();
+        QSize size = reader.size();
+        if (! size.isValid() || size.isEmpty())
+            size = QSize(ch, ch);
+        if (size.height() > ch)
+            size.scale(size.width(), ch, Qt::KeepAspectRatio);
 
-        pixHeight = ch;
-        pixWidth = qMax(1, qRound(pixHeight * aspect));
+        pixWidth = qMax(1, size.width());
+        pixHeight = qMax(1, size.height());
         reader.setScaledSize(QSize(pixWidth, pixHeight) * dpr);
-        const QPixmap pixmap = QPixmap::fromImage(reader.read());
+        QPixmap pixmap = QPixmap::fromImage(reader.read());
         if (! pixmap.isNull()) {
+            pixmap.setDevicePixelRatio(dpr);
             const int ix = m.left();
             const int iy = m.top() + (ch - pixHeight) / 2;
-            painter.drawPixmap(QRect(ix, iy, pixWidth, pixHeight), pixmap);
+            painter.drawPixmap(QPoint(ix, iy), pixmap);
         }
     }
 
@@ -251,8 +252,7 @@ void ReturnButton::paintEvent(QPaintEvent *e)
     {
         emit returnBtnWidthChanged(m_buttonWidth);
     }
-    const int th = fm.height();
-    QRect textRect = QRect(pixWidth, (height() - th)/2 - 1, textWidth, pixHeight);
+    QRect textRect = QRect(m.left() + pixWidth, m.top(), textWidth, ch);
     painter.setPen(QPen(getTextColor()));
     painter.drawText(textRect, Qt::AlignCenter, mt);
     QWidget::paintEvent(e);

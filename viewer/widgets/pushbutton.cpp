@@ -211,26 +211,25 @@ void PushButton::paintEvent(QPaintEvent *e)
 
     const QString pic = getPixmap();
     if (! pic.isEmpty()) {
-        // 读取 SVG 原生尺寸以保留宽高比, 防止高分屏下尺寸异常/溢出
         QImageReader reader(pic);
-        QSize native = reader.size();
-        if (! native.isValid() || native.isEmpty())
-            native = QSize(cw, ch);
-        const qreal aspect = qreal(native.width()) / native.height();
-
-        int iw = cw;
-        int ih = ch;
-        if (iw / aspect > ih)
-            iw = qMax(1, qRound(ih * aspect));
-        else
-            ih = qMax(1, qRound(iw / aspect));
+        QSize size = reader.size();
+        if (! size.isValid() || size.isEmpty())
+            size = QSize(ch, ch);
+        const int maxW = m_text.isEmpty() ? cw : size.width();
+        if (size.width() > maxW || size.height() > ch)
+            size.scale(maxW, ch, Qt::KeepAspectRatio);
+        const int iw = qMax(1, size.width());
+        const int ih = qMax(1, size.height());
 
         reader.setScaledSize(QSize(iw, ih) * dpr);
-        const QPixmap pixmap = QPixmap::fromImage(reader.read());
+        QPixmap pixmap = QPixmap::fromImage(reader.read());
         if (! pixmap.isNull()) {
-            const int ix = m.left() + (cw - iw) / 2;
+            // 按设备像素原样绘制, 避免分数缩放(如 1.25x)下二次缩放导致模糊
+            pixmap.setDevicePixelRatio(dpr);
+            // 有文字时图标靠左, 否则居中
+            const int ix = m_text.isEmpty() ? m.left() + (cw - iw) / 2 : m.left();
             const int iy = m.top() + (ch - ih) / 2;
-            painter.drawPixmap(QRect(ix, iy, iw, ih), pixmap);
+            painter.drawPixmap(QPoint(ix, iy), pixmap);
         }
 
         ph = iw;
