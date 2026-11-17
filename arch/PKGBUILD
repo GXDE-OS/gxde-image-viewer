@@ -1,5 +1,5 @@
 # Maintainer: CharOfString <root@charofstring.cc>
-pkgname=gxde-image-viewer-git
+pkgname=gxde-image-viewer
 pkgver=1.7.6
 pkgrel=1
 pkgdesc='Image viewer for the GXDE desktop environment'
@@ -7,14 +7,15 @@ arch=('x86_64' 'aarch64')
 url="https://github.com/GXDE-OS/gxde-image-viewer"
 license=('GPL-3.0-or-later')
 # 与 debian/control 相同需要 Qt 的图像格式插件（SQLite 驱动在 qt6-base 中） ・ As in debian/control, the Qt image format plugins are needed (the SQLite driver is in qt6-base).
-depends=('dtk2widget-qt6-git' 'freeimage-git' 'qt6-base' 'qt6-svg' 'qt6-5compat' 'qt6-imageformats' 'libraw'
+depends=('dtk2widget-qt6' 'freeimage' 'qt6-base' 'qt6-svg' 'qt6-5compat' 'qt6-imageformats' 'libraw'
          'libexif' 'glib2' 'libx11' 'libxext' 'hicolor-icon-theme' 'libgcc' 'libstdc++' 'glibc')
 makedepends=('git' 'pkgconf' 'qt6-tools')
 optdepends=('kimageformats: more image formats'
-            'gxde-ocr-git: text recognition'
+            'gxde-ocr: text recognition'
             'libheif: HEIF images')
-provides=('gxde-image-viewer')
-conflicts=('gxde-image-viewer')
+provides=("gxde-image-viewer-git=$pkgver")
+conflicts=('gxde-image-viewer-git')
+replaces=('gxde-image-viewer-git')
 source=()
 sha512sums=()
 
